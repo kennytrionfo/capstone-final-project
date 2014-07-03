@@ -42,4 +42,4 @@ gem 'spring',        group: :development
 
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
-gem 'devise' 
+gem 'devise'  
