@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EcoMojo</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div id="all">
+    <header>
+      <nav>
+        <%= link_to('Home Page', root_path) %>
+        <span>&nbsp;</span>
+        <%= link_to('About Eco-Mojo', about_path) %>
+        <span>&nbsp;</span>
+        <%= link_to('Contact Us', contact_path) %>
+        <span>&nbsp;</span>
+        <%= link_to('Sign Up', new_user_registration_path) %>
+        <span>&nbsp;</span>
+        <% if user_signed_in? %>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <% else %>
+          <%= link_to('Login', new_user_session_path) %>
+        <% end %>
+      </nav>
+    </header>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+<%= yield %>
+    <footer>
+      copyright &copy; <%= Time.now.year %>
+    </footer>
+  </div>
+</body>
+</html>
