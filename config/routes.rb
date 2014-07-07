@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
-=======
   devise_for :users
->>>>>>> 0a856f1a516e90a3339ca5b9349581b22a44a246
 root 'home#index'
 
 
