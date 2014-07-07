@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-root 'home#index'
-
   get '/about' => 'site#about'
 
 
   get '/contact' => 'site#contact'
 
 
-devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
 
-root 'site#index'
+  root 'site#index'
 
 
 end
