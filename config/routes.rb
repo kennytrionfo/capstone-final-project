@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'goals/index'
+
   get '/about' => 'site#about'
 
 
