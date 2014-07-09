@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :confirmable, :validatable
 
   has_many :goals
+
+  validates :username, presence: true
 end
