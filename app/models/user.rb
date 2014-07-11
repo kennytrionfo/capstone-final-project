@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
 
   validates :username, :email, :password, presence: true
 
+  accepts_nested_attributes_for :user_goals
 
 end

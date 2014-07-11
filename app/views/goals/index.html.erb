@@ -1,6 +1,25 @@
 <h1>Goals#index</h1>
 
 
+<%= form_for(@user_goal) do |f| %>
+
+  <div>
+    <%= f.label :frequency %>
+    <%= f.text_field :frequency %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+
+
+
+
+
+
 <% @goals.each do |goal| %>
 <h1><%= goal.category %></h1>
 <p><%= goal.frequency %></p>
