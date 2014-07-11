@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe User, :type => :model do
 
   describe 'associations' do
-    it {should have_many :goals}
     it {should have_many :user_goals}
   end
-  
+
   describe 'validations' do
     it {should validate_presence_of :username}
     it {should validate_presence_of :email}
+    it {should validate_presence_of :encrypted_password}
   end
 
   describe '#username' do
@@ -33,9 +33,10 @@ RSpec.describe User, :type => :model do
   describe '#password' do
     before do
       @user = create(:user, username: 'marylouwho', email: 'this@rspec.com', password: 'password')
-    end
+      end
     it 'returns this@rspec.com' do
       expect(@user.password).to eq 'password'
     end
   end
+
 end

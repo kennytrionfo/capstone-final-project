@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140708233138) do
     t.integer  "weekly_points_goal"
     t.integer  "weekly_points_results"
     t.integer  "user_id"
+    t.integer  "goal_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

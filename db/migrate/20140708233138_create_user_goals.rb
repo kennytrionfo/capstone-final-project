@@ -7,6 +7,7 @@ class CreateUserGoals < ActiveRecord::Migration
       t.integer :weekly_points_goal
       t.integer :weekly_points_results
       t.integer :user_id
+      t.integer :goal_id
       t.timestamps
     end
   end
