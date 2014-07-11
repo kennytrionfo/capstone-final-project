@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :confirmable, :validatable
 
   has_many :goals
+  has_many :user_goals
 end
