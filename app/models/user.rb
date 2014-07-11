@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :goals
   has_many :user_goals
+
+  validates :username, :email, :password, presence: true
+
+
 end
