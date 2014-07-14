@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :confirmable, :validatable
 
   has_many :user_goals
-
+  enum role: [:client, :admin]
   validates :username, :email, :encrypted_password, presence: true
 
 

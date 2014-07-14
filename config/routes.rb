@@ -1,18 +1,17 @@
 Rails.application.routes.draw do
 
   get 'goals/index'
-
   get '/about' => 'site#about'
-
-
   get '/contact' => 'site#contact'
 
 
   devise_for :users, :controllers => { registrations: 'registrations' }
-
-
   root 'site#index'
 
+      namespace :clients do
+      get '/' => 'base#index'
+      resources :user_goals
+    end
 
 end
 
