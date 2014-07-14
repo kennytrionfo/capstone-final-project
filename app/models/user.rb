@@ -4,10 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :confirmable, :validatable
 
-  has_many :goals
   has_many :user_goals
 
-  validates :username, :email, :password, presence: true
+  validates :username, :email, :encrypted_password, presence: true
 
   accepts_nested_attributes_for :user_goals
 
