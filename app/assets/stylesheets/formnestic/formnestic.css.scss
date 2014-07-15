@@ -1,0 +1,177 @@
+@import 'entypo';
+
+form.formtastic .stringish input {
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 12px;
+}
+
+form.formtastic .text textarea {
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 12px;
+  height: 50px;
+}
+
+div.formnestic-nested-model-container fieldset.formnestic-li-fieldset {
+  position: relative;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #ccc;
+  div.formnestic-li-fieldset-legend {
+    background: #346A89;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 10px;
+  }  
+  div.formnestic-minus-button-container {
+    position: absolute;
+    top: 7px;
+    right: 0;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+}
+
+div.formnestic-nested-model-container {
+  input[type=text], input[type=number] {
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 12px;
+  } 
+  textarea {
+    padding: 5px;
+    border: 1px solid #ccc;
+    height: 50px;
+  }
+    
+  div.formnestic-list-new-entry-link-container {
+    margin-bottom: 10px;
+    text-align: right;
+    margin-top: 10px;
+    a {
+      border-radius: 5px;
+      background: #4C88AA;
+      color: #fff;
+      padding: 5px;
+      text-decoration: none;
+    }
+  }
+}
+
+table.formnestic-table-inputs {
+  width: 100%;
+}
+
+table.formnestic-table-inputs thead th {
+  padding: 5px;
+  background: #333;
+  color: #fff;
+}
+
+table.formnestic-table-inputs tbody td {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  input[type=text] {
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  } 
+  
+  p.inline-errors {
+    margin-top: 2px;
+    color: #c00;
+    margin-left: 0;
+    line-height: 1.5;
+  }
+}
+
+table.formnestic-table-inputs tbody tr.inputs {
+  td {
+    padding: 5px;
+    vertical-align: top;
+    p.inline-hints {
+      margin-left: 0;
+    }
+    
+    ol.choices-group {
+      padding-left: 0;
+    }
+  }
+  &.formnestic-odd-row td {
+    background: #eee;
+  }
+  
+  &.formnestic-even-row td {
+  }
+}
+
+table.formnestic-table-inputs td.date_select ol.fragments-group, 
+table.formnestic-table-inputs td.time_select ol.fragments-group,
+table.formnestic-table-inputs td.datetime ol.fragments-group, 
+table.formnestic-table-inputs td.datetime_select ol.fragments-group,
+table.formnestic-table-inputs td.date ol.fragments-group, 
+table.formnestic-table-inputs td.time ol.fragments-group {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+table.formnestic-table-inputs td.date_select ol.fragments-group li.fragment, table.formnestic-table-inputs td.date ol.fragments-group li.fragment {
+  float: left;
+  margin-right: 5px;
+}
+
+table.formnestic-table-inputs thead tr th.formnestic-minus-thead {
+  width: 20px;
+}
+
+table.formnestic-table-inputs tbody tr td.formnestic-minus-button-cell {
+}
+
+table.formnestic-table-inputs tbody tr td.boolean label {
+  padding-left: 0;
+}
+
+table.formnestic-table-inputs tbody tr.formnestic-table-no-border td {
+  text-align: right;
+  border: 0 none;
+  padding-right: 0;
+  background: none;
+}
+  
+table.formnestic-table-inputs tbody tr td.formnestic-minus-button-cell div.formnestic-table-minus-button {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #999;
+  -webkit-transition: all 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: all 0.5s;
+  &:hover {
+    color: #333;
+  }
+}
+
+table.formnestic-table-inputs tbody a.formnestic-add-row-field-link {
+  text-decoration: none;
+  background: #A1C988;
+  padding: 5px 10px;
+  color: #fff;
+  margin-top: 10px;
+  line-height: 30px;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: all 0.5s;
+  
+  &:hover {
+    background: #89BC69;
+  };
+}
+
+.formnestic-hidden {
+  display: none;
+}
