@@ -56,10 +56,10 @@
         1,
         1,
         1,
-        9,
+        7,
         null,
         1,
-        9,
+        7,
         null,
         null
       ],
@@ -474,14 +474,6 @@
         null,
         null
       ],
-      "/Users/Lisa/Documents/capstone-dpl-project/spec/factories/user_goals.rb": [
-        null,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
       "/Users/Lisa/Documents/capstone-dpl-project/spec/factories/users.rb": [
         null,
         null,
@@ -600,69 +592,6 @@
         1,
         null
       ],
-      "/Users/Lisa/Documents/capstone-dpl-project/db/schema.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
       "/Users/Lisa/Documents/capstone-dpl-project/app/controllers/clients_controller.rb": [
         1,
         1,
@@ -760,23 +689,6 @@
         1,
         null
       ],
-      "/Users/Lisa/Documents/capstone-dpl-project/spec/models/user_goal_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        2,
-        2,
-        null,
-        null
-      ],
-      "/Users/Lisa/Documents/capstone-dpl-project/app/models/user_goal.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/Lisa/Documents/capstone-dpl-project/spec/models/user_spec.rb": [
         1,
         null,
@@ -822,6 +734,6 @@
         null
       ]
     },
-    "timestamp": 1405367754
+    "timestamp": 1405459356
   }
 }

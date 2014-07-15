@@ -32,7 +32,7 @@ group :test do
 end
 
 group :development, :test do
-    gem 'ffaker'
+   gem 'ffaker'
    gem 'rspec-rails'
    gem 'pry-rails'
    gem 'factory_girl_rails'
