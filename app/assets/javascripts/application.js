@@ -15,3 +15,5 @@
 //= require turbolinks
 //= require cocoon
 //= require_tree .
+
+//= require formnestic/formnestic

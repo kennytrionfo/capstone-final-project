@@ -1,25 +1,153 @@
-<h1>Client Dashboard</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-<%= nested_form_for([:client, @goal]) do |f| %>
-  <div class="form-group">
-    <%= f.label :catagory %>
-    <%= f.text_field :catagory %>
-  </div>
+</head>
 
-  <div class="form-group">
-    <%= f.label :point_value %>
-    <%= f.number_field :point_value %>
-  </div>
+<body>
+  <h1>Daily Deeds Dashboard</h1>
+  <h3>Add your deeds and grow your points!</h3>
 
-  <div class="form-group">
-    <%= f.label :frequency %>
-    <%= f.text_field :frequency %>
-  </div>
+  
 
 
 
-  <div class="form-group">
-    <%= f.submit %>
-  </div>
 
-<% end %>
+
+
+
+  <div class="total"> </div>
+</br></br>
+
+    <table style="width:700px">
+    <tr>
+      <td>I turned off the lights - 10 pts.</td>
+      <td>
+        <form action="">
+          <select name="frequency">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+        </form>
+      </td>
+      <td id="lights_goal_total"> 10</td>
+      <td><button id="lights" value="10">Done!</button></td>
+      <td>This Week's Total:</td>
+      <td id="lights_total"> </td>
+    </tr>
+
+    <tr>
+      <td>I used my own bags at the grocery store - 5 pts.</td>
+      <td>
+        <form action="">
+          <select name="frequency" onchange="frequency_choice = this.options[selectedIndex].value" >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+        </form>
+      </td>
+      <td id="bags_goal_total"> </td>
+      <td><button id="bags" value="5">Done!</button></td>
+      <td>This Week's Total:</td>
+      <td id="bags_total"> </td>
+    </tr>
+    </table>
+
+
+  <script>
+
+  $('#bags_goal_total').text("Goal goes here.");
+  $('#lights_goal_total').text("Goal goes here.");
+
+  var bagsTotal = 0;
+  $('#bags').click(function(){
+     bagsTotal = Number(bagsTotal) + Number($(this).val());
+     $('#bags_total').text(bagsTotal);
+  });
+  $('#bags_total').text(bagsTotal);
+
+  var lightsTotal = 0;
+  $('#lights').click(function(){
+     lightsTotal = Number(lightsTotal) + Number($(this).val());
+     $('#lights_total').text(lightsTotal);
+  });
+  $('#lights_total').text(lightsTotal);
+
+  var theTotal = 0;
+  $('button').click(function(){
+     theTotal = Number(theTotal) + Number($(this).val());
+     $('.total').text("Your Grand Total: "+theTotal);
+  });
+  $('.total').text("Your Grand Total: "+theTotal);
+
+  </script>
+
+   <style media="screen">
+     .total {
+        position: absolute;
+        left: 300px;
+        font-weight:bold;
+     }
+
+   </style>
+
+</body>
+
+
+</html>
+
+<!-- <tr>
+  <td>I road my bike to work.</td>
+  <td><button id = "bike" value="15">Done!</button></td>
+  <td>Total:</td>
+  <td id="bike_total"> </td>
+</tr>
+
+<tr>
+  <td>I carpooled instead of taking my car.</td>
+  <td><button id="carpool" value="35">Done!</button></td>
+  <td>Total:</td>
+  <td id="carpool_total"> </td>
+</tr>
+
+<tr>
+  <td>I put a load of laundry on the line.</td>
+  <td><button id="laundry" value="15">Done!</button></td>
+  <td>Total:</td>
+  <td id="laundry_total"> </td>
+</tr> -->
+
+
+<!-- // var bikeTotal = 0;
+// $('#bike').click(function(){
+//    bikeTotal = Number(bikeTotal) + Number($(this).val());
+//    $('#bike_total').text(bikeTotal);
+// });
+// $('#bike_total').text(bikeTotal);
+//
+// var carpoolTotal = 0;
+// $('#carpool').click(function(){
+//    carpoolTotal = Number(carpoolTotal) + Number($(this).val());
+//    $('#carpool_total').text(carpoolTotal);
+// });
+// $('#carpool_total').text(carpoolTotal);
+//
+// var laundryTotal = 0;
+// $('#laundry').click(function(){
+//    laundryTotal = Number(laundryTotal) + Number($(this).val());
+//    $('#laundry_total').text(laundryTotal);
+// });
+// $('#laundry_total').text(laundryTotal); -->

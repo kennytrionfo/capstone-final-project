@@ -26,18 +26,6 @@ ActiveRecord::Schema.define(version: 20140712185552) do
     t.datetime "updated_at"
   end
 
-  create_table "user_goals", force: true do |t|
-    t.text     "category"
-    t.integer  "point_value"
-    t.integer  "frequency"
-    t.integer  "weekly_points_goal"
-    t.integer  "weekly_points_results"
-    t.integer  "user_id"
-    t.integer  "goal_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

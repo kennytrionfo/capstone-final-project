@@ -4,10 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :confirmable, :validatable
 
-  has_many :user_goals
+  has_many :goals
   enum role: [:client, :admin]
   validates :username, :email, :encrypted_password, presence: true
 
-  accepts_nested_attributes_for :user_goals
 
 end
