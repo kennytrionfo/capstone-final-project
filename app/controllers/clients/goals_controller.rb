@@ -1,8 +1,8 @@
-class Clients::GoalsController < ApplicationController
-  before_action :authenticate_user!
-  
+class Clients::GoalsController < Clients::BaseController
+
   def index
-    @goals = Goal.all
+    user = User.find(current_user.id)
+    @goals = user.goals.all
   end
 
   def show

@@ -33,6 +33,8 @@ $(function() {
   });
 });
 
+// use an ajax call to save the change to the db.
+
 var bagsTotal = 0;
   $('#bags').click(function(){
     bagsTotal = Number(bagsTotal) + Number($(this).val());
