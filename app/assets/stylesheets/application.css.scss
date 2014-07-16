@@ -15,3 +15,15 @@
  */
 
 /* *= require formnestic/formnestic */
+
+@import "bootstrap";
+
+/*navigation bar*/
+
+.nav.navbar-nav {
+  float: right;
+}
+
+.navbar-brand {
+  font-size: 40px;
+}

@@ -38,6 +38,7 @@ group :development, :test do
    gem 'factory_girl_rails'
  end
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -50,6 +51,7 @@ group :development, :test do
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'cocoon'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'devise'
