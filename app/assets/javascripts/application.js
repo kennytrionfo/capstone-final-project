@@ -15,5 +15,41 @@
 //= require turbolinks
 //= require cocoon
 //= require_tree .
+//= require formnestic/formnestic.js
+//= require_self
 
-//= require formnestic/formnestic
+$(function() {
+
+  $('#frequency').change(function() {
+      var val1 = $('#frequency option:selected').val();
+      var val2 = $('#lights_value').attr("value");
+      $('#lights_goal_total').text(val1*val2);
+  });
+
+  $('#frequency1').change(function() {
+      var val1 = $('#frequency1 option:selected').val();
+      var val2 = $('#bags_value').attr("value");
+      $('#bags_goal_total').text(val1*val2);
+  });
+});
+
+var bagsTotal = 0;
+  $('#bags').click(function(){
+    bagsTotal = Number(bagsTotal) + Number($(this).val());
+      $('#bags_total').text(bagsTotal);
+});
+$('#bags_total').text(bagsTotal);
+
+var lightsTotal = 0;
+  $('#lights').click(function(){
+    lightsTotal = Number(lightsTotal) + Number($(this).val());
+      $('#lights_total').text(lightsTotal);
+});
+$('#lights_total').text(lightsTotal);
+
+var theTotal = 0;
+  $('button').click(function(){
+   theTotal = Number(theTotal) + Number($(this).val());
+     $('.total').text("Your Grand Total: "+theTotal);
+});
+$('.total').text("Your Grand Total: "+theTotal);

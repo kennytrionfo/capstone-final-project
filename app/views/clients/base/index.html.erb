@@ -5,8 +5,11 @@
 </head>
 <body>
   <h1>Daily Deeds Dashboard</h1>
-  <form id="dashboardform" action="index.html" method="post">
+  <form id="dashboardform" action="clients/goals" method="post">
     <h2>Add your deeds and grow your points!</h2>
+    <div class="total">
+
+    </div><br />
   <table style="width:900px">
    <tr align="center">
      <th align="center">Eco-Friendly Action</th>
@@ -17,7 +20,7 @@
      <th>This Week's Total</th>
    </tr>
     <tr>
-      <td>I turned off the lights - 10 pts.</td>
+      <td></td>
       <td id="lights_value" value=10 >10 </td>
       <td>
           <select id="frequency">
@@ -59,42 +62,6 @@
     <input type="reset" value="Reset!" />
   </form>
 
-<script>
-    $('#frequency').change(function() {
-        var val1 = $('#frequency option:selected').val();
-        var val2 = $('#lights_value').attr("value");
-        $('#lights_goal_total').text(val1*val2);
-    });
-
-    $('#frequency1').change(function() {
-        var val1 = $('#frequency1 option:selected').val();
-        var val2 = $('#bags_value').attr("value");
-        $('#bags_goal_total').text(val1*val2);
-    });
-
-    var bagsTotal = 0;
-    $('#bags').click(function(){
-       bagsTotal = Number(bagsTotal) + Number($(this).val());
-       $('#bags_total').text(bagsTotal);
-    });
-    $('#bags_total').text(bagsTotal);
-
-    var lightsTotal = 0;
-    $('#lights').click(function(){
-       lightsTotal = Number(lightsTotal) + Number($(this).val());
-       $('#lights_total').text(lightsTotal);
-    });
-    $('#lights_total').text(lightsTotal);
-
-    var theTotal = 0;
-    $('button').click(function(){
-       theTotal = Number(theTotal) + Number($(this).val());
-       $('.total').text("Your Grand Total: "+theTotal);
-    });
-    $('.total').text("Your Grand Total: "+theTotal);
-
-  </script>
-
    <style media="screen">
      .total {
         position: absolute;
@@ -109,7 +76,6 @@
    </style>
 
 </body>
-
 
 </html>
 

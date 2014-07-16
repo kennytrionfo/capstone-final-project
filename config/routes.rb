@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'goals/index'
+  get 'clients/goals/index'
   get '/about' => 'site#about'
   get '/contact' => 'site#contact'
 
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
 
       namespace :clients do
       get '/' => 'base#index'
-      resources :user_goals
+      resources :goals
     end
 
 end
