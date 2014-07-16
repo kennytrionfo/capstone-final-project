@@ -6,26 +6,30 @@
 </head>
 
 <body>
-  <h1>Daily Deeds Dashboard</h1>
+  <h1>Daily Actions Dashboard</h1>
   <h3>Add your deeds and grow your points!</h3>
-
-  
-
-
-
-
-
 
 
   <div class="total"> </div>
+
 </br></br>
 
-    <table style="width:700px">
+  <table style="width:1100px">
+   <tr align="center">
+     <th align="center">Eco-Friendly Action</th>
+     <th align="center">Point Value</th>
+     <th>Point Value</th>
+     <th>Times Per Week</th>
+     <th>Weekly Goal</th>
+     <th>This Week's Total</th>
+
+   </tr>
     <tr>
       <td>I turned off the lights - 10 pts.</td>
+      <td id="lights_value" value=10 >10 </td>
       <td>
         <form action="">
-          <select name="frequency">
+          <select id="frequency">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -37,17 +41,17 @@
           </select>
         </form>
       </td>
-      <td id="lights_goal_total"> 10</td>
-      <td><button id="lights" value="10">Done!</button></td>
-      <td>This Week's Total:</td>
+      <td id="lights_goal_total"></td>
+      <td><button id="lights" value=10>Done!</button></td>
       <td id="lights_total"> </td>
     </tr>
 
     <tr>
       <td>I used my own bags at the grocery store - 5 pts.</td>
+      <td id="bags_value" value=5 >5 </td>
       <td>
         <form action="">
-          <select name="frequency" onchange="frequency_choice = this.options[selectedIndex].value" >
+          <select id="frequency1" >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -61,37 +65,44 @@
       </td>
       <td id="bags_goal_total"> </td>
       <td><button id="bags" value="5">Done!</button></td>
-      <td>This Week's Total:</td>
       <td id="bags_total"> </td>
     </tr>
     </table>
 
 
   <script>
+    $('#frequency').change(function() {
+        var val1 = $('#frequency option:selected').val();
+        var val2 = $('#lights_value').attr("value");
+        $('#lights_goal_total').text(val1*val2);
+    });
 
-  $('#bags_goal_total').text("Goal goes here.");
-  $('#lights_goal_total').text("Goal goes here.");
+    $('#frequency1').change(function() {
+        var val1 = $('#frequency1 option:selected').val();
+        var val2 = $('#bags_value').attr("value");
+        $('#bags_goal_total').text(val1*val2);
+    });
 
-  var bagsTotal = 0;
-  $('#bags').click(function(){
-     bagsTotal = Number(bagsTotal) + Number($(this).val());
-     $('#bags_total').text(bagsTotal);
-  });
-  $('#bags_total').text(bagsTotal);
+    var bagsTotal = 0;
+    $('#bags').click(function(){
+       bagsTotal = Number(bagsTotal) + Number($(this).val());
+       $('#bags_total').text(bagsTotal);
+    });
+    $('#bags_total').text(bagsTotal);
 
-  var lightsTotal = 0;
-  $('#lights').click(function(){
-     lightsTotal = Number(lightsTotal) + Number($(this).val());
-     $('#lights_total').text(lightsTotal);
-  });
-  $('#lights_total').text(lightsTotal);
+    var lightsTotal = 0;
+    $('#lights').click(function(){
+       lightsTotal = Number(lightsTotal) + Number($(this).val());
+       $('#lights_total').text(lightsTotal);
+    });
+    $('#lights_total').text(lightsTotal);
 
-  var theTotal = 0;
-  $('button').click(function(){
-     theTotal = Number(theTotal) + Number($(this).val());
-     $('.total').text("Your Grand Total: "+theTotal);
-  });
-  $('.total').text("Your Grand Total: "+theTotal);
+    var theTotal = 0;
+    $('button').click(function(){
+       theTotal = Number(theTotal) + Number($(this).val());
+       $('.total').text("Your Grand Total: "+theTotal);
+    });
+    $('.total').text("Your Grand Total: "+theTotal);
 
   </script>
 
@@ -100,6 +111,10 @@
         position: absolute;
         left: 300px;
         font-weight:bold;
+     }
+
+     th {
+       align: center;
      }
 
    </style>
