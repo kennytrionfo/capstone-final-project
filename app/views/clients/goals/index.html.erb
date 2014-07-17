@@ -1,14 +1,13 @@
-<% @goals.each do |goal| %>
-<%= goal.category %>
-<%= goal.user_id %>
-<%= goal.point_value %>
-<% end %>
-<body>
-  <h1>Daily Deeds Dashboard</h1>
-  <!-- <form id="dashboardform" action="clients/goals" method="post"> -->
-    <h2>Add your deeds and grow your points!</h2>
 
-    <div class="total"></div>
+<body>
+  <h2>Daily Deeds Dashboard</h2>
+  <!-- <form id="dashboardform" action="clients/goals" method="post"> -->
+    <h4>Add your deeds and grow your points!</h4>
+  <br>
+  <br>
+  <br>
+
+    <div style="text-align: right" class="total"></div>
   </br>
 
   <table class="table">
@@ -43,7 +42,31 @@
               </select>
             </form>
           </td>
-          <td id="lights_goal_total"></td>
+          <td id="lights_goal_total"> </td>
+          <td><%= "Done button here" %></td>
+          <td><%= "Weekly Results here" %></td>
+        </tr>
+
+   <!-- ++++++ practice row below ++++++++ -->
+
+        <tr style="text-align:center">
+          <td><%= goal.category %></td>
+          <td class="point_value"><%= goal.point_value %></td>
+          <td>
+            <form action="">
+              <select id="frequency">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+              </select>
+            </form>
+          </td>
+          <td id="lights_goal_total"> </td>
           <td><%= "Done button here" %></td>
           <td><%= "Weekly Results here" %></td>
         </tr>
@@ -111,7 +134,10 @@
 
 
 </body>
-
+<br>
+<br>
+<br>
+<br>
 </html>
 
 <!-- <tr>
