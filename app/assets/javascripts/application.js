@@ -18,45 +18,47 @@
 //= require formnestic/formnestic.js
 //= require_self
 
+$(document).ready(function() {
 
-var ready;
-ready = function() {
-
-  $('#frequency').change(function() {
-      var val1 = $('#frequency option:selected').val();
-      var val2 = $('.point_value');
-      $('#lights_goal_total').text(val1*val2);
+  $('table tbody tr').each(function(index, row) {
+    $(row).find('.point_value').text()
   });
 
-  $('#frequency1').change(function() {
-      var val1 = $('#frequency1 option:selected').val();
-      var val2 = $('#bags_value').attr("value");
-      $('#bags_goal_total').text(val1*val2);
+  $('select').change(function() {
+    var val1 = parseInt($(this).val());
+    var val2 = parseInt($(this).parents('tr').find('.point_value').text());
+    $('#lights_goal_total').text(val1*val2);
   });
 
-// use an ajax call to save the change to the db.
 
-  var bagsTotal = 0;
-    $('#bags').click(function(){
-      bagsTotal = Number(bagsTotal) + Number($(this).val());
-        $('#bags_total').text(bagsTotal);
-  });
-  $('#bags_total').text(bagsTotal);
 
-  var lightsTotal = 0;
-    $('#lights').click(function(){
-      lightsTotal = Number(lightsTotal) + Number($(this).val());
-        $('#lights_total').text(lightsTotal);
-  });
-  $('#lights_total').text(lightsTotal);
+//   $('#frequency1').change(function() {
+//       var val1 = $('#frequency1 option:selected').val();
+//       var val2 = $('#bags_value').attr("value");
+//       $('#bags_goal_total').text(val1*val2);
+//   });
+//
+// // use an ajax call to save the change to the db.
+//
+//   var bagsTotal = 0;
+//     $('#bags').click(function(){
+//       bagsTotal = Number(bagsTotal) + Number($(this).val());
+//         $('#bags_total').text(bagsTotal);
+//     });
+//         $('#bags_total').text(bagsTotal);
+//
+//   var lightsTotal = 0;
+//     $('#lights').click(function(){
+//       lightsTotal = Number(lightsTotal) + Number($(this).val());
+//         $('#lights_total').text(lightsTotal);
+//     });
+//         $('#lights_total').text(lightsTotal);
+//
+//   var theTotal = 0;
+//     $('button').click(function(){
+//      theTotal = Number(theTotal) + Number($(this).val());
+//        $('.total').text("Your Grand Total: "+theTotal);
+//     });
+//       $('.total').text("Your Grand Total: "+theTotal);
 
-  var theTotal = 0;
-    $('button').click(function(){
-     theTotal = Number(theTotal) + Number($(this).val());
-       $('.total').text("Your Grand Total: "+theTotal);
-  });
-  $('.total').text("Your Grand Total: "+theTotal);
-};
-
-$(document).ready(ready);
-$(document).on('page:load', ready);
+});

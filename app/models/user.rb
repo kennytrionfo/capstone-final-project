@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
 
   def give_goals_to_user
       self.goals.create(category: "I used my own bags at the grocery store.", point_value: 20, frequency: 1)
-
+      self.goals.create(category: "I carpooled.", point_value: 50, frequency: 1)
+      
   end
 
 end
