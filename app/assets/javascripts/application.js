@@ -12,12 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 //= require cocoon
 //= require_tree .
 //= require formnestic/formnestic.js
+//= require foundation
 //= require_self
 
+$(document).foundation();
 $(function() {
 
   $('#frequency').change(function() {
@@ -55,3 +58,5 @@ var theTotal = 0;
      $('.total').text("Your Grand Total: "+theTotal);
 });
 $('.total').text("Your Grand Total: "+theTotal);
+
+$(function(){ $(document).foundation(); });

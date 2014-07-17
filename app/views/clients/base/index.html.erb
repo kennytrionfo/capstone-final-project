@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Daily Deeds Dashboard</h1>
+  <form id="dashboardform" action="clients/goals" method="post">
+    <h2>Add your deeds and grow your points!</h2>
+    <div class="total">
+
+    </div><br />
+  <table style="width:900px">
+   <tr align="center">
+     <th align="center">Eco-Friendly Action</th>
+     <th align="center">Point Value</th>
+     <th>Frequency</th>
+     <th>Times Per Week</th>
+     <th>Weekly Goal</th>
+     <th>This Week's Total</th>
+   </tr>
+    <tr>
+      <td></td>
+      <td id="lights_value" value=10 >10 </td>
+      <td>
+          <select id="frequency">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+      </td>
+      <td id="lights_goal_total"></td>
+      <td><button id="lights" value=10>Done!</button></td>
+      <td id="lights_total"> </td>
+    </tr>
+
+    <tr>
+      <td>I used my own bags at the grocery store - 5 pts.</td>
+      <td id="bags_value" value=5 >5 </td>
+      <td>
+          <select id="frequency1" >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+      </td>
+      <td id="bags_goal_total"> </td>
+      <td><button id="bags" value="5">Done!</button></td>
+      <td id="bags_total"> </td>
+    </tr>
+    </table>
+    <input type="reset" value="Reset!" />
+  </form>
+
+   <style media="screen">
+     .total {
+        position: absolute;
+        left: 300px;
+        font-weight:bold;
+     }
+
+     th {
+       align: center;
+     }
+
+   </style>
+
+</body>
+
+</html>
+
+<!-- <tr>
+  <td>I road my bike to work.</td>
+  <td><button id = "bike" value="15">Done!</button></td>
+  <td>Total:</td>
+  <td id="bike_total"> </td>
+</tr>
+
+<tr>
+  <td>I carpooled instead of taking my car.</td>
+  <td><button id="carpool" value="35">Done!</button></td>
+  <td>Total:</td>
+  <td id="carpool_total"> </td>
+</tr>
+
+<tr>
+  <td>I put a load of laundry on the line.</td>
+  <td><button id="laundry" value="15">Done!</button></td>
+  <td>Total:</td>
+  <td id="laundry_total"> </td>
+</tr> -->
+
+
+<!-- // var bikeTotal = 0;
+// $('#bike').click(function(){
+//    bikeTotal = Number(bikeTotal) + Number($(this).val());
+//    $('#bike_total').text(bikeTotal);
+// });
+// $('#bike_total').text(bikeTotal);
+//
+// var carpoolTotal = 0;
+// $('#carpool').click(function(){
+//    carpoolTotal = Number(carpoolTotal) + Number($(this).val());
+//    $('#carpool_total').text(carpoolTotal);
+// });
+// $('#carpool_total').text(carpoolTotal);
+//
+// var laundryTotal = 0;
+// $('#laundry').click(function(){
+//    laundryTotal = Number(laundryTotal) + Number($(this).val());
+//    $('#laundry_total').text(laundryTotal);
+// });
+// $('#laundry_total').text(laundryTotal); -->
