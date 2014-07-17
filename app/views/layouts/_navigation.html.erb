@@ -16,6 +16,7 @@
       </li>
           <li>
           <% if user_signed_in? %>
+          <%= link_to('Dashboard', clients_path) %>
             <li class="has-dropdown">
               <a>Account</a>
               <ul class="dropdown">
