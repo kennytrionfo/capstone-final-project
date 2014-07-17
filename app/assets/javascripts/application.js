@@ -45,20 +45,12 @@ $(document).ready(function() {
 
 
 // // use an ajax call to save the change to the db.
-//
-//   var bagsTotal = 0;
-//     $('#bags').click(function(){
-//       bagsTotal = Number(bagsTotal) + Number($(this).val());
-//         $('#bags_total').text(bagsTotal);
-//     });
-//         $('#bags_total').text(bagsTotal);
-//
-//
-//   var theTotal = 0;
-//     $('button').click(function(){
-//      theTotal = Number(theTotal) + Number($(this).val());
-//        $('.total').text("Your Grand Total: "+theTotal);
-//     });
-//       $('.total').text("Your Grand Total: "+theTotal);
+
+  var theTotal = 0;
+    $('button').click(function(){
+     theTotal = Number(theTotal) + Number($(this).val());
+       $('.total').text("Your Grand Total: "+theTotal);
+    });
+      $('.total').text("Your Grand Total: "+theTotal);
 
 });
