@@ -31,7 +31,7 @@ $(document).ready(function() {
   $('select').change(function() {
     var val1 = parseInt($(this).val());
     var val2 = parseInt($(this).parents('tr').find('.point_value').text());
-    $('.weekly_goal_id_10').text(val1*val2);
+    $('.weekly_goal').text(val1*val2);
   });
 
 
