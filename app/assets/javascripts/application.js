@@ -24,10 +24,9 @@ $(document).foundation();
 
 $(document).ready(function() {
 
-
-  $('table tbody tr').each(function(index, row) {
-    $(row).find('.point_value').text()
-  });
+  // $('table tbody tr').each(function(index, row) {
+  //   $(row).find('.point_value').text()
+  // });
 
   $('select').change(function() {
     var val1 = parseInt($(this).val());
@@ -36,13 +35,15 @@ $(document).ready(function() {
   });
 
 
+  var lightsTotal = 0;
+    $('#lights').click(function(){
+      lightsTotal = Number(lightsTotal) + Number($(this).val());
+        $('#lights_total').text(lightsTotal);
+    });
+        $('#lights_total').text(lightsTotal);
 
-//   $('#frequency1').change(function() {
-//       var val1 = $('#frequency1 option:selected').val();
-//       var val2 = $('#bags_value').attr("value");
-//       $('#bags_goal_total').text(val1*val2);
-//   });
-//
+
+
 // // use an ajax call to save the change to the db.
 //
 //   var bagsTotal = 0;
@@ -52,12 +53,6 @@ $(document).ready(function() {
 //     });
 //         $('#bags_total').text(bagsTotal);
 //
-//   var lightsTotal = 0;
-//     $('#lights').click(function(){
-//       lightsTotal = Number(lightsTotal) + Number($(this).val());
-//         $('#lights_total').text(lightsTotal);
-//     });
-//         $('#lights_total').text(lightsTotal);
 //
 //   var theTotal = 0;
 //     $('button').click(function(){
