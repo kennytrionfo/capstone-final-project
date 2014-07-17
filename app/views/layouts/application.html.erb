@@ -17,5 +17,8 @@
     </header>
     <%= yield %>
     <%= javascript_include_tag "application" %>
+    <footer>
+      copyright &copy; <%= Time.now.year %>
+    </footer>
   </body>
 </html>
