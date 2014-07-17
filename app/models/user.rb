@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   after_create :give_goals_to_user
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :confirmable, :validatable
+         :recoverable, :rememberable, :validatable
+# took out the :confirmable for devise
 
   has_many :goals
   enum role: [:client, :admin]

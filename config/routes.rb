@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root 'site#index'
 
       namespace :clients do
-      get '/' => 'base#index'
+      get '/' => 'goals#index'
       resources :goals
     end
 
