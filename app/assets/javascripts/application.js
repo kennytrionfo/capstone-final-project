@@ -20,7 +20,7 @@
 //= require foundation
 //= require_self
 
-$(document).foundation();
+// $(document).foundation();
 
 $(document).ready(function() {
 
@@ -31,16 +31,16 @@ $(document).ready(function() {
   $('select').change(function() {
     var val1 = parseInt($(this).val());
     var val2 = parseInt($(this).parents('tr').find('.point_value').text());
-    $('#lights_goal_total').text(val1*val2);
+    $('#weekly_goal').text(val1*val2);
   });
 
 
-  var lightsTotal = 0;
-    $('#lights').click(function(){
-      lightsTotal = Number(lightsTotal) + Number($(this).val());
-        $('#lights_total').text(lightsTotal);
+  var weeklyResults = 0;
+    $('#done').click(function(){
+      weeklyResults = Number(weeklyResults) + Number($(this).val());
+        $('#weekly_results').text(weeklyResults);
     });
-        $('#lights_total').text(lightsTotal);
+        $('#weekly_results').text(weeklyResults);
 
 
 

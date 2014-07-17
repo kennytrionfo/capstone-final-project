@@ -42,34 +42,11 @@
               </select>
             </form>
           </td>
-          <td id="lights_goal_total"> </td>
-          <td><button id="lights" value="5">Done!</button></td>
-          <td id="lights_total"> </td>
+          <td id="weekly_goal"> </td>
+          <td><button id="done" value="<%= goal.point_value %>">Done!</button></td>
+          <td id="weekly_result"> </td>
         </tr>
 
-   <!-- ++++++ practice row below ++++++++ -->
-
-        <tr style="text-align:center">
-          <td><%= goal.category %></td>
-          <td class="point_value"><%= goal.point_value %></td>
-          <td>
-            <form action="">
-              <select id="frequency">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-              </select>
-            </form>
-          </td>
-          <td id="lights_goal_total"> </td>
-          <td><%= "Done button here" %></td>
-          <td><%= "Weekly Results here" %></td>
-        </tr>
       <% end %>
     </tbody>
   </table>
