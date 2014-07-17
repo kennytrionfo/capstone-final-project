@@ -12,11 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ //= require foundation_and_overrides
+
  */
 
 /* *= require formnestic/formnestic */
-
-@import "bootstrap";
+@import "foundation_and_overrides";
+/* Add imports of custom sass/scss files here */
 
 /*navigation bar*/
 

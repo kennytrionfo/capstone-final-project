@@ -52,6 +52,6 @@ group :development, :test do
 # gem 'debugger', group: [:development, :test]
 
 gem 'cocoon'
-gem 'bootstrap-sass'
+gem 'foundation-rails', '~> 5.3.0.1'
 gem 'font-awesome-sass'
 gem 'devise'

@@ -12,13 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 //= require cocoon
 //= require_tree .
 //= require formnestic/formnestic.js
+//= require foundation
 //= require_self
 
+$(document).foundation();
+
 $(document).ready(function() {
+
 
   $('table tbody tr').each(function(index, row) {
     $(row).find('.point_value').text()

@@ -1,42 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>EcoMojo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track', 'cocoon' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <section class="container">
-    <nav class="navbar navbar-default" role="navigation">
-      <a class="navbar-brand" href="<%= root_path %>">Eco-Mojo</a>
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="<%= about_path %>">About</a>
-        </li>
-        <li>
-          <a href="<%= contact_path %>">Contact</a>
-        </li>
-        <li>
-          <a href="<%= new_user_registration_path %>">Sign Up</a>
-        </li>
-        <li>
-        <% if user_signed_in? %>
-          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-        <% else %>
-          <%= link_to('Login', new_user_session_path) %>
-        <% end %>
-      </li>
-      </ul>
-    </nav>
-    <div class="row">
-      <div class="col-sm-12">
-        <%= yield %>
-        <footer>
-          copyright &copy; <%= Time.now.year %>
-        </footer>
-      </div>
-    </div>
-  </section>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track', 'cocoon' => true %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header>
+     <%= render "layouts/navigation" %>
+    </header>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+    <footer>
+      copyright &copy; <%= Time.now.year %>
+    </footer>
+  </body>
 </html>
