@@ -20,7 +20,7 @@
 //= require foundation
 //= require_self
 
-// $(document).foundation();
+$(document).foundation();
 
 $(document).ready(function() {
 
@@ -31,7 +31,7 @@ $(document).ready(function() {
   $('select').change(function() {
     var val1 = parseInt($(this).val());
     var val2 = parseInt($(this).parents('tr').find('.point_value').text());
-    $('#weekly_goal').text(val1*val2);
+    $('.weekly_goal').text(val1*val2);
   });
 
 
@@ -45,20 +45,12 @@ $(document).ready(function() {
 
 
 // // use an ajax call to save the change to the db.
-//
-//   var bagsTotal = 0;
-//     $('#bags').click(function(){
-//       bagsTotal = Number(bagsTotal) + Number($(this).val());
-//         $('#bags_total').text(bagsTotal);
-//     });
-//         $('#bags_total').text(bagsTotal);
-//
-//
-//   var theTotal = 0;
-//     $('button').click(function(){
-//      theTotal = Number(theTotal) + Number($(this).val());
-//        $('.total').text("Your Grand Total: "+theTotal);
-//     });
-//       $('.total').text("Your Grand Total: "+theTotal);
+
+  var theTotal = 0;
+    $('button').click(function(){
+     theTotal = Number(theTotal) + Number($(this).val());
+       $('.total').text("Your Grand Total: "+theTotal);
+    });
+      $('.total').text("Your Grand Total: "+theTotal);
 
 });
