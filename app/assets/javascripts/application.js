@@ -49,12 +49,11 @@ $(document).ready(function() {
 
 
 // // use an ajax call to save the change to the db.
-
-  // var theTotal = 0;
-  // $('button').click(function(){
-  //   theTotal = Number(theTotal) + Number($(this).val());
-  //   $('.total').text("Your Grand Total: "+theTotal);
-  // });
-      // $('.total').text("Your Grand Total: "+theTotal);
+  var theTotal = 0;
+  $('a.done').click(function(){
+    theTotal = Number(theTotal) + parseInt($(this).closest('tr').find('.point_value').text());
+    $('.total').text("Your Grand Total: "+theTotal);
+  });
+      $('.total').text("Your Grand Total: "+theTotal);
 
 });
