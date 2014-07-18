@@ -45,8 +45,8 @@
 
           <td class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %> </td>
 
-          <td><button class="done" value="<%= goal.point_value %>">Done!</button></td>
-          <td class="weekly_results"> </td>
+          <td><a class="done" href="#" data-value="<%= goal.point_value %>">Done!</a></td>
+          <td class="weekly_results"><%= goal.weekly_results %></td>
         </tr>
 
       <% end %>

@@ -34,12 +34,15 @@ $(document).ready(function() {
     parseInt($(this).closest('tr').find('.weekly_goal').text(val1*val2));
   });
 
-    var weeklyResults = 0;
-    $('.done').click(function(){
-      weeklyResults = Number(weeklyResults) + Number($(this).val());
-        parseInt($(this).closest('tr').find('.weekly_results').text(weeklyResults));
-    });
-      parseInt($(this).closest('tr').find('.weekly_results').text(weeklyResults));
+  // var weeklyResults = 0;
+  $('a.done').click(function(){
+    var weekly_results = parseInt($(this).closest('tr').find('.weekly_results').text(), 10);
+    var point_value = parseInt($(this).closest('tr').find('.point_value').text(), 10);
+    var total = weekly_results + point_value;
+    $(this).closest('tr').find('.weekly_results').text(total);
+    return false;
+  });
+      // parseInt($(this).closest('tr').find('.weekly_results').text(wr));
 
         // $('#weekly_results').text(weeklyResults);
 
@@ -47,11 +50,11 @@ $(document).ready(function() {
 
 // // use an ajax call to save the change to the db.
 
-  var theTotal = 0;
-    $('button').click(function(){
-     theTotal = Number(theTotal) + Number($(this).val());
-       $('.total').text("Your Grand Total: "+theTotal);
-    });
-      $('.total').text("Your Grand Total: "+theTotal);
+  // var theTotal = 0;
+  // $('button').click(function(){
+  //   theTotal = Number(theTotal) + Number($(this).val());
+  //   $('.total').text("Your Grand Total: "+theTotal);
+  // });
+      // $('.total').text("Your Grand Total: "+theTotal);
 
 });
