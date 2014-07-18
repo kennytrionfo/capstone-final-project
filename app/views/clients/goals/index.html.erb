@@ -42,8 +42,10 @@
               </select>
             </form>
           </td>
-          <td class="weekly_goal" id='<%= goal.id %>'> </td>
-          <td><button class="done">Done!</button></td>
+
+          <td class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %> </td>
+
+          <td><button class="done" value="<%= goal.point_value %>">Done!</button></td>
           <td class="weekly_results"> </td>
         </tr>
 
