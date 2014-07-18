@@ -34,9 +34,8 @@ $(document).ready(function() {
     parseInt($(this).closest('tr').find('.weekly_goal').text(val1*val2));
   });
 
-
-  var weeklyResults = 0;
-    $('.weekly_results').click(function(){
+    var weeklyResults = 0;
+    $('.done').click(function(){
       weeklyResults = Number(weeklyResults) + Number($(this).val());
         parseInt($(this).closest('tr').find('.weekly_results').text(weeklyResults));
     });
