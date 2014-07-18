@@ -33,8 +33,7 @@ $(document).ready(function() {
     var val2 = parseInt($(this).closest('tr').find('.point_value').text());  parseInt($(this).closest('tr').find('.weekly_goal').text(val1*val2));
   });
 
-
-  var weeklyResults = 0;
+    var weeklyResults = 0;
     $('.done').click(function(){
       weeklyResults = Number(weeklyResults) + Number($(this).val());
         parseInt($(this).closest('tr').find('.weekly_results').text(weeklyResults));
