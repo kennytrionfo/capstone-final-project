@@ -30,17 +30,18 @@ $(document).ready(function() {
 
   $('select').change(function() {
     var val1 = parseInt($(this).val());
-    var val2 = parseInt($(this).parents('tr').find('.point_value').text());
-    $('.weekly_goal').text(val1*val2);
+    var val2 = parseInt($(this).closest('tr').find('.point_value').text());  parseInt($(this).closest('tr').find('.weekly_goal').text(val1*val2));
   });
 
 
   var weeklyResults = 0;
-    $('#done').click(function(){
+    $('.done').click(function(){
       weeklyResults = Number(weeklyResults) + Number($(this).val());
-        $('#weekly_results').text(weeklyResults);
+        parseInt($(this).closest('tr').find('.weekly_results').text(weeklyResults));
     });
-        $('#weekly_results').text(weeklyResults);
+      parseInt($(this).closest('tr').find('.weekly_results').text(weeklyResults));
+
+        // $('#weekly_results').text(weeklyResults);
 
 
 
