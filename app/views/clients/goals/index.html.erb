@@ -11,16 +11,16 @@
   </br>
 
 
-  <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+  <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
     <% @goals.each do |goal| %>
       <li class="card">
         <div>
-          <h1>Category</h1>
+          <!-- <h1>Category</h1> -->
           <%= goal.category %>
         </div>
         <div><span class="point_value"><%= goal.point_value %></span> Value</div>
         <div>
-          <h3>Time Per Week</h3>
+          <h3>Times Per Week</h3>
             <select id="frequency">
               <option value="1">1</option>
               <option value="2">2</option>

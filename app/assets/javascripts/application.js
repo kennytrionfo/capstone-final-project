@@ -30,9 +30,7 @@ $(document).ready(function() {
 
   $('select').change(function() {
     var val1 = parseInt($(this).val());
-    console.log(val1);
     var val2 = parseInt($(this).closest('li').find('.point_value').text());
-    console.log(val2);
     parseInt($(this).closest('li').find('.weekly_goal').text(val1*val2));
   });
 
