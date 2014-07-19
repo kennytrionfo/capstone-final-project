@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
@@ -22,6 +23,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 # for nested forms
 gem 'formnestic'
+
+gem 'thin'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
@@ -36,9 +39,11 @@ group :development, :test do
    gem 'rspec-rails'
    gem 'pry-rails'
    gem 'factory_girl_rails'
- end
+end
 
-
+group :production do
+  gem 'rails_12factor'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
