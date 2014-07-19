@@ -13,11 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
+//= require goals
 //= require cocoon
 //= require_tree .
 //= require formnestic/formnestic.js
-//= require foundation
 //= require_self
 
 $(document).foundation();
@@ -29,9 +28,9 @@ $(document).ready(function() {
   // });
 
   $('select').change(function() {
-    var val1 = parseInt($(this).val());
-    var val2 = parseInt($(this).closest('tr').find('.point_value').text());
-    parseInt($(this).closest('tr').find('.weekly_goal').text(val1*val2));
+    var frequency_button = parseInt($(this).val());
+    var local_point_value = parseInt($(this).closest('tr').find('.point_value').text());
+    parseInt($(this).closest('tr').find('.weekly_goal').text(frequency_button*local_point_value));
   });
 
   // var weeklyResults = 0;

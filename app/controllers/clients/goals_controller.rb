@@ -15,6 +15,12 @@ class Clients::GoalsController < Clients::BaseController
   end
 
   def update
+    goal = Goal.find params[:id]
+    #psuedo - update the freq -
+    #goals frequency = the new selected
+    
+
+
   end
 
   def destroy
