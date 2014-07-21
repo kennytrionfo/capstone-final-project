@@ -1,26 +1,31 @@
 
 <body>
-  <h2>Daily Deeds Dashboard</h2>
-  <!-- <form id="dashboardform" action="clients/goals" method="post"> -->
-    <h4>Add your deeds and grow your points!</h4>
+<div class="row">
+    <div class="small-4 columns">
+        <h2>Username and level go here</h2>
+        <%=  %>
+    </div>
+    <div class="small-8 columns">
+        <h2>Total points, titles/whatever goes here</h2>
+        <div style="text-align: center" class="total"></div>
+    </div>
+</div>
   <br>
   <br>
-  <br>
-
-    <div style="text-align: center" class="total"></div>
   </br>
 
 
   <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
     <% @goals.each do |goal| %>
       <li class="card">
-        <div>
-          <!-- <h1>Category</h1> -->
-          <%= goal.category %>
+        <div class="row">
+          <div class="small-8">
+            <%= goal.category %>
+          </div>
+        <div class="small-4"><span class="point_value"><%= goal.point_value %></span> Value</div>
         </div>
-        <div><span class="point_value"><%= goal.point_value %></span> Value</div>
-        <div>
-          <h3>Times Per Week</h3>
+        <div class="row">
+          <div class="small-2">
             <select id="frequency">
               <option value="1">1</option>
               <option value="2">2</option>
@@ -31,18 +36,22 @@
               <option value="15">15</option>
               <option value="20">20</option>
             </select>
+          </div>
+          <div class="small-10">
+            <h3>Times Per Week</h3>
+          </div>
         </div>
         <div><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span> Weekly Goal</div>
-        <div>
-        <a class="done" href="#" data-value="<%= goal.point_value %>"> Check!</a>
-      </div>
         <div><span class="weekly_results"><%= goal.weekly_results %></span> Weekly Results</div>
+        <div>
+        <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
+      </div>
       </li>
     <% end %>
   </ul>
 
   <!-- <table class="table small-block-grid-2 medium-block-grid-3 large-block-grid-4">
-    <thead>
+    <!-- <thead>
       <tr>
         <th class="text-center" style="text-align:center">Catagory</th>
         <th style="text-align:center">Value</th>
@@ -80,7 +89,7 @@
 
       <% end %>
     </tbody>
-  </table> -->
+  </table>
 
   <!-- <table style="width:900px">
    <tr align="center">
