@@ -36,22 +36,6 @@ $(document).ready(function() {
     });
   });
 
-//   $.getJSON('select').change(function() {
-    //   return $.post({
-    //     url: "/clients/goals/#{id}",
-    //     data: {
-    //         frequency: "#frequency button here?"
-    //     },
-    //     dataType: "json",
-    //     success: function(data) {
-    //       return alert(data.id);
-    //     }  #what about error return?
-    //   });
-    // });
-
-  //  console.log id
-  //  console.log frequency_button
-  //  console.log local_point_value
 
   $('a.done').click(function(){
     var weekly_results = parseInt($(this).closest('li').find('.weekly_results').text(), 10);

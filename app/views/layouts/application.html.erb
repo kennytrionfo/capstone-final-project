@@ -14,7 +14,9 @@
     <header>
      <%= render "layouts/navigation" %>
     </header>
-    <%= yield %>
+    <div class='row'>
+      <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %>
     <footer>
       copyright &copy; <%= Time.now.year %>
