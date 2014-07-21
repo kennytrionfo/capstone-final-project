@@ -30,7 +30,10 @@ $(document).ready(function() {
     var goal_id = $(this).closest('li').find('.goal_id').val();
     $.post('/clients/goals/' + goal_id, {
       _method: 'patch',
-      goal: {frequency: frequency_button}
+      goal: {
+        frequency: frequency_button,
+        weekly_points_goal: frequency_button*local_point_value
+      },
     },function(goal){
       console.log(goal);
     });
