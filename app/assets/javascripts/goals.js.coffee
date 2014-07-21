@@ -3,15 +3,27 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-# kenny's psuedo code..
-
-$("select").change ->
-  frequency_button = parseInt($(this).val())
-  local_point_value = parseInt($(this).closest("tr").find(".point_value").text())
-  parseInt $(this).closest("tr").find(".weekly_goal").text(frequency_button * local_point_value)
-  #psuedo
-  save this to db..
-
-
-also:
-set up post route
+#translate into js and move into js file?
+# $("select").change ->
+#   id = $(this).closest("ul li input").val()  #this is still not working.
+#   frequency_button = parseInt($(this).val())
+#   local_point_value = parseInt($(this).closest("li").find(".point_value").text())
+#   # parseInt $(this).closest("li").find(".weekly_goal").text(frequency_button * local_point_value)
+#
+#   console.log id
+#   console.log frequency_button
+#   console.log local_point_value
+#
+#
+#   $.ajax
+#     url: "/clients/goals/#{id}"
+#     type: "PATCH"
+#     data:
+#       frequency: frequency_button
+#
+#     success: (data) ->
+#
+#       return
+#
+#     error: (data) ->
+#       return

@@ -1,0 +1,28 @@
+<p>Goals#index</p>
+<br>
+<br>
+
+<div  class="card small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+  <% @goals.each do |goal| %>
+    <div class="category"><%= goal.category %></div>
+    <div class="point_value"><%= goal.point_value %></div>
+    <div>
+      <select id="frequency">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </select>
+    </div>
+    <div class="weekly_goal" id='<%= goal.id %>'>
+      <%= goal.weekly_points_goal %>
+    </div>
+    <div class="done">
+      <a class="done" href="#" data-value="<%= goal.point_value %>">Check!</a>
+    </div>
+    <% end %>
+  </div>

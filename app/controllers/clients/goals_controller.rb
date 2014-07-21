@@ -14,16 +14,26 @@ class Clients::GoalsController < Clients::BaseController
   def edit
   end
 
+  # PATCH /clients/goals/:id
+  # JSON API
   def update
     goal = Goal.find params[:id]
-    #psuedo - update the freq -
-    #goals frequency = the new selected
-    
 
-
+    if goal.update(goal_params)
+      render json: goal, status: 200
+    else
+      render json: goal.errors.full_messages, status: 422
+    end
   end
 
   def destroy
   end
 
+
+  private
+
+  def goal_params
+    params.require(:goal).permit(:frequency)
+    # this returns something like this: {frequency: 10}
+  end
 end

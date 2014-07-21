@@ -7,12 +7,13 @@ Rails.application.routes.draw do
 
 
   devise_for :users, :controllers => { registrations: 'registrations' }
+
   root 'site#index'
 
-      namespace :clients do
-      get '/' => 'goals#index'
-      resources :goals
-    end
+  namespace :clients do
+    get '/' => 'goals#index'
+    resources :goals
+  end
 
 end
 

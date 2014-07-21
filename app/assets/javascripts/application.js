@@ -20,37 +20,51 @@
 //= require_self
 
 $(document).foundation();
-
 $(document).ready(function() {
 
-  // $('table tbody tr').each(function(index, row) {
-  //   $(row).find('.point_value').text()
-  // });
 
-  $('select').change(function() {
+  $('select.frequency-select').change(function() {
     var frequency_button = parseInt($(this).val());
-    var local_point_value = parseInt($(this).closest('tr').find('.point_value').text());
-    parseInt($(this).closest('tr').find('.weekly_goal').text(frequency_button*local_point_value));
+    var local_point_value = parseInt($(this).closest('li').find('.point_value').text());
+    parseInt($(this).closest('li').find('.weekly_goal').text(frequency_button*local_point_value));
+    var goal_id = $(this).closest('li').find('.goal_id').val();
+    $.post('/clients/goals/' + goal_id, {
+      _method: 'patch',
+      goal: {frequency: frequency_button}
+    },function(goal){
+      console.log(goal);
+    });
   });
 
-  // var weeklyResults = 0;
+//   $.getJSON('select').change(function() {
+    //   return $.post({
+    //     url: "/clients/goals/#{id}",
+    //     data: {
+    //         frequency: "#frequency button here?"
+    //     },
+    //     dataType: "json",
+    //     success: function(data) {
+    //       return alert(data.id);
+    //     }  #what about error return?
+    //   });
+    // });
+
+  //  console.log id
+  //  console.log frequency_button
+  //  console.log local_point_value
+
   $('a.done').click(function(){
-    var weekly_results = parseInt($(this).closest('tr').find('.weekly_results').text(), 10);
-    var point_value = parseInt($(this).closest('tr').find('.point_value').text(), 10);
+    var weekly_results = parseInt($(this).closest('li').find('.weekly_results').text(), 10);
+    var point_value = parseInt($(this).closest('li').find('.point_value').text(), 10);
     var total = weekly_results + point_value;
-    $(this).closest('tr').find('.weekly_results').text(total);
+    $(this).closest('li').find('.weekly_results').text(total);
     return false;
   });
-      // parseInt($(this).closest('tr').find('.weekly_results').text(wr));
-
-        // $('#weekly_results').text(weeklyResults);
 
 
-
-// // use an ajax call to save the change to the db.
   var theTotal = 0;
   $('a.done').click(function(){
-    theTotal = Number(theTotal) + parseInt($(this).closest('tr').find('.point_value').text());
+    theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
     $('.total').text("Your Grand Total: "+theTotal);
   });
       $('.total').text("Your Grand Total: "+theTotal);

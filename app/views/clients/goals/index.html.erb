@@ -10,105 +10,28 @@
     <div style="text-align: center" class="total"></div>
   </br>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th style="text-align:center">Catagory</th>
-        <th style="text-align:center">Point Value</th>
-        <th style="text-align:center">Frequency</th>
-        <th style="text-align:center">Weekly Goal</th>
-        <th style="text-align:center">Done!</th>
-        <th style="text-align:center">Weekly Results</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
 
-    <tbody>
-      <% @goals.each do |goal| %>
-        <tr style="text-align:center">
-          <td><%= goal.category %></td>
-          <td class="point_value"><%= goal.point_value %></td>
-          <td>
-            <form action="">
-              <select id="frequency">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-              </select>
-            </form>
-          </td>
-
-          <td class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %> </td>
-
-          <td><a class="done" href="#" data-value="<%= goal.point_value %>">Done!</a></td>
-          <td class="weekly_results"><%= goal.weekly_results %></td>
-        </tr>
-
-      <% end %>
-    </tbody>
-  </table>
-
-  <!-- <table style="width:900px">
-   <tr align="center">
-     <th align="center">Eco-Friendly Action</th>
-     <th align="center">Point Value</th>
-     <th>Frequency</th>
-     <th>Times Per Week</th>
-     <th>Weekly Goal</th>
-     <th>This Week's Total</th>
-   </tr>
-    <tr>
-      <td>that goes here</td>
-      <td id="lights_value" value=10 >10 </td>
-      <td>
-        <form action="">
-          <select id="frequency">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-          </select>
-        </form>
-      </td>
-      <td id="lights_goal_total"></td>
-      <td><button id="lights" value=10>Done!</button></td>
-      <td id="lights_total"> </td>
-    </tr>
-
-    <tr>
-      <td>I used my own bags at the grocery store - 5 pts.</td>
-      <td id="bags_value" value=5 >5 </td>
-      <td>
-        <form action="">
-          <select id="frequency1" >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-          </select>
-        </form>
-      </td>
-      <td id="bags_goal_total"> </td>
-      <td><button id="bags" value="5">Done!</button></td>
-      <td id="bags_total"> </td>
-    </tr>
-    </table> -->
-
-    <!-- <input type="reset" value="Reset!" /> -->
-  <!-- </form> -->
+  <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+    <% @goals.each do |goal| %>
+      <li class="card">
+        <input type="hidden" class="goal_id" value="<%= goal.id %>">
+        <div>
+          <h1>Category</h1>
+          <%= goal.category %>
+        </div>
+        <div><span class="point_value"><%= goal.point_value %></span> Value</div>
+        <div>
+          <h3>Time Per Week</h3>
+          <%= select_tag(:frequency, options_for_select([1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %>
+        </div>
+        <div><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span> Weekly Goal</div>
+        <div>
+        <a class="done" href="#" data-value="<%= goal.point_value %>"> Check!</a>
+      </div>
+        <div><span class="weekly_results"><%= goal.weekly_results %></span> Weekly Results</div>
+      </li>
+    <% end %>
+  </ul>
 
 
 
