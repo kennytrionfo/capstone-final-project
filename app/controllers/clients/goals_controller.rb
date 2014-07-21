@@ -33,7 +33,7 @@ class Clients::GoalsController < Clients::BaseController
   private
 
   def goal_params
-    params.require(:goal).permit(:frequency, :weekly_points_goal)
+    params.require(:goal).permit(:frequency, :weekly_points_goal, :weekly_results)
     # this returns something like this: {frequency: 10}
   end
 end

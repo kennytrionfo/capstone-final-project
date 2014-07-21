@@ -45,6 +45,15 @@ $(document).ready(function() {
     var point_value = parseInt($(this).closest('li').find('.point_value').text(), 10);
     var total = weekly_results + point_value;
     $(this).closest('li').find('.weekly_results').text(total);
+    var goal_id = $(this).closest('li').find('.goal_id').val();
+    $.post('/clients/goals/' + goal_id, {
+      _method: 'patch',
+      goal: {
+        weekly_results: total,
+      },
+    },function(goal){
+      console.log(goal);
+    });
     return false;
   });
 
