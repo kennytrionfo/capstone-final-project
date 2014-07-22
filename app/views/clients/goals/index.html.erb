@@ -1,25 +1,25 @@
 
-<div class="row">
-    <div class="small-4 columns">
-        <h2>Username and level go here</h2>
-        <%=  %>
-    </div>
-    <div class="small-8 columns">
-        <h2>Total points, titles/whatever goes here</h2>
-        <div style="text-align: center" class="total"></div>
-    </div>
-</div>
-  <br>
-  <br>
+  <div class="row">
+      <div class="small-4 columns">
+          <h2>Put user's name here. </h2>
+      </div>
 
+      <div class="small-8 columns">
+          <h2>Total points, titles/whatever goes here</h2>
+      </div>
+  </div>
+
+  <div style="text-align: center" id="grand_total" value="<%= @user.grand_total %>"></div>
+
+  <br>
+  <br>
 
   <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
     <% @goals.each do |goal| %>
       <li class="card">
         <input type="hidden" class="goal_id" value="<%= goal.id %>">
-        <div>
-          <%= goal.category %>
-        </div>
+        <input type="hidden" class="user_id" value="<%= @user.id %>">
+        <div><%= goal.category %></div>
         <div><span class="point_value"><%= goal.point_value %></span> Value</div>
         <div>
           <h3>Time Per Week</h3>

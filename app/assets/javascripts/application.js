@@ -58,11 +58,21 @@ $(document).ready(function() {
   });
 
 
-  var theTotal = 0;
+    var theTotal = 0;
+
   $('a.done').click(function(){
     theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
-    $('.total').text("Your Grand Total: "+theTotal);
+    var user_id = $(this).closest('li').find('.user_id').val();  // do I need the this here cuz its not closest to anything theres just one on page
+    $('#grand_total').text("Your Grand Total: "+ theTotal);
+      $.post('/clients/users/' + user_id, {
+        _method: 'patch',
+        user: {
+          grand_total: theTotal,
+        },
+      },function(user){
+        console.log(user);
+      });
+      return false;
   });
-      $('.total').text("Your Grand Total: "+theTotal);
-
+      $('#grand_total').text("Your Grand Total: "+ theTotal);
 });
