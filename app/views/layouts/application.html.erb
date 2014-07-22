@@ -5,22 +5,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reva HTML5 Template</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
     <!-- ////////////////////////////////// -->
     <!-- //     Retina Bookmark Icon     // -->
     <!-- ////////////////////////////////// -->
-    <link rel="apple-touch-icon-precomposed" href="apple-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/apple-icon.png" />
 
     <!-- ////////////////////////////////// -->
     <!-- //      Stylesheets Files       // -->
     <!-- ////////////////////////////////// -->
-    <link rel="stylesheet" href="app/assets/stylesheets/foundation_and_overrides.scss" />
-    <link rel="stylesheet" href="app/assets/stylesheets/prodigy-responsive.css" />
-    <link rel="stylesheet" href="app/assets/stylesheets/style.css" />
+    <link rel="stylesheet" href="/assets/stylesheets/foundation_and_overrides.scss" />
+    <link rel="stylesheet" href="/assets/stylesheets/prodigy-responsive.css" />
+    <link rel="stylesheet" href="/assets/stylesheets/style.css" />
 
     <!-- css plugin here  -->
-    <link rel="stylesheet" href="app/assets/stylesheets/revolution.css" media="screen"/>
-    <link rel="stylesheet" href="app/assets/stylesheets/revolution-responsive.css" media="screen"/>
+    <link rel="stylesheet" href="/assets/stylesheets/revolution.css" media="screen"/>
+    <link rel="stylesheet" href="/assets/stylesheets/revolution-responsive.css" media="screen"/>
 
     <!-- ////////////////////////////////// -->
     <!-- //     Google Webfont Files     // -->
@@ -31,7 +32,7 @@
     <!-- ////////////////////////////////// -->
     <!-- //        Favicon Files         // -->
     <!-- ////////////////////////////////// -->
-    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
 
 </head>
 
@@ -43,7 +44,7 @@
             <div class="row">
                 <div class="large-4 tp-12 columns">
                     <div id="logo">
-                        <a href="index.html"><img src="img/logo.png" alt="" class="retina" /></a>
+                        <a href="application.html"><img src="/assets/images/logo.png" alt="" class="retina" /></a>
                     </div>
                 </div>
 
@@ -62,7 +63,7 @@
                             <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
 
                             <ul class="nav">
-                                <li class="active dropdown"><a href="index.html">Home</a>
+                                <li class="active dropdown"><a href="application.html">Home</a>
                                     <ul>
                                         <li><a href="index-layout2.html">Index Layout 2</a></li>
                                         <li><a href="index-layout3.html">Index Layout 3</a></li>
@@ -143,7 +144,7 @@
                 <ul>
                     <!-- slide 1 -->
                     <li data-transition="fade">
-                        <img src="img/slideshow/bg_slide1.jpg" alt="">
+                        <img src="/Users/Lisa/Documents/capstone-dpl-project/app/assets/images/slideshow/bg_slide1.jpg" alt="">
                         <div class="caption slide_overlay fade" data-x="-50%" data-y="0" data-speed="1000" data-start="100" data-easing="easeOutExpo"></div>
                         <div class="caption general_caption lfb ltb tp-rr1"  data-x="180" data-y="173" data-speed="900" data-endspeed="900" data-start="250" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
                             <h1 class="uppercase text-center">Reva design is and interactive<br/>Creatve agency</h1>
@@ -161,7 +162,7 @@
 
                     <!-- slide 2 -->
                     <li data-transition="fade">
-                        <img src="img/slideshow/bg_slide2.jpg" alt="">
+                        <img src="app/assets/images/slideshow/bg_slide2.jpg" alt="">
                         <div class="caption slide_overlay fade" data-x="-50%" data-y="0" data-speed="1000" data-start="100" data-easing="easeOutExpo"></div>
                         <div class="caption general_caption lfb ltb tp-rr1"  data-x="180" data-y="173" data-speed="900" data-endspeed="900" data-start="250" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
                             <h1 class="uppercase text-center">Reva design is and interactive<br/>Creatve agency</h1>
@@ -178,7 +179,7 @@
                     </li>
                     <!-- slide 3 -->
                     <li data-transition="fade">
-                        <img src="img/slideshow/bg_slide3.jpg" alt="">
+                        <img src="app/assets/images/slideshow/bg_slide3.jpg" alt="">
                         <div class="caption slide_overlay fade" data-x="-50%" data-y="0" data-speed="1000" data-start="100" data-easing="easeOutExpo"></div>
                         <div class="caption general_caption lfb ltb tp-rr1"  data-x="180" data-y="173" data-speed="900" data-endspeed="900" data-start="250" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
                             <h1 class="uppercase text-center">Reva design is and interactive<br/>Creatve agency</h1>
@@ -222,7 +223,7 @@
                                         <h4>Smooth but it’s sharp display</h4>
                                         <p>Umur nyepeng andhapan dodot estri tangsul mlampah bocah lingsem nyipeng toya kaca tlngal jawah</p>
                                     </div>
-                                    <img src="img/sample/content_img6.png" alt="" class="img-left img-reva-tabs1 triggerAnimation animated" data-animate="fadeInLeft">
+                                    <img src="app/assets/images/sample/content_img6.png" alt="" class="img-left img-reva-tabs1 triggerAnimation animated" data-animate="fadeInLeft">
                                     <p class="triggerAnimation animated" data-animate="fadeInDown">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliquaenim ad minim veniam, quis nostrud exercitation ullamco molestiae consequatur.
                                     </p>
@@ -248,7 +249,7 @@
                                         <h4>Mobile Application Developer</h4>
                                         <p>Umur nyepeng andhapan dodot estri tangsul mlampah bocah lingsem nyipeng toya kaca tlngal jawah</p>
                                     </div>
-                                    <img src="img/sample/content_img17.png" alt="" class="img-right img-reva-tabs2 triggerAnimation animated" data-animate="fadeInRight">
+                                    <img src="app/assets/images/sample/content_img17.png" alt="" class="img-right img-reva-tabs2 triggerAnimation animated" data-animate="fadeInRight">
                                     <p class="triggerAnimation animated" data-animate="fadeInDown">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliquaenim ad minim veniam, quis nostrud exercitation ullamco molestiae consequatur.
                                     </p>
@@ -298,7 +299,7 @@
                                         <h4>Smooth but it’s sharp display</h4>
                                         <p>Umur nyepeng andhapan dodot estri tangsul mlampah bocah lingsem nyipeng toya kaca tlngal jawah</p>
                                     </div>
-                                    <img src="img/sample/content_img18.png" alt="" class="img-center triggerAnimation animated" data-animate="bounceIn">
+                                    <img src="app/assets/images/sample/content_img18.png" alt="" class="img-center triggerAnimation animated" data-animate="bounceIn">
                                     <p class="text-center triggerAnimation animated" data-animate="fadeInUp">
                                         Neque porro quisquam estqui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae voluptatibus maiores alias consequatur aut perferendis.
                                     </p>
@@ -599,3 +600,36 @@
         </footer>
         <!-- Footer end here -->
     </div>
+
+    <!-- ////////////////////////////////// -->
+    <!-- //      Javascript Files        // -->
+    <!-- ////////////////////////////////// -->
+    <script src="js/jquery.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/foundation.js"></script>
+    <script src="js/responsivetabs.js"></script>
+    <script src="js/fancybox.js"></script>
+    <script src="js/fancybox-media.js"></script>
+    <script src="js/donutchart.js"></script>
+    <script src="js/waypoints.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/retina.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/uisearch.js"></script>
+    <script src="js/sticky.js"></script>
+    <script src="js/sscr.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/scrollUp.js"></script>
+
+    <!-- Javascript plugin here  -->
+    <script src="js/themepunch.plugins.js"></script>
+    <script src="js/themepunch.revolution.js"></script>
+    <script src="js/carousel.js"></script>
+
+    <!-- Javascript initialize here  -->
+    <script src="js/prodigy.js"></script>
+
+
+
+</body>
+</html>
