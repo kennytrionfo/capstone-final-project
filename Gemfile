@@ -21,8 +21,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-# for nested forms
-gem 'formnestic'
 
 gem 'thin'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -56,7 +54,6 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'cocoon'
 gem 'foundation-rails', '~> 5.3.0.1'
 gem 'font-awesome-sass'
 gem 'devise'
