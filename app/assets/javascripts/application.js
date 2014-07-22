@@ -14,9 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require goals
-//= require cocoon
 //= require_tree .
-//= require formnestic/formnestic.js
 //= require_self
 
 $(document).foundation();
