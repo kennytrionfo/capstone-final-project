@@ -1,4 +1,4 @@
-/* 
+/*
  * 	Core Owl Carousel CSS File
  *	v1.3.2
  */
@@ -46,7 +46,7 @@ body:last-child .owl-carousel, x:-moz-any-link {float: left;}
     margin:0 10px;
 }
 
-.owl-carousel .owl-item{    
+.owl-carousel .owl-item{
 	float: left;
 }
 .owl-controls .owl-page,
@@ -63,8 +63,8 @@ body:last-child .owl-carousel, x:-moz-any-link {float: left;}
 }
 
 /* mouse grab icon */
-.grabbing { 
-    cursor:url(../img/grabbing.png) 8 8, move;
+.grabbing {
+    cursor:image-url('grabbing.png') 8 8, move;
 }
 
 /* fix */
@@ -80,7 +80,7 @@ body:last-child .owl-carousel, x:-moz-any-link {float: left;}
 
 
 /*
-* 	Owl Carousel Owl Demo Theme 
+* 	Owl Carousel Owl Demo Theme
 *	v1.3.2
 */
 
@@ -96,7 +96,7 @@ body:last-child .owl-carousel, x:-moz-any-link {float: left;}
 	display: inline-block;
 	zoom: 1;
 	*display: inline;/*IE7 life-saver */
-	margin: 5px;	
+	margin: 5px;
 	font-size: 9px;
     color: #95a5a6;
 	background: #fff;

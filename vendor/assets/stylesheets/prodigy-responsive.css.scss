@@ -2,7 +2,7 @@
     Prodigy Configuration Script - Reva HTML5 Template
 ------------------------------------------------------------------------------------
     file --> prodigy-responsive.css
-------------------------------------------------------------------------------------    
+------------------------------------------------------------------------------------
     http://prodigystudio.net
     Prodigy Studio. Copyright © 2014. All Rights Reserved.
 ------------------------------------------------------------------------------------*/
@@ -11,7 +11,7 @@
 @media only screen and (max-width : 1280px) {
 html {overflow-x:hidden;}
 
-.content-full4 {background:#f8f8f8 url(../img/sample/bg_content1.jpg) 620px 0px no-repeat !important;}
+.content-full4 {background:#f8f8f8 image-url('sample/bg_content1.jpg') 620px 0px no-repeat !important;}
 
 .front-testi {height: 270px !important;}
 .front-testi:before {width: 100% !important;}
@@ -37,7 +37,7 @@ input.search-input {height:41px !important;}
 .search-icon i {top: 5px !important;}
 
 header.stuck .nav-menu {margin-top: 7px !important;}
-.content-full4 {background:#f8f8f8 url(../img/sample/bg_content1.jpg) 440px 0px no-repeat !important;}
+.content-full4 {background:#f8f8f8 image-url('sample/bg_content1.jpg') 440px 0px no-repeat !important;}
 
 .front-testi {height: 340px !important;}
 .front-testi:before {width: 100% !important;}
@@ -83,7 +83,7 @@ input.search-input {height:41px !important;}
 .search-icon i {top: 5px !important;}
 
 header.stuck .nav-menu {margin-top: 9px !important;}
-.content-full4 {background:#f8f8f8 url(../img/sample/bg_content1.jpg) 340px 0px no-repeat !important;}
+.content-full4 {background:#f8f8f8 image-url('sample/bg_content1.jpg') 340px 0px no-repeat !important;}
 
 .front-testi {height: 260px !important;}
 .front-testi:before {width: 100% !important;}
@@ -203,7 +203,7 @@ ul.reva-tabs-fancybox {margin-left: 16%; float: left;}
 /* Mobile Landscape */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 html {overflow-x:hidden;}
-  
+
 .row {padding: 0 25px;}
 .row .row {padding: 0px;}
 

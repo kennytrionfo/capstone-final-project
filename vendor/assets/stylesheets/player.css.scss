@@ -82,9 +82,9 @@ margin: -50px 0 0 -50px;
 }
 
 .mejs-overlay-button:before {
-font-family:'WebHostingHub-Glyphs'; 
-color:#fff; 
-content:'\f17e'; 
+font-family:'WebHostingHub-Glyphs';
+color:#fff;
+content:'\f17e';
 font-size:98px;
 -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 filter: alpha(opacity=50);
@@ -123,7 +123,7 @@ border-radius: 5px;
 display: block;
 width: 16px;
 height: 16px;
-background: transparent url(../img/loading.gif) 50% 50% no-repeat;
+background: transparent image-url('loading.gif') 50% 50% no-repeat;
 }
 
 /* Start: CONTROL BAR */
@@ -171,7 +171,7 @@ position: absolute;
 height: 16px;
 width: 16px;
 border: 0;
-background: transparent url(../img/mediaelementplayer/controls.svg) no-repeat;
+background: transparent image-url('mediaelementplayer/controls.svg') no-repeat;
 }
 
 /* :focus for accessibility */
@@ -414,7 +414,7 @@ right: 10px;
 }
 
 /*Safari CSS Hack*/
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
     .mejs-controls div.mejs-horizontal-volume-slider {
 		position: relative;
 		right: -3px;
@@ -422,14 +422,14 @@ right: 10px;
 }
 
 /*Chrome CSS Hack*/
-@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
 	.mejs-controls div.mejs-horizontal-volume-slider {
     	position: fixed !important;
     	right: 10px !important;
-    } 
+    }
 }
 
-/*IE10 CSS hack	*/					
+/*IE10 CSS hack	*/
 _::-ms-reveal, .mejs-controls div.mejs-horizontal-volume-slider {position: relative; right: -3px;}
 
 /*IE9 CSS hack*/
@@ -539,8 +539,8 @@ background: -webkit-linear-gradient(top, rgba(50,50,50,0.7), rgba(0,0,0,0.7));
 background: -moz-linear-gradient(top, rgba(50,50,50,0.7), rgba(0,0,0,0.7));
 background: -o-linear-gradient(top, rgba(50,50,50,0.7), rgba(0,0,0,0.7));
 background: -ms-linear-gradient(top, rgba(50,50,50,0.7), rgba(0,0,0,0.7));
-background: linear-gradient(rgba(50,50,50,0.7), rgba(0,0,0,0.7)); 
-filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#323232,endColorstr=#000000);		
+background: linear-gradient(rgba(50,50,50,0.7), rgba(0,0,0,0.7));
+filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#323232,endColorstr=#000000);
 overflow: hidden;
 border: 0;
 }
@@ -567,7 +567,7 @@ background: -moz-linear-gradient(top, rgba(102,102,102,0.7), rgba(50,50,50,0.6))
 background: -o-linear-gradient(top, rgba(102,102,102,0.7), rgba(50,50,50,0.6));
 background: -ms-linear-gradient(top, rgba(102,102,102,0.7), rgba(50,50,50,0.6));
 background: linear-gradient(rgba(102,102,102,0.7), rgba(50,50,50,0.6));
-filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666,endColorstr=#323232);		
+filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666,endColorstr=#323232);
 }
 .mejs-chapters .mejs-chapter .mejs-chapter-block .ch-title {
 font-size: 12px;
@@ -675,7 +675,7 @@ z-index: 1001; /* make sure it shows on fullscreen */
 height: 1px;
 font-size: 0;
 margin: 5px 6px;
-background: #333;	
+background: #333;
 }
 
 .mejs-contextmenu .mejs-contextmenu-item {
@@ -683,7 +683,7 @@ font-family: Helvetica, Arial;
 font-size: 12px;
 padding: 4px 6px;
 cursor: pointer;
-color: #333;	
+color: #333;
 }
 .mejs-contextmenu .mejs-contextmenu-item:hover {
 background: #2C7C91;

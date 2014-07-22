@@ -1,11 +1,11 @@
 /*----------------------------------------------------------------------------------
     Prodigy Configuration Script - Reva HTML5 Template
 ------------------------------------------------------------------------------------
-    
+
     --> Javascript main configuration handle plugin
         1. Animated Content
         2. Responsive Tab
-        3. Menu Trigger 
+        3. Menu Trigger
         4. Fancybox
         5. Progress bar and donut chart
         6. Retina Image
@@ -13,7 +13,7 @@
         8. Parallax Background
         9. Menu Expanding
         10. Touch
-    
+
     --> Javascript handle plugin
         - Number counter
         - Media element
@@ -32,11 +32,11 @@
 
 var Prodigy = function () {
 
-    // get window screen 
+    // get window screen
     widthScreen = $(window).width();
 
     /*------------------------------------------------------------------------------*/
-    /*  1. Animated Content 
+    /*  1. Animated Content
      *------------------------------------------------------------------------------*/
     var animatedContentHandle = function () {
         // function to check is user is on touch device
@@ -48,7 +48,7 @@ var Prodigy = function () {
 
             $('.triggerAnimation').waypoint(function() {
                 var animation = $(this).attr('data-animate');
-                
+
                 $(this).css('opacity', '');
                 $(this).addClass("animated " + animation);
 
@@ -69,8 +69,8 @@ var Prodigy = function () {
      *------------------------------------------------------------------------------*/
     var responsiveTabHandle = function () {
         $('#horizontalTab-Top').easyResponsiveTabs({
-            type: 'default',  
-            width: 'auto', 
+            type: 'default',
+            width: 'auto',
             fit: true
         });
 
@@ -96,10 +96,10 @@ var Prodigy = function () {
     /*------------------------------------------------------------------------------*/
     /*  3. Menu Trigger
      *------------------------------------------------------------------------------*/
-    var menuTriggerHandle = function () { 
+    var menuTriggerHandle = function () {
         var menu = $(".header");
         var searchForm = $("#form-search");
-        
+
         $('#content-wrapper').waypoint(function(direction) {
             if ( widthScreen > 960 ) {
                 // sticky menu show
@@ -110,8 +110,8 @@ var Prodigy = function () {
                         unexpandSearch();
 
                         $('.nav').show();
-                        $("#logo img").attr('src','img/logo_sticky.png').attr('alt','logo').addClass('retina');
-                        $('img.retina').retina('@2x');          
+                        $("#logo img").attr('src','assets/logo_sticky.png').attr('alt','logo').addClass('retina');
+                        $('img.retina').retina('@2x');
                     });
                 }
 
@@ -125,14 +125,14 @@ var Prodigy = function () {
 
                             // show menu in first condition
                             $(".nav").show();
-                            $("#logo img").attr('src','img/logo.png').attr('alt','logo').addClass('retina');
+                            $("#logo img").attr('src','assets/logo.png').attr('alt','logo').addClass('retina');
                             $('img.retina').retina('@2x');
                         });
                     });
                 }
             }
         }, { offset: '20%' });
-        
+
 
         function unexpandSearch() {
             if (searchForm.hasClass('form-search-open')) {
@@ -147,13 +147,13 @@ var Prodigy = function () {
         if (!jQuery().scrollUp) {
             return;
         }
-        
+
         $.scrollUp({
            scrollText: '<i class="icon-chevron-up"/>',
            scrollSpeed: 450
         });
     };
-    
+
     /*------------------------------------------------------------------------------*/
     /*  4. Fancybox
      *------------------------------------------------------------------------------*/
@@ -171,8 +171,8 @@ var Prodigy = function () {
                 media:{}
             }
         });
-    };    
-    
+    };
+
     /*------------------------------------------------------------------------------*/
     /*  5. Progress bar and donut chart
      *------------------------------------------------------------------------------*/
@@ -181,16 +181,16 @@ var Prodigy = function () {
             var progressBarWidth = percent * element.width() / 100;
             element.find('div').animate({ width: progressBarWidth }, 2000).html("<div class='progress-meter'>"+percent+"%&nbsp;</div>");
         }
-        
+
         $('#progress-trigger').waypoint(function() {
-            $('.progress-bar').each(function() { 
+            $('.progress-bar').each(function() {
                 var bar = $(this);
                 var percentage = $(this).attr('data-percent');
 
                 progress(percentage, bar);
             });
         }, { offset: '80%' , triggerOnce: true });
-        
+
         $('.circular-trigger').waypoint(function () {
             $(".circular-bar").donutchart({'size': 150});
             $(".circular-bar").donutchart("animate");
@@ -216,7 +216,7 @@ var Prodigy = function () {
         if (!jQuery().retina) {
             return;
         }
-        
+
         $('img.retina').retina('@2x');
     };
 
@@ -237,14 +237,14 @@ var Prodigy = function () {
             $('.content-parallax1').parallax("30%", 0.1);
 
             // Page title
-            $('#pagetitle-wrapper').parallax("20%",0.1);  
+            $('#pagetitle-wrapper').parallax("20%",0.1);
 
             // About parallax
-            $('#about-parallax').parallax("25%", 0.1);     
+            $('#about-parallax').parallax("25%", 0.1);
 
             // service-layout2.html
             $(".content-parallax2").parallax("30%", 0.1);
-        } 
+        }
     };
 
     /*------------------------------------------------------------------------------*/
@@ -253,8 +253,8 @@ var Prodigy = function () {
     var menuHandle = function () {
         var ww = document.body.clientWidth;
         var menuLevel3 = $(".nav ul ul ul");
-        
-        $(document).ready(function() {            
+
+        $(document).ready(function() {
             $(".nav li a").each(function() {
                 if ($(this).next().length > 0) {
                     $(this).addClass("parent");
@@ -285,7 +285,7 @@ var Prodigy = function () {
                 $(".toggleMenu").css("display", "inline-block");
                 $('.nav').hide();
                 menuLevel3.hide();
-                
+
                 if (!$(".toggleMenu").hasClass("active")) {
                     $(".nav").hide();
                 } else {
@@ -302,9 +302,9 @@ var Prodigy = function () {
                         menuLevel3.toggle();
                     });
                 });
-            } 
+            }
 
-            else if (ww >= 960) {                
+            else if (ww >= 960) {
                 $(".toggleMenu").css("display", "block");
                 // show menu in first condition
                 $(".nav").show();
@@ -313,7 +313,7 @@ var Prodigy = function () {
                 $(".nav li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
                     // must be attached to li so that mouseleave is not triggered when hover over submenu
                     $(this).toggleClass('hover');
-                    
+
                     $(".nav ul ul li.dropdown").hover(function () {
                         menuLevel3.show();
                     }, function () {
@@ -322,9 +322,9 @@ var Prodigy = function () {
                 });
             }
         }
-  
+
     };
-     
+
     /*------------------------------------------------------------------------------*/
     /*  10. Touch
      *------------------------------------------------------------------------------*/
@@ -403,9 +403,9 @@ var Prodigy = function () {
                 el.addEventListener( 'touchstart', function(e) {
                     classie.toggle( this, 'cs-hover' );
                 }, false );
-            }); 
+            });
 
-            // disable tooltip on touch device 
+            // disable tooltip on touch device
             if ($('.has-tip').length) {
                 var $target = $('.has-tip');
                 var attrs = $target[0].attributes;
@@ -414,7 +414,7 @@ var Prodigy = function () {
                 for (index = attrs.length - 1; index >= 0; --index) {
                     name = attrs[index].nodeName;
 
-                    $target.removeAttr("title");                
+                    $target.removeAttr("title");
                     if (name.substring(0, 5) === "data-") {
                         $target.removeAttr(name);
                     }
@@ -466,7 +466,7 @@ var Prodigy = function () {
             })( jQuery, window, document );
 
             $('.nav li:has(ul)').doubleTapToGo();
-        } 
+        }
     };
 
     return {
@@ -487,8 +487,8 @@ var Prodigy = function () {
 
     /*------------------------------------------------------------------------------*/
     /*  -- Conditional Handle Script --
-     *------------------------------------------------------------------------------*/  
-        
+     *------------------------------------------------------------------------------*/
+
         /*--------------------------------------------------------------------------*/
         /*  Number counter
          *--------------------------------------------------------------------------*/
@@ -526,7 +526,7 @@ var Prodigy = function () {
         /*--------------------------------------------------------------------------*/
         /*  Map
          *--------------------------------------------------------------------------*/
-        mapHandle: function () {            
+        mapHandle: function () {
             var map = new GMaps({
                 el: '#map',
                 scrollwheel: false,
@@ -541,9 +541,9 @@ var Prodigy = function () {
                 panControl : false,
                 streetViewControl : false,
                 mapTypeControl: false,
-                overviewMapControl: false 
+                overviewMapControl: false
             });
-            
+
             var styles = [
             {
                 stylers: [
@@ -569,10 +569,10 @@ var Prodigy = function () {
             map.addStyle({
                 styledMapName:"Styled Map",
                 styles: styles,
-                mapTypeId: "map_style"  
+                mapTypeId: "map_style"
             });
 
-            map.setStyle("map_style"); 
+            map.setStyle("map_style");
         },
 
         /* Map2 */
@@ -591,13 +591,13 @@ var Prodigy = function () {
                 panControl : false,
                 streetViewControl : false,
                 mapTypeControl: false,
-                overviewMapControl: false 
+                overviewMapControl: false
             });
-            
+
             map.addMarker({
                   lat: 52.52398,
                   lng: 13.40540,
-                  icon: "img/map-marker.png"
+                  icon: "assets/map-marker.png"
                 });
 
             var styles = [
@@ -625,14 +625,14 @@ var Prodigy = function () {
             map.addStyle({
                 styledMapName:"Styled Map",
                 styles: styles,
-                mapTypeId: "map_style"  
+                mapTypeId: "map_style"
             });
 
-            map.setStyle("map_style"); 
+            map.setStyle("map_style");
         },
 
         /* Map3 */
-        mapHandle3: function () {            
+        mapHandle3: function () {
             var map = new GMaps({
                 el: '#map3',
                 scrollwheel: false,
@@ -647,13 +647,13 @@ var Prodigy = function () {
                 panControl : false,
                 streetViewControl : false,
                 mapTypeControl: false,
-                overviewMapControl: false 
+                overviewMapControl: false
             });
-            
+
             map.addMarker({
                   lat: 52.52398,
                   lng: 13.40540,
-                  icon: "img/map-marker.png"
+                  icon: "assets/map-marker.png"
                 });
 
             var styles = [
@@ -681,12 +681,12 @@ var Prodigy = function () {
             map.addStyle({
                 styledMapName:"Styled Map",
                 styles: styles,
-                mapTypeId: "map_style"  
+                mapTypeId: "map_style"
             });
 
-            map.setStyle("map_style"); 
+            map.setStyle("map_style");
         },
-        
+
         /*--------------------------------------------------------------------------*/
         /*  Grayscale Image
          *--------------------------------------------------------------------------*/
@@ -703,7 +703,7 @@ var Prodigy = function () {
                 $(".client-box a, #client-carousel a, #clientlogo-carousel a").hover(
                     function() {
                         $(this).find('.gotcolors').stop().animate({opacity: 1}, 200);
-                    }, 
+                    },
                     function() {
                         $(this).find('.gotcolors').stop().animate({opacity: 0}, 500);
                     }
@@ -713,9 +713,9 @@ var Prodigy = function () {
             function grayscale(src) {
                 var supportsCanvas = !!document.createElement('canvas').getContext;
                 if (supportsCanvas) {
-                    var canvas = document.createElement('canvas'), 
-                    context = canvas.getContext('2d'), 
-                    imageData, px, length, i = 0, gray, 
+                    var canvas = document.createElement('canvas'),
+                    context = canvas.getContext('2d'),
+                    imageData, px, length, i = 0, gray,
                     img = new Image();
 
                     img.src = src;
@@ -747,7 +747,7 @@ var Prodigy = function () {
             $("#content-carousel").owlCarousel({
                 itemsCustom : [[0, 1], [400, 2], [700, 3], [1000, 3], [1200, 3], [1600, 3]],
                 singleItem : false,
-                itemsScaleUp : false,        
+                itemsScaleUp : false,
                 autoPlay: false, //Set AutoPlay to 3 seconds
                 navigation : true,
                 slideSpeed : 300,
@@ -755,7 +755,7 @@ var Prodigy = function () {
                 pagination : false,
                 paginationNumbers : false,
                 paginationSpeed : 400,
-                scrollPerPage : false,        
+                scrollPerPage : false,
                 lazyLoad : false,
                 lazyFollow : true,
                 lazyEffect : "fade"
@@ -769,7 +769,7 @@ var Prodigy = function () {
             $("#clientlogo-carousel").owlCarousel({
                 itemsCustom : [[0, 2], [400, 3], [700, 4], [1000, 6], [1200, 6], [1600, 6]],
                 singleItem : false,
-                itemsScaleUp : false,        
+                itemsScaleUp : false,
                 autoPlay: false, //Set AutoPlay to 3 seconds
                 navigation : true,
                 slideSpeed : 300,
@@ -777,7 +777,7 @@ var Prodigy = function () {
                 pagination : false,
                 paginationNumbers : false,
                 paginationSpeed : 400,
-                scrollPerPage : false,        
+                scrollPerPage : false,
                 lazyLoad : false,
                 lazyFollow : true,
                 lazyEffect : "fade"
@@ -790,14 +790,14 @@ var Prodigy = function () {
         testiCarouselHandle: function () {
             $("#testi-carousel").owlCarousel({
                 singleItem : true,
-                itemsScaleUp : false,        
+                itemsScaleUp : false,
                 autoPlay: false, //Set AutoPlay to 3 seconds
                 navigation : false,
                 slideSpeed : 300,
                 pagination : true,
                 paginationNumbers : false,
                 paginationSpeed : 400,
-                scrollPerPage : false,        
+                scrollPerPage : false,
                 lazyLoad : false,
                 lazyFollow : true,
                 lazyEffect : "fade"
@@ -848,7 +848,7 @@ var Prodigy = function () {
                     }
                     var $optionSet = $this.parents('#pf-filter');
                     $optionSet.find('.selected').removeClass('selected');
-                    $this.addClass('selected'); 
+                    $this.addClass('selected');
                 });
             });
         }
@@ -857,10 +857,10 @@ var Prodigy = function () {
         /*  Caution !!!
          *--------------------------------------------------------------------------
             If you want to add new plugin, this format to create new handle plugin :
-            
+
             pluginHandlePrimary: function () {
                 // your plugin code here
-            }, 
+            },
             //don't forget to add a comma at the end of each code
 
             pluginHandleSecondary: function () {
@@ -871,7 +871,7 @@ var Prodigy = function () {
             pluginHandleThird: function () {
                 // your plugin code here
             }
-            //special for the last plugin, leave without coma 
+            //special for the last plugin, leave without coma
         ---------------------------------------------------------------------------*/
     };
 
