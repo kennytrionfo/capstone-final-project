@@ -11,25 +11,25 @@
 // about supported directives.
 //
 //= require jquery
-//= require reva/modernizr
+//= require modernizr
 //= require foundation
-//= require reva/responsivetabs
-//= require reva/fancybox
-//= require reva/fancybox-media
-//= require reva/donutchart
-//= require reva/waypoints
-//= require reva/accordion
-//= require reva/retina
-//= require reva/classie
-//= require reva/uisearch
-//= require reva/sticky
-//= require reva/sscr
-//= require reva/parallax
-//= require reva/scrollUp
-//= require reva/themepunch
-//= require reva/themepunch_revolution
-//= require reva/carousel
-//= require reva/prodigy
+//= require responsivetabs
+//= require fancybox
+//= require fancybox-media
+//= require donutchart
+//= require waypoints
+//= require accordion
+//= require retina
+//= require classie
+//= require uisearch
+//= require sticky
+//= require sscr
+//= require parallax
+//= require scrollUp
+//= require themepunch
+//= require themepunch-revolution
+//= require carousel
+//= require prodigy
 //= require jquery_ujs
 //= require goals
 //= require_tree .
@@ -38,7 +38,7 @@
 $(document).foundation();
 
 $(document).ready(function() {
-
+// for the home page
         // Initialization Handle
         Prodigy.init();
         Prodigy.contentCarouselHandle();
@@ -73,8 +73,8 @@ $(document).ready(function() {
             hideSliderAtLimit:0,                    // Hide the whole slider, and stop also functions if Width of Browser is less than this value
             shadow:0,                               //0 = no Shadow, 1,2,3 = 3 Different Art of Shadows  (No Shadow in Fullwidth Version !)
             fullWidth:"on"                          // Turns On or Off the Fullwidth Image Centering in FullWidth Modus
-        })
-    });
+        });
+
 
   $('select.frequency-select').change(function() {
     var frequency_button = parseInt($(this).val());

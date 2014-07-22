@@ -1,11 +1,12 @@
-@import "foundation_and_overrides";
-@import "prodigy-responsive";
-@import "style";
-@import "revolution";
-@import "revolution-responsive";
-
-/* Add imports of custom sass/scss files here */
-
+/*
+ *= require_foundation
+ *= require_prodigy-responsive
+ *= require_style
+ *= require_revolution
+ *= require_revolution-responsive
+ *= require_tree .
+ *= require_self
+ */
 /*navigation bar*/
 
 .nav.navbar-nav {

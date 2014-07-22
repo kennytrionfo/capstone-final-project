@@ -88,7 +88,7 @@ p.text-box i{
 }
 
 .tp-caption.general_caption p:nth-of-type(1n){line-height: 23px\9;}
-.tp-caption.general_caption p{line-height: 23px\0;} /* before looked like \0/ */
+.tp-caption.general_caption p{line-height: 23px;} /* before looked like \0/ */
 
 
 /****************************************************************
@@ -185,7 +185,7 @@ p.text-box i{
 .tp-bullets.simplebullets.round .bullet					{	cursor:pointer; position:relative;	background:url(../images/assets/bullet.png) no-Repeat top left;	width:16px;	height:16px;  margin-right:0px; float:left; margin-top:-10px; margin-left:3px;}
 .tp-bullets.simplebullets.round .bullet.last			{	margin-right:3px;}
 
-.tp-bullets.simplebullets.round-old .bullet				{	cursor:pointer; position:relative;	background:url(../images/assets/bullets.png) no-Repeat bottom left;	width:17px;	height:17px; margin-right:5px; float:left; margin-top:-8px; margin-top:0px\0;} /* before looked like \0/ */
+.tp-bullets.simplebullets.round-old .bullet				{	cursor:pointer; position:relative;	background:url(../images/assets/bullets.png) no-Repeat bottom left;	width:17px;	height:17px; margin-right:5px; float:left; margin-top:-8px; margin-top:0px;} /* before looked like \0/ */
 .tp-bullets.simplebullets.round-old .bullet.last		{	margin-right:0px;}
 
 
