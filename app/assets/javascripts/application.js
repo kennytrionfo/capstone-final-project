@@ -25,6 +25,9 @@
 //= require sticky
 //= require sscr
 //= require parallax
+//= require countTo
+//= require maps
+//= require contact-form
 //= require scrollUp
 //= require themepunch
 //= require themepunch-revolution

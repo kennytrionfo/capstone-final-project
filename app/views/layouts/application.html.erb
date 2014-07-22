@@ -1,636 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reva HTML5 Template</title>
+    <title>Eco-Mojo</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-    <!-- ////////////////////////////////// -->
-    <!-- //     Retina Bookmark Icon     // -->
-    <!-- ////////////////////////////////// -->
-    <link rel="apple-touch-icon-precomposed" href= "image/apple-icon.png" />
+  <body>
+      <%= yield %>
+<footer id="footer1">
+      <div class="row">
+          <div class="large-4 medium-6 columns hide-for-small-only">
+              <a href="#" class="button large round white gap-top8">Ready to get started?</a>
+              <p class="gap-left8">You can also call 123.456.7899 or <a href="mailto:hello@prodigystudio.net">email us</a>.</p>
+          </div>
 
-    <!-- ////////////////////////////////// -->
-    <!-- //      Stylesheets Files       // -->
-    <!-- ////////////////////////////////// -->
-    <link rel="stylesheet" href="assets/foundation.css" />
-    <link rel="stylesheet" href="assets/prodigy-responsive.css" />
-    <link rel="stylesheet" href="assets/style.css" />
+          <div class="large-8 medium-6 columns text">
+              <div class="footer-socials right">
+                  <ul class="share-social no-bullet">
+                      <li data-tooltip class="has-tip tip-top fb-color" title="Share to Facebook">
+                          <a href="#">
+                              <i class="social-facebook"></i>
+                          </a>
+                      </li>
+                      <li data-tooltip class="has-tip tip-top tw-color" title="Share to Twitter">
+                          <a href="#">
+                              <i class="social-twitter"></i>
+                          </a>
+                      </li>
+                      <li data-tooltip class="has-tip tip-top gplus-color" title="Share to Google+">
+                          <a href="#">
+                              <i class="social-googleplus"></i>
+                          </a>
+                      </li>
+                      <li data-tooltip class="has-tip tip-top drb-color" title="Share to Dribbble">
+                          <a href="#">
+                              <i class="social-dribbble"></i>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
 
-    <!-- css plugin here  -->
-    <link rel="stylesheet" href="assets/revolution.css" media="screen"/>
-    <link rel="stylesheet" href="assets/revolution-responsive.css" media="screen"/>
+              <div class="footer-menu">
+                  <ul class="no-bullet right">
+                      <li><a href="#">Work</a></li>
+                      <li><a href="#">Approach</a></li>
+                      <li><a href="#">Team</a></li>
+                      <li><a href="#">Contact</a></li>
+                      <li><a href="#">Blog</a></li>
+                  </ul>
+              </div>
 
-    <!-- ////////////////////////////////// -->
-    <!-- //     Google Webfont Files     // -->
-    <!-- ////////////////////////////////// -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+              <div class="right">
+                  <p>&copy; 2014 . Proudly Producing from Indonesia</p>
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!-- Footer end here -->
+  </div>
+      <script src="assets/jquery.js"></script>
+      <script src="assets/modernizr.js"></script>
+      <script src="assets/foundation.js"></script>
+      <script src="assets/responsivetabs.js"></script>
+      <script src="assets/fancybox.js"></script>
+      <script src="assets/fancybox-media.js"></script>
+      <script src="assets/donutchart.js"></script>
+      <script src="assets/waypoints.js"></script>
+      <script src="assets/accordion.js"></script>
+      <script src="assets/retina.js"></script>
+      <script src="assets/classie.js"></script>
+      <script src="assets/uisearch.js"></script>
+      <script src="assets/sticky.js"></script>
+      <script src="assets/sscr.js"></script>
+      <script src="assets/parallax.js"></script>
 
-    <!-- ////////////////////////////////// -->
-    <!-- //        Favicon Files         // -->
-    <!-- ////////////////////////////////// -->
-    <link rel="shortcut icon" href="assets/favicon.ico" />
-
-</head>
-
-<body>
-    <div id="box-wrapper">
-
-        <!-- Header start here -->
-        <header id="header1" class="header">
-            <div class="row">
-                <div class="large-4 tp-12 columns">
-                    <div id="logo">
-                        <a href="application.html"><img src= "assets/logo.png"  alt="" class="retina" /></a>
-                    </div>
-                </div>
-
-                <div class="large-8 tp-12 columns">
-                    <div id="navigation">
-                        <!-- expanding search  -->
-                        <div id="form-search" class="form-search">
-                            <form>
-                                <input class="search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search">
-                                <input class="search-submit" type="submit" value="">
-                                <span class="search-icon"><i class="icon-search"></i></span>
-                            </form>
-                        </div>
-
-                        <nav class="nav-menu">
-                            <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
-
-                            <ul class="nav">
-                                <li class="active dropdown"><a href="application.html">Home</a>
-                                    <ul>
-                                        <li><a href="index-layout2.html">Index Layout 2</a></li>
-                                        <li><a href="index-layout3.html">Index Layout 3</a></li>
-                                        <li><a href="index-layout4.html">Index Layout 4</a></li>
-                                        <li><a href="index-layout5.html">Index Layout 5</a></li>
-                                        <li><a href="index-layout6.html">Index Layout 6</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Pages</a>
-                                    <ul>
-                                        <li><a href="about.html">About Layout 1</a></li>
-                                        <li><a href="about-layout2.html">About Layout 2</a></li>
-                                        <li><a href="services.html">Services Layout 1</a></li>
-                                        <li><a href="services-layout2.html">Services Layout 2</a></li>
-                                        <li><a href="pricing-plan.html">Pricing Plan</a></li>
-                                        <li><a href="testimonials.html">Testimonials</a></li>
-                                        <li><a href="team.html">Our Team</a></li>
-                                        <li><a href="sitemap.html">Reva Sitemap</a></li>
-                                        <li><a href="single.html">Blog Post</a></li>
-                                        <li><a href="portfolio-single.html">Portfolio Single</a></li>
-                                        <li><a href="faq.html">FAQ Page</a></li>
-                                        <li><a href="404.html">404 Error</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Element</a>
-                                    <ul>
-                                        <li><a href="column.html">Column</a></li>
-                                        <li><a href="tables.html">Tables</a></li>
-                                        <li><a href="button-list.html">Button &amp; List</a></li>
-                                        <li><a href="icon-list.html">Icon List</a></li>
-                                        <li><a href="icon-use.html">Icon Use</a></li>
-                                        <li><a href="typhography.html">Typhography</a></li>
-                                        <li><a href="panel-promo.html">Panel &amp; Promo</a></li>
-                                        <li><a href="tab-accordion.html">Tab &amp; Accordion</a></li>
-                                        <li><a href="alert-progress.html">Alert &amp; Progress</a></li>
-                                        <li><a href="timeline.html">Timeline</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Portfolio</a>
-                                    <ul>
-                                        <li><a href="portfolio-2col.html">Portfolio 2 Column</a></li>
-                                        <li><a href="portfolio-3col.html">Portfolio 3 Column</a></li>
-                                        <li><a href="portfolio-4col.html">Portfolio 4 Column</a></li>
-                                        <li class="dropdown"><a href="#">Dropdown Level 1</a>
-                                            <ul>
-                                                <li><a href="#">Dropdown Level 2</a></li>
-                                                <li><a href="#">Dropdown Level 2</a></li>
-                                                <li class="dropdown"><a href="#">Dropdown Level 2</a>
-                                                    <ul>
-                                                        <li><a href="#">Dropdown Level 3</a></li>
-                                                        <li><a href="#">Dropdown Level 3</a></li>
-                                                        <li><a href="#">Dropdown Level 3</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li class="dropdown"><a href="#">Contact</a>
-                                    <ul>
-                                        <li><a href="contact.html">Contact Layout 1</a></li>
-                                        <li><a href="contact-layout2.html">Contact Layout 2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- Header end here -->
-
-        <!-- Slideshow start here -->
-        <section id="slide-wrapper">
-            <div class="banner">
-
-                <ul>
-                    <!-- slide 1 -->
-                    <li data-transition="fade">
-                        <img src="assets/slideshow/bg_slide1.jpg" alt="">
-                        <div class="caption slide_overlay fade" data-x="-50%" data-y="0" data-speed="1000" data-start="100" data-easing="easeOutExpo"></div>
-                        <div class="caption general_caption lfb ltb tp-rr1"  data-x="180" data-y="173" data-speed="900" data-endspeed="900" data-start="250" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <h1 class="uppercase text-center">Reva design is and interactive<br/>Creatve agency</h1>
-                        </div>
-                        <div class="caption general_caption lfl ltl tp-rr2"  data-x="353" data-y="323" data-speed="900" data-endspeed="900" data-start="650" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <a href="#" class="button small green round">Get Started</a>
-                        </div>
-                        <div class="caption general_caption lfr ltr tp-rr3"  data-x="500" data-y="323" data-speed="900" data-endspeed="900" data-start="650" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <a href="#" class="button small white-sld round">Try our Demo <i class="icon-explorerwindow"></i></a>
-                        </div>
-                        <div class="caption general_caption lfb ltb tp-rr4"  data-x="302" data-y="385" data-speed="900" data-endspeed="900" data-start="750" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <p class="text-center">Tanem segawon balung ringgit lawas Nedha ageng pedhang mbekta<br/>piring kalung nginum naleni.</p>
-                        </div>
-                    </li>
-
-                    <!-- slide 2 -->
-                    <li data-transition="fade">
-                        <img src="assets/slideshow/bg_slide2.jpg" alt="">
-                        <div class="caption slide_overlay fade" data-x="-50%" data-y="0" data-speed="1000" data-start="100" data-easing="easeOutExpo"></div>
-                        <div class="caption general_caption lfb ltb tp-rr1"  data-x="180" data-y="173" data-speed="900" data-endspeed="900" data-start="250" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <h1 class="uppercase text-center">Reva design is and interactive<br/>Creatve agency</h1>
-                        </div>
-                        <div class="caption general_caption lfl ltl tp-rr2"  data-x="353" data-y="323" data-speed="900" data-endspeed="900" data-start="650" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <a href="#" class="button small green round">Get Started</a>
-                        </div>
-                        <div class="caption general_caption lfr ltr tp-rr3"  data-x="500" data-y="323" data-speed="900" data-endspeed="900" data-start="650" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <a href="#" class="button small white-sld round">Try our Demo <i class="icon-explorerwindow"></i></a>
-                        </div>
-                        <div class="caption general_caption lfb ltb tp-rr4"  data-x="302" data-y="385" data-speed="900" data-endspeed="900" data-start="750" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <p class="text-center">Tanem segawon balung ringgit lawas Nedha ageng pedhang mbekta<br/>piring kalung nginum naleni.</p>
-                        </div>
-                    </li>
-                    <!-- slide 3 -->
-                    <li data-transition="fade">
-                        <img src="assets/slideshow/bg_slide3.jpg" alt="">
-                        <div class="caption slide_overlay fade" data-x="-50%" data-y="0" data-speed="1000" data-start="100" data-easing="easeOutExpo"></div>
-                        <div class="caption general_caption lfb ltb tp-rr1"  data-x="180" data-y="173" data-speed="900" data-endspeed="900" data-start="250" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <h1 class="uppercase text-center">Reva design is and interactive<br/>Creatve agency</h1>
-                        </div>
-                        <div class="caption general_caption lfl ltl tp-rr2"  data-x="353" data-y="323" data-speed="900" data-endspeed="900" data-start="650" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <a href="#" class="button small green round">Get Started</a>
-                        </div>
-                        <div class="caption general_caption lfr ltr tp-rr3"  data-x="500" data-y="323" data-speed="900" data-endspeed="900" data-start="650" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <a href="#" class="button small white-sld round">Try our Demo <i class="icon-explorerwindow"></i></a>
-                        </div>
-                        <div class="caption general_caption lfb ltb tp-rr4"  data-x="302" data-y="385" data-speed="900" data-endspeed="900" data-start="750" data-end="8500" data-easing="easeOutExpo" data-endeasing="easeInExpo">
-                            <p class="text-center">Tanem segawon balung ringgit lawas Nedha ageng pedhang mbekta<br/>piring kalung nginum naleni.</p>
-                        </div>
-                    </li>
-                </ul>
-                <div class="tp-bannertimer tp-bottom"></div>
-            </div>
-        </section>
-        <!-- Slideshow end here -->
-
-        <!-- Content wrapper and sticky menu trigger here  -->
-        <div id="content-wrapper" class="browser-fix">
-
-            <!-- Content fullwidth start here -->
-            <section class="content-full1">
-                <div class="row">
-                    <div class="large-12 columns text-center triggerAnimation animated" data-animate="fadeInDown">
-                        <h2>Completely automated.</h2>
-                        <p class="lead">Naleni jaler mular sirah, dhuwung jawah bapak Jawa Ipsum gujeng mantuk. Imbuh? Latu badan ngangge bathuk tilem ngadeg toya tangsul taken kakang nyukani dipun awis cukur segawon nyipeng kalung gujeng.</p>
-
-                        <div id="horizontalTab-Top" class="reva-tabs">
-                            <ul class="resp-tabs-list">
-                                <li><i class="icon-desklamp"></i></li>
-                                <li class="green-color" data-class="green-color"><i class="icon-plug"></i></li>
-                                <li class="blue-color" data-class="blue-color"><i class="icon-gift"></i></li>
-                                <li class="yellow-color" data-class="yellow-color"><i class="icon-bucket"></i></li>
-                            </ul>
-                            <div class="resp-tabs-container">
-                                <div>
-                                    <div class="reva-tabs-title">
-                                        <h4>Smooth but it’s sharp display</h4>
-                                        <p>Umur nyepeng andhapan dodot estri tangsul mlampah bocah lingsem nyipeng toya kaca tlngal jawah</p>
-                                    </div>
-                                    <img src="assets/sample/content_img6.png" alt="" class="img-left img-reva-tabs1 triggerAnimation animated" data-animate="fadeInLeft">
-                                    <p class="triggerAnimation animated" data-animate="fadeInDown">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliquaenim ad minim veniam, quis nostrud exercitation ullamco molestiae consequatur.
-                                    </p>
-                                    <p class="triggerAnimation animated" data-animate="fadeInDown">
-                                        Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur dolorem eum fugiat quo voluptas.
-                                    </p>
-                                    <ul class="no-bullet reva-tabs-fancybox">
-                                        <li class="triggerAnimation animated" data-animate="fadeInUp">
-                                            <a class="fancybox" href="assets/thumb/p1.jpg" data-fancybox-group="gallery" title="Some of project description here"><img src="assets/sample/content_img1.jpg" alt=""></a>
-                                        </li>
-                                        <li class="triggerAnimation animated" data-animate="fadeInUp">
-                                            <a class="fancybox" href="assets/thumb/p2.jpg" data-fancybox-group="gallery" title="Some of project description here"><img src="assets/sample/content_img2.jpg" alt=""></a>
-                                        </li>
-                                        <li class="triggerAnimation animated" data-animate="fadeInUp">
-                                            <a class="fancybox" href="assets/thumb/p3.jpg" data-fancybox-group="gallery" title="Some of project description here"><img src="assets/sample/content_img3.jpg" alt=""></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clear"></div>
-                                </div>
-
-                                <div>
-                                    <div class="reva-tabs-title">
-                                        <h4>Mobile Application Developer</h4>
-                                        <p>Umur nyepeng andhapan dodot estri tangsul mlampah bocah lingsem nyipeng toya kaca tlngal jawah</p>
-                                    </div>
-                                    <img src="assets/sample/content_img17.png" alt="" class="img-right img-reva-tabs2 triggerAnimation animated" data-animate="fadeInRight">
-                                    <p class="triggerAnimation animated" data-animate="fadeInDown">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliquaenim ad minim veniam, quis nostrud exercitation ullamco molestiae consequatur.
-                                    </p>
-                                    <p class="triggerAnimation animated" data-animate="fadeInDown">
-                                        Duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore eu fugiat nulla pariatur dolorem eum fugiat quo voluptas.
-                                    </p>
-                                    <ul class="no-bullet reva-tabs-fancybox triggerAnimation animated" data-animate="fadeInUp">
-                                        <li>
-                                            <a class="fancybox" href="assets/thumb/p1.jpg" data-fancybox-group="gallery" title="Some of project description here"><img src="assets/sample/content_img1.jpg" alt=""></a>
-                                        </li>
-                                        <li>
-                                            <a class="fancybox" href="assets/thumb/p2.jpg" data-fancybox-group="gallery" title="Some of project description here"><img src="assets/sample/content_img2.jpg" alt=""></a>
-                                        </li>
-                                        <li>
-                                            <a class="fancybox" href="assets/thumb/p3.jpg" data-fancybox-group="gallery" title="Some of project description here"><img src="assets/sample/content_img3.jpg" alt=""></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clear"></div>
-                                </div>
-
-                                <div>
-                                    <div class="reva-tabs-title">
-                                        <h4>Design with Sketch</h4>
-                                        <p>Umur nyepeng andhapan dodot estri tangsul mlampah bocah lingsem nyipeng toya kaca tlngal jawah</p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-6 medium-6 column triggerAnimation animated" data-animate="fadeInLeft">
-                                            <p><span class="dropcap">A</span>t vero eos accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi nonsint occaecati cupiditate.</p>
-                                            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores.</p>
-                                        </div>
-
-                                        <div class="large-6 medium-6 column triggerAnimation animated" data-animate="fadeInRight">
-                                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
-                                            <ul class="check">
-                                                <li>Adipisci velit sed quia non numquam eius modi tempora</li>
-                                                <li>Voluptatibus maiores alias consequatur aut perferendis doloribus</li>
-                                                <li>Temporibus autem quibusdam et aut officiis debitis repudiandae</li>
-                                                <li>Consequuntur magni dolores eos qui ratione voluptatem sequi</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="clear"></div>
-                                </div>
-
-                                <div>
-                                    <div class="reva-tabs-title">
-                                        <h4>Smooth but it’s sharp display</h4>
-                                        <p>Umur nyepeng andhapan dodot estri tangsul mlampah bocah lingsem nyipeng toya kaca tlngal jawah</p>
-                                    </div>
-                                    <img src="assets/sample/content_img18.png" alt="" class="img-center triggerAnimation animated" data-animate="bounceIn">
-                                    <p class="text-center triggerAnimation animated" data-animate="fadeInUp">
-                                        Neque porro quisquam estqui dolorem ipsum quia dolor sit amet consectetur, adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae voluptatibus maiores alias consequatur aut perferendis.
-                                    </p>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Content fullwidth end here -->
-
-            <!-- Content start here -->
-            <section class="content">
-                <div class="row triggerAnimation animated" data-animate="fadeInDown">
-                    <div class="large-4 medium-6 columns">
-                        <div class="circle-border small icon-left">
-                            <i class="icon-fblike"></i>
-                        </div>
-                        <div class="content-position1">
-                            <h4>Good choice</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicin elit sed do eiusmod tempor incididunt ut labore dolore magna aliquaenim ad minim veniam </p>
-                        </div>
-                    </div>
-
-                    <div class="large-4 medium-6 columns">
-                        <div class="circle-border small icon-left">
-                            <i class="icon-design"></i>
-                        </div>
-                        <div class="content-position1">
-                            <h4>Easy to custom</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicin elit sed do eiusmod tempor incididunt ut labore dolore magna aliquaenim ad minim veniam </p>
-                        </div>
-                    </div>
-
-                    <div class="large-4 medium-6 columns">
-                        <div class="circle-border small icon-left">
-                            <i class="icon-iphone"></i>
-                        </div>
-                        <div class="content-position1">
-                            <h4>Fully responsive</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicin elit sed do eiusmod tempor incididunt ut labore dolore magna aliquaenim ad minim veniam </p>
-                        </div>
-                    </div>
-
-                    <div class="large-4 medium-6 columns">
-                        <div class="circle-border small icon-left">
-                            <i class="icon-layers"></i>
-                        </div>
-                        <div class="content-position1">
-                            <h4>Layered PSD</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicin elit sed do eiusmod tempor incididunt ut labore dolore magna aliquaenim ad minim veniam </p>
-                        </div>
-                    </div>
-
-                    <div class="large-4 medium-6 columns">
-                        <div class="circle-border small icon-left">
-                            <i class="icon-eye-open"></i>
-                        </div>
-                        <div class="content-position1">
-                            <h4>Retina ready</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicin elit sed do eiusmod tempor incididunt ut labore dolore magna aliquaenim ad minim veniam </p>
-                        </div>
-                    </div>
-
-                    <div class="large-4 medium-6 columns">
-                        <div class="circle-border small icon-left">
-                            <i class="icon-dropbox"></i>
-                        </div>
-                        <div class="content-position1">
-                            <h4>Multipurpose</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicin elit sed do eiusmod tempor incididunt ut labore dolore magna aliquaenim ad minim veniam </p>
-                        </div>
-                    </div>
-
-                    <div class="large-12 columns text-center gap-top25">
-                        <a href="#" class="button medium round green">take the tour to find out more</a>
-                    </div>
-                </div>
-            </section>
-            <!-- Content end here -->
-
-            <!-- Content fullwidth start here -->
-            <section class="content-full4">
-                <div class="row">
-                    <div class="large-6 medium-6 tp-8 columns triggerAnimation animated" data-animate="fadeInLeft">
-                        <h2 class="gap-bottom0">Who are we?</h2>
-                        <h3 class="grey-text gap-top0">A small, passionate, &amp; powerful team.</h3>
-
-                        <div class="gap-bottom25"></div>
-
-                        <p class="lead">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                        <p class="lead">Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animinctio.</p>
-                        <a href="#" class="button medium round white">meet the entire team</a>
-                    </div>
-                </div>
-            </section>
-            <!-- Content fullwidth end here -->
-
-            <!-- Content start here -->
-            <section class="content">
-                <div class="row">
-                    <div class="large-9 medium-9 tp-12 columns triggerAnimation animated" data-animate="fadeInLeft">
-                        <h4 class="heading-line"><span>Latest Article</span></h4>
-
-                        <div id="content-carousel" class="owl-carousel">
-                            <div class="item cs-style-1">
-                                <figure>
-                                    <div>
-                                        <img src="assets/sample/content_img1.jpg" alt="" class="img-radius">
-                                    </div>
-                                    <figcaption>
-                                        <a class="fancybox" href="assets/thumb/p1.jpg" data-fancybox-group="gallery" title="Some of project description here">
-                                            <i class="icon-search"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="icon-link"></i>
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                                <a href="#"><h5>Sample post1 from blog</h5></a>
-                                <p>Consectetur adipisicin elit sed do eiusmod tempor incididunt labore ... </p>
-                                <ul class="post-info no-bullet">
-                                    <li><i class="icon-clockalt-timealt"></i>jan 20, 2014</li>
-                                    <li><i class="icon-user"></i><a href="#">kartoyo</a></li>
-                                    <li><i class="icon-comment"></i><a href="#">15</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="item cs-style-1">
-                                <figure>
-                                    <div>
-                                        <img src="assets/sample/content_img2.jpg" alt="" class="img-radius">
-                                    </div>
-                                    <figcaption>
-                                        <a class="fancybox" href="assets/thumb/p1.jpg" data-fancybox-group="gallery" title="Some of project description here">
-                                            <i class="icon-search"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="icon-link"></i>
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                                <a href="#"><h5>Sample post2 from blog</h5></a>
-                                <p>Consectetur adipisicin elit sed do eiusmod tempor incididunt labore ... </p>
-                                <ul class="post-info no-bullet">
-                                    <li><i class="icon-clockalt-timealt"></i>jan 17, 2014</li>
-                                    <li><i class="icon-user"></i><a href="#">lukman</a></li>
-                                    <li><i class="icon-comment"></i><a href="#">12</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="item cs-style-1">
-                                <figure>
-                                    <div>
-                                        <img src="assets/sample/content_img3.jpg" alt="" class="img-radius">
-                                    </div>
-                                    <figcaption>
-                                        <a class="fancybox" href="assets/thumb/p1.jpg" data-fancybox-group="gallery" title="Some of project description here">
-                                            <i class="icon-search"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="icon-link"></i>
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                                <a href="#"><h5>Sample post3 from blog</h5></a>
-                                <p>Consectetur adipisicin elit sed do eiusmod tempor incididunt labore ... </p>
-                                <ul class="post-info no-bullet">
-                                    <li><i class="icon-clockalt-timealt"></i>jan 11, 2014</li>
-                                    <li><i class="icon-user"></i><a href="#">ponari</a></li>
-                                    <li><i class="icon-comment"></i><a href="#">25</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="item cs-style-1">
-                                <figure>
-                                    <div>
-                                        <img src="assets/sample/content_img4.jpg" alt="" class="img-radius">
-                                    </div>
-                                    <figcaption>
-                                        <a class="fancybox" href="assets/thumb/p1.jpg" data-fancybox-group="gallery" title="Some of project description here">
-                                            <i class="icon-search"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="icon-link"></i>
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                                <a href="#"><h5>Sample post4 from blog</h5></a>
-                                <p>Consectetur adipisicin elit sed do eiusmod tempor incididunt labore ... </p>
-                                <ul class="post-info no-bullet">
-                                    <li><i class="icon-clockalt-timealt"></i>jan 09, 2014</li>
-                                    <li><i class="icon-user"></i><a href="#">lukman</a></li>
-                                    <li><i class="icon-comment"></i><a href="#">17</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="item cs-style-1">
-                                <figure>
-                                    <div>
-                                        <img src="assets/sample/content_img5.jpg" alt="" class="img-radius">
-                                    </div>
-                                    <figcaption>
-                                        <a class="fancybox" href="assets/thumb/p1.jpg" data-fancybox-group="gallery" title="Some of project description here">
-                                            <i class="icon-search"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="icon-link"></i>
-                                        </a>
-                                    </figcaption>
-                                </figure>
-                                <a href="#"><h5>Sample post5 from blog</h5></a>
-                                <p>Consectetur adipisicin elit sed do eiusmod tempor incididunt labore ... </p>
-                                <ul class="post-info no-bullet">
-                                    <li><i class="icon-clockalt-timealt"></i>jan 04, 2014</li>
-                                    <li><i class="icon-user"></i><a href="#">kartoyo</a></li>
-                                    <li><i class="icon-comment"></i><a href="#">30</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="large-3 medium-3 tp-12 columns triggerAnimation animated" data-animate="fadeInRight">
-                        <h4 class="heading-line"><span>Happy Client</span></h4>
-
-                        <div class="testi-container">
-                            <div class="testi-text">
-                                <blockquote>
-                                    <p>Reva Creative Agency provides pre-eminent customer service and I would recommend them to any progressive companies seeking a robust, reliable and state-of-the-art solution.</p>
-                                </blockquote>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="testi-image">
-                            <img src="assets/sample/team7.jpg" alt="" />
-                        </div>
-                        <div class="testi-name">Steven Alvarez
-                            <br/>
-                            <span class="label round green">Designer - Castro Art</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Content end here -->
-        </div>
-        <!-- Content wrapper and sticky menu trigger end here  -->
-
-        <!-- Footer start here -->
-        <footer id="footer1">
-            <div class="row">
-                <div class="large-4 medium-6 columns hide-for-small-only">
-                    <a href="#" class="button large round white gap-top8">Ready to get started?</a>
-                    <p class="gap-left8">You can also call 123.456.7899 or <a href="mailto:hello@prodigystudio.net">email us</a>.</p>
-                </div>
-
-                <div class="large-8 medium-6 columns text">
-                    <div class="footer-socials right">
-                        <ul class="share-social no-bullet">
-                            <li data-tooltip class="has-tip tip-top fb-color" title="Share to Facebook">
-                                <a href="#">
-                                    <i class="social-facebook"></i>
-                                </a>
-                            </li>
-                            <li data-tooltip class="has-tip tip-top tw-color" title="Share to Twitter">
-                                <a href="#">
-                                    <i class="social-twitter"></i>
-                                </a>
-                            </li>
-                            <li data-tooltip class="has-tip tip-top gplus-color" title="Share to Google+">
-                                <a href="#">
-                                    <i class="social-googleplus"></i>
-                                </a>
-                            </li>
-                            <li data-tooltip class="has-tip tip-top drb-color" title="Share to Dribbble">
-                                <a href="#">
-                                    <i class="social-dribbble"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-menu">
-                        <ul class="no-bullet right">
-                            <li><a href="#">Work</a></li>
-                            <li><a href="#">Approach</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Blog</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="right">
-                        <p>&copy; 2014 . Proudly Producing from Indonesia</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Footer end here -->
-    </div>
-
-    <!-- ////////////////////////////////// -->
-    <!-- //      Javascript Files        // -->
-    <!-- ////////////////////////////////// -->
-    <script src="assets/jquery.js"></script>
-    <script src="assets/modernizr.js"></script>
-    <script src="assets/foundation.js"></script>
-    <script src="assets/responsivetabs.js"></script>
-    <script src="assets/fancybox.js"></script>
-    <script src="assets/fancybox-media.js"></script>
-    <script src="assets/donutchart.js"></script>
-    <script src="assets/waypoints.js"></script>
-    <script src="assets/accordion.js"></script>
-    <script src="assets/retina.js"></script>
-    <script src="assets/classie.js"></script>
-    <script src="assets/uisearch.js"></script>
-    <script src="assets/sticky.js"></script>
-    <script src="assets/sscr.js"></script>
-    <script src="assets/parallax.js"></script>
-    <script src="assets/scrollUp.js"></script>
-
-    <!-- Javascript plugin here  -->
-    <script src="assets/themepunch.js"></script>
-    <script src="assets/themepunch-revolution.js"></script>
-    <script src="assets/carousel.js"></script>
-
-    <!-- Javascript initialize here  -->
-    <script src="assets/prodigy.js"></script>
-
-
-
+      <!-- Javascript plugin here  -->
+      <script src="assets/countTo.js"></script>
+      <script src="assets/contact-form.js"></script>
+      <script src="assets/scrollUp.js"></script>
+      <script src="assets/themepunch.js"></script>
+      <script src="assets/themepunch-revolution.js"></script>
+      <script src="assets/carousel.js"></script>
+      <!-- Javascript initialize here  -->
+      <script src="assets/prodigy.js"></script>
 </body>
 </html>

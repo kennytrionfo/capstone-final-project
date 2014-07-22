@@ -1,5 +1,285 @@
+<!doctype html>
+<html class="no-js" lang="en">
 
-<div class="row">
+<head>
+    <!-- ////////////////////////////////// -->
+    <!-- //     Retina Bookmark Icon     // -->
+    <!-- ////////////////////////////////// -->
+<link rel="apple-touch-icon-precomposed" href= "assets/apple-icon.png" />
+
+<!-- ////////////////////////////////// -->
+<!-- //      Stylesheets Files       // -->
+<!-- ////////////////////////////////// -->
+<link rel="stylesheet" href="assets/foundation.css.scss" />
+<link rel="stylesheet" href="assets/prodigy-responsive.css.scss" />
+<link rel="stylesheet" href="assets/style.css.scss" />
+
+<!-- css plugin here  -->
+<link rel="stylesheet" href="assets/revolution.css" media="screen"/>
+<link rel="stylesheet" href="assets/revolution-responsive.css.scss" media="screen"/>
+
+<!-- ////////////////////////////////// -->
+<!-- //     Google Webfont Files     // -->
+<!-- ////////////////////////////////// -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+<!-- ////////////////////////////////// -->
+<!-- //        Favicon Files         // -->
+<!-- ////////////////////////////////// -->
+<link rel="shortcut icon" href="assets/favicon.ico" />
+
+</head>
+
+<body>
+    <div id="box-wrapper">
+        <!-- Header start here -->
+        <header id="header1" class="header">
+            <div class="row">
+                <div class="large-4 columns">
+                    <div id="logo">
+                        <a href="index.html"><img src="assets/logo.png" alt="" class="retina" /></a>
+                    </div>
+                </div>
+
+                <div class="large-8 columns">
+                    <div id="navigation">
+                        <!-- expanding search  -->
+                        <!-- <div id="form-search" class="form-search">
+                            <form>
+                                <input class="search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search">
+                                <input class="search-submit" type="submit" value="">
+                                <span class="search-icon"><i class="icon-search"></i></span>
+                            </form>
+                        </div> -->
+
+                        <nav class="nav-menu">
+                            <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
+
+                            <ul class="nav">
+                                <li class="dropdown"><a href="index.html">Home</a>
+                                    <ul>
+                                        <li><a href="index-layout2.html">Index Layout 2</a></li>
+                                        <li><a href="index-layout3.html">Index Layout 3</a></li>
+                                        <li><a href="index-layout4.html">Index Layout 4</a></li>
+                                        <li><a href="index-layout5.html">Index Layout 5</a></li>
+                                        <li><a href="index-layout6.html">Index Layout 6</a></li>
+                                    </ul>
+                                </li>
+                                <li class="active dropdown"><a href="#">Pages</a>
+                                    <ul>
+                                        <li><a href="about.html">About Layout 1</a></li>
+                                        <li><a href="about-layout2.html">About Layout 2</a></li>
+                                        <li><a href="services.html">Services Layout 1</a></li>
+                                        <li><a href="services-layout2.html">Services Layout 2</a></li>
+                                        <li><a href="pricing-plan.html">Pricing Plan</a></li>
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="team.html">Our Team</a></li>
+                                        <li class="active"><a href="sitemap.html">Reva Sitemap</a></li>
+                                        <li><a href="single.html">Blog Post</a></li>
+                                        <li><a href="portfolio-single.html">Portfolio Single</a></li>
+                                        <li><a href="faq.html">FAQ Page</a></li>
+                                        <li><a href="404.html">404 Error</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">Element</a>
+                                    <ul>
+                                        <li><a href="column.html">Column</a></li>
+                                        <li><a href="tables.html">Tables</a></li>
+                                        <li><a href="button-list.html">Button &amp; List</a></li>
+                                        <li><a href="icon-list.html">Icon List</a></li>
+                                        <li><a href="icon-use.html">Icon Use</a></li>
+                                        <li><a href="typhography.html">Typhography</a></li>
+                                        <li><a href="panel-promo.html">Panel &amp; Promo</a></li>
+                                        <li><a href="tab-accordion.html">Tab &amp; Accordion</a></li>
+                                        <li><a href="alert-progress.html">Alert &amp; Progress</a></li>
+                                        <li><a href="timeline.html">Timeline</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">Portfolio</a>
+                                    <ul>
+                                        <li><a href="portfolio-2col.html">Portfolio 2 Column</a></li>
+                                        <li><a href="portfolio-3col.html">Portfolio 3 Column</a></li>
+                                        <li><a href="portfolio-4col.html">Portfolio 4 Column</a></li>
+                                        <li class="dropdown"><a href="#">Dropdown Level 1</a>
+                                            <ul>
+                                                <li><a href="#">Dropdown Level 2</a></li>
+                                                <li><a href="#">Dropdown Level 2</a></li>
+                                                <li class="dropdown"><a href="#">Dropdown Level 2</a>
+                                                    <ul>
+                                                        <li><a href="#">Dropdown Level 3</a></li>
+                                                        <li><a href="#">Dropdown Level 3</a></li>
+                                                        <li><a href="#">Dropdown Level 3</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li class="dropdown"><a href="#">Contact</a>
+                                    <ul>
+                                        <li><a href="contact.html">Contact Layout 1</a></li>
+                                        <li><a href="contact-layout2.html">Contact Layout 2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header end here -->
+
+        <!-- Page title start here -->
+        <section id="pagetitle-wrapper" class="parallax">
+            <div class="row">
+                <div class="large-9 large-offset-3 columns">
+                    <h1 class="h1-double">Sitemap</h1>
+                    <h5 class="width80">Lorem ipsum dolor sit amet consectetur adipisicing elit tenetur minus perferendis animi eveniet quo ipsum totam neque maxime</h5>
+                </div>
+
+                <div class="large-12 columns">
+                    <div class="breadcrumb">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Pages</a></li>
+                            <li class="current-page"><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page title end here -->
+
+        <!-- Content wrapper and sticky menu trigger here  -->
+        <div id="content-wrapper">
+            <!-- Content start here -->
+            <section class="content triggerAnimation animated" data-animate="fadeInDown">
+                <div class="row">
+                    <div class="large-4 medium-4 tp-12 columns">
+                        <h3 class="heading-line"><span>Pages</span></h3>
+                        <ul class="arrow">
+                            <li><a href="#">Home</a>
+                                <ul class="arrow">
+                                    <li><a href="#">Home Layout2</a></li>
+                                    <li><a href="#">Home Layout3</a></li>
+                                    <li><a href="#">Home Layout4</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Portfolio</a>
+                                <ul class="arrow">
+                                    <li><a href="#">Portfolio 2 Column</a></li>
+                                    <li><a href="#">Portfolio 3 Column</a></li>
+                                    <li><a href="#">Portfolio 4 Column</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Blog</a>
+                                <ul class="arrow">
+                                    <li><a href="#">Blog Right Sidebar</a></li>
+                                    <li><a href="#">Blog Left Sidebar</a></li>
+                                    <li><a href="#">Single Right Sidebar</a></li>
+                                    <li><a href="#">Single Left Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="arrow">
+                                    <li><a href="#">Column Page</a></li>
+                                    <li><a href="#">Table Page</a></li>
+                                    <li><a href="#">Button &amp; List Page</a></li>
+                                    <li><a href="#">Typhography Page</a></li>
+                                    <li><a href="#">Testimonials Page</a></li>
+                                    <li><a href="#">Pricing Page</a></li>
+                                    <li><a href="#">FAQ Page</a></li>
+                                    <li><a href="#">Team Page</a></li>
+                                    <li><a href="#">Services Layout Alt</a></li>
+                                    <li><a href="#">Contact Layout Alt</a></li>
+                                    <li><a href="#">Sitemap Page</a></li>
+                                    <li><a href="#">Fullwidth Page</a></li>
+                                    <li><a href="#">404 Page</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="large-4 medium-4 tp-12 columns">
+                        <h3 class="heading-line"><span>Blog Archives</span></h3>
+                        <h5>Archives by Month</h5>
+                        <ul class="arrow">
+                            <li><a href="#">May 2012</a></li>
+                            <li><a href="#">June 2012</a></li>
+                            <li><a href="#">July 2012</a></li>
+                            <li><a href="#">August 2012</a></li>
+                        </ul>
+
+                        <h5>Archives by Category</h5>
+                        <ul class="arrow">
+                            <li><a href="#">Activeden</a></li>
+                            <li><a href="#">Audiojungle</a></li>
+                            <li><a href="#">Themeforest</a></li>
+                            <li><a href="#">Videohive</a></li>
+                            <li><a href="#">Graphicriver</a></li>
+                            <li><a href="#">3Docean</a></li>
+                            <li><a href="#">Codecanyon</a></li>
+                            <li><a href="#">Photodune</a></li>
+                        </ul>
+
+                        <h5>Archives by Tag</h5>
+                        <ul class="arrow">
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Architecture</a></li>
+                            <li><a href="#">Corporate Identity</a></li>
+                            <li><a href="#">Logo Reveal</a></li>
+                            <li><a href="#">Web Developement</a></li>
+                        </ul>
+
+                        <h5>Archives by Author</h5>
+                        <ul class="arrow">
+                            <li><a href="#">Admin</a></li>
+                            <li><a href="#">Veloz</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="large-4 medium-4 tp-12 columns">
+                        <h3 class="heading-line"><span>Latest 20 Posts</span></h3>
+                        <ul class="arrow">
+                            <li><a href="#">Build Your First Admin Bundle for Laravel</a></li>
+                            <li><a href="#">Apache: Aliasing and Redirection</a></li>
+                            <li><a href="#">Learning from Historic Web Archives</a></li>
+                            <li><a href="#">What to Expect From PHP 5.5</a></li>
+                            <li><a href="#">Publishers: Don't Restrict Writers</a></li>
+                            <li><a href="#">Build Your First Admin Bundle for Laravel</a></li>
+                            <li><a href="#">Polishing up Your Creative Process</a></li>
+                            <li><a href="#">Dependency Injection in PHP</a></li>
+                            <li><a href="#">Using Inline SVGs With HTML5</a></li>
+                            <li><a href="#">Testing JavaScript with PhantomJS</a></li>
+                            <li><a href="#">Typographic Readability and Legibility</a></li>
+                            <li><a href="#">Responsive Grids With Susy</a></li>
+                            <li><a href="#">The Latest Updates to jQuery Mobile</a></li>
+                            <li><a href="#">Build a Multi-Step Form Interface</a></li>
+                            <li><a href="#">An Introduction to Handlebars</a></li>
+                            <li><a href="#">Getting Started with Web Workers</a></li>
+                            <li><a href="#">A Simple Parallax Scrolling Technique</a></li>
+                            <li><a href="#">10 Great Prestashop 1.5 Themes</a></li>
+                            <li><a href="#">Build Your First JavaScript Library</a></li>
+                            <li><a href="#">Sublime Text 2 Project Bliss</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Content end here -->
+        </div>
+        <!-- Content wrapper and sticky menu trigger end here  -->
+    </div>
+
+</body>
+
+</html>
+
+<!-- <div class="row">
     <div class="small-4 columns">
         <h2>Username and level go here</h2>
         <%=  %>
@@ -32,4 +312,4 @@
       </div>
       </li>
     <% end %>
-  </ul>
+  </ul> -->
