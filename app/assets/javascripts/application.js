@@ -20,6 +20,7 @@
 $(document).foundation();
 $(document).ready(function() {
 
+// put these into different js files like user.js and goals.js etc.
 
   $('select.frequency-select').change(function() {
     var frequency_button = parseInt($(this).val());
@@ -56,8 +57,7 @@ $(document).ready(function() {
   });
 
 
-    var theTotal = 0;
-
+    var theTotal = $('#grand_total').attr('value')
   $('a.done').click(function(){
     theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
     var user_id = $(this).closest('li').find('.user_id').val();  // do I need the this here cuz its not closest to anything theres just one on page
