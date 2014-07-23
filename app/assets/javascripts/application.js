@@ -20,7 +20,7 @@
 $(document).foundation();
 $(document).ready(function() {
 
-// put these into different js files like user.js and goals.js etc.
+ // put these into different js files like user.js and goals.js etc.
 
   $('select.frequency-select').change(function() {
     var frequency_button = parseInt($(this).val());
@@ -32,9 +32,9 @@ $(document).ready(function() {
       goal: {
         frequency: frequency_button,
         weekly_points_goal: frequency_button*local_point_value
-      },
-    },function(goal){
-      console.log(goal);
+        },
+      },function(goal){
+        console.log(goal);
     });
   });
 
@@ -49,15 +49,32 @@ $(document).ready(function() {
       _method: 'patch',
       goal: {
         weekly_results: total,
-      },
-    },function(goal){
-      console.log(goal);
+        },
+      },function(goal){
+        console.log(goal);
     });
     return false;
   });
 
+      // psuedo for reset button
+      // when I click on the refresh button for THIS goal
+      // set the value of weekly results back to 0 and send this new value to db via ajax
+  $('a.refresh').click(function(){
+    var total = 0
+    $(this).closest('li').find('.weekly_results').text(total);
+    var goal_id = $(this).closest('li').find('.goal_id').val();
+    $.post('/clients/goals/' + goal_id, {
+      _method: 'patch',
+      goal: {
+        weekly_results: total,
+        },
+      },function(goal){
+        console.log(goal);
+    });
+    return false;
+  });
 
-    var theTotal = $('#grand_total').attr('value')
+  var theTotal = $('#grand_total').attr('value')
   $('a.done').click(function(){
     theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
     var user_id = $(this).closest('li').find('.user_id').val();  // do I need the this here cuz its not closest to anything theres just one on page
@@ -66,11 +83,12 @@ $(document).ready(function() {
         _method: 'patch',
         user: {
           grand_total: theTotal,
-        },
-      },function(user){
+          },
+        },function(user){
         console.log(user);
       });
-      return false;
-  });
+        return false;
+    });
       $('#grand_total').text("Your Grand Total: "+ theTotal);
+
 });
