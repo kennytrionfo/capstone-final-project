@@ -109,7 +109,7 @@
 		// 		alert("not Propagation");
 		// 		ev.stopPropagation();
 		// 	} );
-		// },
+		},
 		open : function() {
 			var self = this;
 			classie.add( this.el, 'form-search-open' );
