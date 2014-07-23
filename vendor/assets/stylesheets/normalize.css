@@ -315,6 +315,7 @@ input {
 button,
 select {
     text-transform: none;
+    width: 20%;
 }
 
 /**

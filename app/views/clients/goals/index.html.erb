@@ -67,14 +67,6 @@
                     <h1 class="h1-double">Get in touch</h1>
                     <h5 class="width80">Lorem ipsum dolor sit amet consectetur adipisicing elit tenetur minus perferendis animi eveniet quo ipsum totam neque maxime</h5>
                 </div>
-
-                <div class="large-12 columns">
-                    <div class="breadcrumb">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li class="current-page"><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </section>
@@ -97,21 +89,30 @@
 
             <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
               <% @goals.each do |goal| %>
-                <li class="card">
-                  <input type="hidden" class="goal_id" value="<%= goal.id %>">
-                  <div>
-                    <%= goal.category %>
-                  </div>
-                  <div><span class="point_value"><%= goal.point_value %></span> Value</div>
-                  <div>
-                    <h3>Time Per Week</h3>
-                    <%= select_tag(:frequency, options_for_select([1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %>
-                  </div>
-                  <div><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span> Weekly Goal</div>
-                  <div><span class="weekly_results"><%= goal.weekly_results %></span> Weekly Results</div>
-                  <div>
-                  <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
-                </div>
+                  <li class="card">
+                    <div class="row">
+                      <div class="small-6 columns">
+                        <input type="hidden" class="goal_id" value="<%= goal.id %>">
+                        <div>
+                          <%= goal.category %>
+                        </div>
+                      </div>
+                      <div class="small-6 columns">
+                        <div><span class="point_value"><%= goal.point_value %></span> Value</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-6 columns">
+                          <div><span class="per week"><%= select_tag(:frequency, options_for_select([1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span> Times per week</div>
+                      <div class="small-6 columns"><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span> Weekly Goal</div>
+                    </div>
+                    <div class="row">
+                      <div class="small-6 columns">
+                        <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
+                          <div><span class="weekly_results"><%= goal.weekly_results %></span> Weekly Results</div>
+                      </div>
+                        <div class="small-6 columns">graph goes here</div>
+                    </div>
                 </li>
               <% end %>
             </ul>
