@@ -1,11 +1,18 @@
   <div class="row">
       <div class="small-4 columns">
-          <h2>Put user's name here. </h2>
+        <div>
+          <h3>Welcome back <%= current_user.username %></h3>
+
+        </div>
       </div>
 
       <div class="small-8 columns">
-          <h2>Total points, titles/whatever goes here</h2>
+          <h3>Total points, titles/whatever goes here</h3>
       </div>
+  </div>
+
+  <div>
+  <a class="reset"> RESET</a>
   </div>
 
   <div style="text-align: center" id="grand_total" value="<%= @user.grand_total %>"></div>
@@ -28,7 +35,7 @@
         <div><span class="weekly_results"><%= goal.weekly_results %></span> Weekly Results</div>
         <div>
         <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
-      </div>
+        </div>
       </li>
     <% end %>
   </ul>
