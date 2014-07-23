@@ -1,41 +1,123 @@
-  <div class="row">
-      <div class="small-4 columns">
-        <div>
-          <h3>Welcome back <%= current_user.username %></h3>
+<!doctype html>
+<html class="no-js" lang="en">
 
-        </div>
-      </div>
+<body>
+    <div id="box-wrapper">
+      <!-- Header start here -->
+      <header id="header1" class="header">
+          <div class="row">
+              <div class="large-4 columns">
+                  <div id="logo">
+                      <a href="<%= root_path %>"><img src="assets/logo.png" alt="" class="retina" /></a>
+                  </div>
+              </div>
 
-      <div class="small-8 columns">
-          <h3>Total points, titles/whatever goes here</h3>
-      </div>
-  </div>
+              <div class="large-8 columns">
+                  <div id="navigation">
 
-  <div style="text-align: center" id="grand_total" value="<%= @user.grand_total %>"></div>
+                      <nav class="nav-menu">
+                          <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
 
-  <br>
-  <br>
+                          <ul class="nav">
+                            <li class="active dropdown"><a href="application.html">Home</a>
+                                  <ul>
+                                      <li><a href="index-layout2.html">Index Layout 2</a></li>
+                                  </ul>
+                              </li>
+                              <li class="dropdown"><a href="#">Pages</a>
+                                  <ul>
+                                      <li><a href="about.html">About Layout 1</a></li>
+                                  </ul>
+                              </li>
+                                <li>
+                                  <% if user_signed_in? %>
+                                  <% else %>
+                                  <%= link_to "Sign Up", new_user_registration_path %>
+                                  <% end %>
+                                <li>
+                                  <% if user_signed_in? %>
+                                  <%= link_to('Dashboard', clients_path) %>
+                                    <li class="has-dropdown">
+                                      <a>Account</a>
+                                      <ul class="dropdown">
+                                        <li>
+                                          <%= link_to('Settings', edit_user_registration_path) %>
+                                          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+                                        </li>
+                                      </ul>
+                                      <% else %>
+                                        <%= link_to('Login', new_user_session_path) %>
+                                      <% end %>
+                                    </li>
+                                </li>
+                              <li><a href="blog.html">Blog</a></li>
+                              <li><a href="contact.html">Contact</a>
+                              </li>
+                          </ul>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </header>
+      <!-- Header end here -->
+        <!-- Page title start here -->
+        <section id="pagetitle-wrapper" class="parallax">
+            <div class="row">
+                <div class="large-9 large-offset-3 columns">
+                    <h1 class="h1-double">Get in touch</h1>
+                    <h5 class="width80">Lorem ipsum dolor sit amet consectetur adipisicing elit tenetur minus perferendis animi eveniet quo ipsum totam neque maxime</h5>
+                </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page title end here -->
+        <!-- Content wrapper and sticky menu trigger here  -->
+        <div id="content-wrapper">
+          <div class="row">
+              <div class="small-4 columns">
+                  <h2>Username and level go here</h2>
+                  <%=  %>
+              </div>
+              <div class="small-8 columns">
+                  <h2>Total points, titles/whatever goes here</h2>
+                  <div style="text-align: center" class="total"></div>
+              </div>
+          </div>
+            <br>
+            <br>
 
-  <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
-    <% @goals.each do |goal| %>
-      <li class="card">
-        <input type="hidden" class="goal_id" value="<%= goal.id %>">
-        <input type="hidden" class="user_id" value="<%= @user.id %>">
-        <div><%= goal.category %></div>
-        <div><span class="point_value"><%= goal.point_value %></span> Value</div>
-        <div>
-          <h3>Time Per Week</h3>
-          <!-- Add "No goal set" to the frequency button and make it the default. -->
-          <%= select_tag(:frequency, options_for_select([1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %>
-        </div>
-        <div><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span> Weekly Goal</div>
-        <div><span class="weekly_results"><%= goal.weekly_results %></span> Weekly Results</div>
-        <div>
-        <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
-        </div>
-        <div>
-        <a class="refresh"> Refresh</a>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+
+            <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+              <% @goals.each do |goal| %>
+                  <li class="card">
+                    <div class="row">
+                      <div class="small-6 columns">
+                        <input type="hidden" class="goal_id" value="<%= goal.id %>">
+                        <div>
+                          <%= goal.category %>
+                        </div>
+                      </div>
+                      <div class="small-6 columns">
+                        <div><span class="point_value"><%= goal.point_value %></span> Value</div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-6 columns">
+                          <div><span class="per week"><%= select_tag(:frequency, options_for_select([1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span> Times per week</div>
+                      <div class="small-6 columns"><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span> Weekly Goal</div>
+                    </div>
+                    <div class="row">
+                      <div class="small-6 columns">
+                        <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
+                          <div><span class="weekly_results"><%= goal.weekly_results %></span> Weekly Results</div>
+                      </div>
+                        <div class="small-6 columns">graph goes here</div>
+                    </div>
+                </li>
+              <% end %>
+            </ul>
+    </div>
+
+</body>
+
+</html>

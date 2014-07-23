@@ -1,25 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title>Eco-Mojo</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+
+        <!-- ////////////////////////////////// -->
+        <!-- //     Retina Bookmark Icon     // -->
+        <!-- ////////////////////////////////// -->
+        <link rel="apple-touch-icon-precomposed" href="assets/apple-icon.png" />
+
+        <!-- ////////////////////////////////// -->
+        <!-- //      Stylesheets Files       // -->
+        <!-- ////////////////////////////////// -->
+        <link rel="stylesheet" href="assets/foundation.css.scss" />
+        <link rel="stylesheet" href="assets/prodigy-responsive.css.scss" />
+        <link rel="stylesheet" href="assets/style.css.scss" />
+
+        <!-- css plugin here  -->
+        <!-- no css plugin  -->
+
+        <!-- ////////////////////////////////// -->
+        <!-- //     Google Webfont Files     // -->
+        <!-- ////////////////////////////////// -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+        <!-- ////////////////////////////////// -->
+        <!-- //        Favicon Files         // -->
+        <!-- ////////////////////////////////// -->
+        <link rel="shortcut icon" href="assets/favicon.ico" />
   </head>
 
   <body>
-    <header>
-     <%= render "layouts/navigation" %>
-    </header>
-    <div class='row'>
-      <%= yield %>
-    </div>
-    <%= javascript_include_tag "application" %>
-    <footer>
-      copyright &copy; <%= Time.now.year %>
-    </footer>
-  </body>
+    <%= yield %>
+<footer id="footer1">
+      <div class="row">
+          <div class="large-4 medium-6 columns hide-for-small-only">
+              <a href="#" class="button large round white gap-top8">Ready to get started?</a>
+              <p class="gap-left8">You can also call 123.456.7899 or <a href="mailto:hello@prodigystudio.net">email us</a>.</p>
+          </div>
+
+          <div class="large-8 medium-6 columns text">
+              <div class="footer-socials right">
+                  <ul class="share-social no-bullet">
+                      <li data-tooltip class="has-tip tip-top fb-color" title="Share to Facebook">
+                          <a href="#">
+                              <i class="social-facebook"></i>
+                          </a>
+                      </li>
+                      <li data-tooltip class="has-tip tip-top tw-color" title="Share to Twitter">
+                          <a href="#">
+                              <i class="social-twitter"></i>
+                          </a>
+                      </li>
+                      <li data-tooltip class="has-tip tip-top gplus-color" title="Share to Google+">
+                          <a href="#">
+                              <i class="social-googleplus"></i>
+                          </a>
+                      </li>
+                      <li data-tooltip class="has-tip tip-top drb-color" title="Share to Dribbble">
+                          <a href="#">
+                              <i class="social-dribbble"></i>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+
+              <div class="footer-menu">
+                  <ul class="no-bullet right">
+                      <li><a href="#">Work</a></li>
+                      <li><a href="#">Approach</a></li>
+                      <li><a href="#">Team</a></li>
+                      <li><a href="#">Contact</a></li>
+                      <li><a href="#">Blog</a></li>
+                  </ul>
+              </div>
+
+              <div class="right">
+                  <p>&copy; 2014 . Proudly Producing from Indonesia</p>
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!-- Footer end here -->
+  </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>
 </html>

@@ -1,1 +1,165 @@
-<h1>We'd love to hear from you!</h1>
+<!doctype html>
+<html class="no-js" lang="en">
+
+<body>
+    <div id="box-wrapper">
+      <!-- Header start here -->
+      <header id="header1" class="header">
+          <div class="row">
+              <div class="large-4 columns">
+                  <div id="logo">
+                      <a href="<%= root_path %>"><img src="assets/logo.png" alt="" class="retina" /></a>
+                  </div>
+              </div>
+
+              <div class="large-8 columns">
+                  <div id="navigation">
+
+                      <nav class="nav-menu">
+                          <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
+
+                          <ul class="nav">
+                            <li class="active dropdown"><a href="application.html">Home</a>
+                                  <ul>
+                                      <li><a href="index-layout2.html">Index Layout 2</a></li>
+                                  </ul>
+                              </li>
+                              <li class="dropdown"><a href="#">Pages</a>
+                                  <ul>
+                                      <li><a href="about.html">About Layout 1</a></li>
+                                  </ul>
+                              </li>
+                                <li>
+                                  <% if user_signed_in? %>
+                                  <% else %>
+                                  <%= link_to "Sign Up", new_user_registration_path %>
+                                  <% end %>
+                                <li>
+                                  <% if user_signed_in? %>
+                                  <%= link_to('Dashboard', clients_path) %>
+                                    <li class="has-dropdown">
+                                      <a>Account</a>
+                                      <ul class="dropdown">
+                                        <li>
+                                          <%= link_to('Settings', edit_user_registration_path) %>
+                                          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+                                        </li>
+                                      </ul>
+                                      <% else %>
+                                        <%= link_to('Login', new_user_session_path) %>
+                                      <% end %>
+                                    </li>
+                                </li>
+                              <li><a href="blog.html">Blog</a></li>
+                              <li><a href="contact.html">Contact</a>
+                              </li>
+                          </ul>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </header>
+      <!-- Header end here -->
+        <!-- Page title start here -->
+        <section id="pagetitle-wrapper" class="parallax">
+            <div class="row">
+                <div class="large-9 large-offset-3 columns">
+                    <h1 class="h1-double">Get in touch</h1>
+                    <h5 class="width80">Lorem ipsum dolor sit amet consectetur adipisicing elit tenetur minus perferendis animi eveniet quo ipsum totam neque maxime</h5>
+                </div>
+
+                <div class="large-12 columns">
+                    <div class="breadcrumb">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="current-page"><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page title end here -->
+
+        <!-- Content wrapper and sticky menu trigger here  -->
+        <div id="content-wrapper">
+            <!-- Content start here -->
+            <section class="content">
+                <div class="row">
+                    <div class="large-6 medium-6 tp-12 columns gap-top12  triggerAnimation animated" data-animate="fadeInLeft">
+                        <div id="map2"></div>
+                    </div>
+
+                    <div class="large-6 medium-6 tp-12 columns  triggerAnimation animated" data-animate="fadeInDown">
+                        <h3>We'd love to hear from you!</h3>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+
+                        <div class="contactform-area2">
+                            <form action="#" id="contactform">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="large-12 columns">
+                                            <label for="name"><span>Username</span></label>
+                                            <input type="text" name="name" id="name" placeholder="Username" />
+                                        </div>
+
+                                        <div class="large-12 columns">
+                                            <label for="email"><span>Email</span></label>
+                                            <input type="email" name="email" id="email" placeholder="Email here" />
+                                        </div>
+
+                                        <div class="large-12 columns">
+                                            <label for="subject"><span>Subject</span></label>
+                                            <input type="text" name="subject" id="subject" placeholder="Subject here" />
+                                        </div>
+
+                                        <div class="large-12 columns">
+                                            <label for="message"><span>Message</span></label>
+                                            <textarea id="message" name="message" placeholder="Leave your message here." style="height: 100px;"></textarea>
+
+                                            <button type="submit" class="small round green" id="buttonsend">Send Message</button>
+                                            <span class="loading" style="display: none;">Please wait..</span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="large-12 columns gap-top12 gap-bottom25">
+                        <hr/>
+                    </div>
+
+                    <div class="large-4 medium-4 tp-12 columns triggerAnimation animated" data-animate="fadeInLeft">
+                        <div class="circle-border small icon-left">
+                            <i class="icon-alarm"></i>
+                        </div>
+                        <h4>Office Hours</h4>
+                        <p class="text-overflow">Monday to Friday / 7:00 - 18:00<br/>Saturday / 9:00 - 15:00</p>
+                    </div>
+
+                    <div class="large-4 medium-4 tp-12 columns triggerAnimation animated" data-animate="fadeInUp">
+                        <div class="circle-border small icon-left">
+                            <i class="icon-office-building"></i>
+                        </div>
+                        <h4>Reva Address</h4>
+                        <p class="text-overflow">Cost Avenue. Silver Spring<br/>Jacko City, MD 20910, Indonesia</p>
+                    </div>
+
+                    <div class="large-4 medium-4 tp-12 columns triggerAnimation animated" data-animate="fadeInRight">
+                        <div class="circle-border small icon-left">
+                            <i class="icon-envelope"></i>
+                        </div>
+                        <h4>Contact Info</h4>
+                        <p class="text-overflow">Phone : (111) 234 5678<br/>Email : you@companyname.com</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Content end here -->
+        </div>
+        <!-- Content wrapper and sticky menu trigger end here  -->
+    </div>
+
+
+</body>
+
+</html>
