@@ -223,9 +223,9 @@ var Prodigy = function () {
     /*------------------------------------------------------------------------------*/
     /*  7. Seacrh Expanding
      *------------------------------------------------------------------------------*/
-    var seacrhExpandHandle = function () {
-        new UISearch(document.getElementById( 'form-search' ));
-    };
+    // var seacrhExpandHandle = function () {
+    //     new UISearch(document.getElementById( 'form-search' ));
+    // };
 
     /*------------------------------------------------------------------------------*/
     /*  8. Parallax Background
@@ -479,7 +479,7 @@ var Prodigy = function () {
             fancyboxHandle();
             progressBarDonutChartHandle();
             retinaImageHandle();
-            seacrhExpandHandle();
+            // seacrhExpandHandle();
             menuHandle();
             parallaxbgHandle();
             touchHandle();
