@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   namespace :clients do
     get '/' => 'goals#index'
+    get '/' => 'users#update'
     resources :goals
+    resources :users
   end
 
 end

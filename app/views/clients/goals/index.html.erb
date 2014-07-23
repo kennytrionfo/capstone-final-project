@@ -1,35 +1,41 @@
+  <div class="row">
+      <div class="small-4 columns">
+        <div>
+          <h3>Welcome back <%= current_user.username %></h3>
 
-<div class="row">
-    <div class="small-4 columns">
-        <h2>Username and level go here</h2>
-        <%=  %>
-    </div>
-    <div class="small-8 columns">
-        <h2>Total points, titles/whatever goes here</h2>
-        <div style="text-align: center" class="total"></div>
-    </div>
-</div>
+        </div>
+      </div>
+
+      <div class="small-8 columns">
+          <h3>Total points, titles/whatever goes here</h3>
+      </div>
+  </div>
+
+  <div style="text-align: center" id="grand_total" value="<%= @user.grand_total %>"></div>
+
   <br>
   <br>
-
 
   <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
     <% @goals.each do |goal| %>
       <li class="card">
         <input type="hidden" class="goal_id" value="<%= goal.id %>">
-        <div>
-          <%= goal.category %>
-        </div>
+        <input type="hidden" class="user_id" value="<%= @user.id %>">
+        <div><%= goal.category %></div>
         <div><span class="point_value"><%= goal.point_value %></span> Value</div>
         <div>
           <h3>Time Per Week</h3>
+          <!-- Add "No goal set" to the frequency button and make it the default. -->
           <%= select_tag(:frequency, options_for_select([1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %>
         </div>
         <div><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span> Weekly Goal</div>
         <div><span class="weekly_results"><%= goal.weekly_results %></span> Weekly Results</div>
         <div>
         <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
-      </div>
+        </div>
+        <div>
+        <a class="refresh"> Refresh</a>
+        </div>
       </li>
     <% end %>
   </ul>

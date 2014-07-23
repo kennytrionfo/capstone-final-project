@@ -1,8 +1,8 @@
 class Clients::GoalsController < Clients::BaseController
 
   def index
-    user = User.find(current_user.id)
-    @goals = user.goals.all
+    @user = User.find(current_user.id)
+    @goals = @user.goals.all
   end
 
   def show
@@ -18,14 +18,13 @@ class Clients::GoalsController < Clients::BaseController
   # JSON API
   def update
     goal = Goal.find params[:id]
-
     if goal.update(goal_params)
       render json: goal, status: 200
     else
       render json: goal.errors.full_messages, status: 422
     end
   end
-
+  
   def destroy
   end
 
@@ -33,7 +32,7 @@ class Clients::GoalsController < Clients::BaseController
   private
 
   def goal_params
-    params.require(:goal).permit(:frequency)
-    # this returns something like this: {frequency: 10}
+    params.require(:goal).permit(:frequency, :weekly_points_goal, :weekly_results,)
   end
+
 end

@@ -14,14 +14,13 @@
 //= require jquery_ujs
 //= require foundation
 //= require goals
-//= require cocoon
 //= require_tree .
-//= require formnestic/formnestic.js
 //= require_self
 
 $(document).foundation();
 $(document).ready(function() {
 
+ // put these into different js files like user.js and goals.js etc.
 
   $('select.frequency-select').change(function() {
     var frequency_button = parseInt($(this).val());
@@ -30,9 +29,12 @@ $(document).ready(function() {
     var goal_id = $(this).closest('li').find('.goal_id').val();
     $.post('/clients/goals/' + goal_id, {
       _method: 'patch',
-      goal: {frequency: frequency_button}
-    },function(goal){
-      console.log(goal);
+      goal: {
+        frequency: frequency_button,
+        weekly_points_goal: frequency_button*local_point_value
+        },
+      },function(goal){
+        console.log(goal);
     });
   });
 
@@ -42,15 +44,51 @@ $(document).ready(function() {
     var point_value = parseInt($(this).closest('li').find('.point_value').text(), 10);
     var total = weekly_results + point_value;
     $(this).closest('li').find('.weekly_results').text(total);
+    var goal_id = $(this).closest('li').find('.goal_id').val();
+    $.post('/clients/goals/' + goal_id, {
+      _method: 'patch',
+      goal: {
+        weekly_results: total,
+        },
+      },function(goal){
+        console.log(goal);
+    });
     return false;
   });
 
+      // psuedo for reset button
+      // when I click on the refresh button for THIS goal
+      // set the value of weekly results back to 0 and send this new value to db via ajax
+  $('a.refresh').click(function(){
+    var total = 0
+    $(this).closest('li').find('.weekly_results').text(total);
+    var goal_id = $(this).closest('li').find('.goal_id').val();
+    $.post('/clients/goals/' + goal_id, {
+      _method: 'patch',
+      goal: {
+        weekly_results: total,
+        },
+      },function(goal){
+        console.log(goal);
+    });
+    return false;
+  });
 
-  var theTotal = 0;
+  var theTotal = $('#grand_total').attr('value')
   $('a.done').click(function(){
     theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
-    $('.total').text("Your Grand Total: "+theTotal);
-  });
-      $('.total').text("Your Grand Total: "+theTotal);
+    var user_id = $(this).closest('li').find('.user_id').val();  // do I need the this here cuz its not closest to anything theres just one on page
+    $('#grand_total').text("Your Grand Total: "+ theTotal);
+      $.post('/clients/users/' + user_id, {
+        _method: 'patch',
+        user: {
+          grand_total: theTotal,
+          },
+        },function(user){
+        console.log(user);
+      });
+        return false;
+    });
+      $('#grand_total').text("Your Grand Total: "+ theTotal);
 
 });
