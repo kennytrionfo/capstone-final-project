@@ -35,7 +35,6 @@
 //= require prodigy
 //= require jquery_ujs
 //= require goals
-//= require_tree .
 //= require_self
 
 $(document).foundation();

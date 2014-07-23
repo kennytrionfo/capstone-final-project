@@ -5,11 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eco-Mojo</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+        <!-- ////////////////////////////////// -->
+        <!-- //     Retina Bookmark Icon     // -->
+        <!-- ////////////////////////////////// -->
+        <link rel="apple-touch-icon-precomposed" href="assets/apple-icon.png" />
+
+        <!-- ////////////////////////////////// -->
+        <!-- //      Stylesheets Files       // -->
+        <!-- ////////////////////////////////// -->
+        <link rel="stylesheet" href="assets/foundation.css.scss" />
+        <link rel="stylesheet" href="assets/prodigy-responsive.css.scss" />
+        <link rel="stylesheet" href="assets/style.css.scss" />
+
+        <!-- css plugin here  -->
+        <!-- no css plugin  -->
+
+        <!-- ////////////////////////////////// -->
+        <!-- //     Google Webfont Files     // -->
+        <!-- ////////////////////////////////// -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+        <!-- ////////////////////////////////// -->
+        <!-- //        Favicon Files         // -->
+        <!-- ////////////////////////////////// -->
+        <link rel="shortcut icon" href="assets/favicon.ico" />
   </head>
 
   <body>
+    <header>
+     <%= render "layouts/navigation" %>
+    </header>
     <%= yield %>
 <footer id="footer1">
       <div class="row">
@@ -62,30 +90,6 @@
   </footer>
   <!-- Footer end here -->
   </div>
-      <script src="assets/jquery.js"></script>
-      <script src="assets/modernizr.js"></script>
-      <script src="assets/foundation.js"></script>
-      <script src="assets/responsivetabs.js"></script>
-      <script src="assets/fancybox.js"></script>
-      <script src="assets/fancybox-media.js"></script>
-      <script src="assets/donutchart.js"></script>
-      <script src="assets/waypoints.js"></script>
-      <script src="assets/accordion.js"></script>
-      <script src="assets/retina.js"></script>
-      <script src="assets/classie.js"></script>
-      <script src="assets/uisearch.js"></script>
-      <script src="assets/sticky.js"></script>
-      <script src="assets/sscr.js"></script>
-      <script src="assets/parallax.js"></script>
-
-      <!-- Javascript plugin here  -->
-      <script src="assets/countTo.js"></script>
-      <script src="assets/contact-form.js"></script>
-      <script src="assets/scrollUp.js"></script>
-      <script src="assets/themepunch.js"></script>
-      <script src="assets/themepunch-revolution.js"></script>
-      <script src="assets/carousel.js"></script>
-      <!-- Javascript initialize here  -->
-      <script src="assets/prodigy.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
