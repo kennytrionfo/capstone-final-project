@@ -7,15 +7,15 @@
     Prodigy Studio. Copyright © 2014. All Rights Reserved.
 ------------------------------------------------------------------------------------*/
 
-@import url('normalize.css');
+@import 'normalize';
 
 /* reva import css */
-@import url("animate.css");
-@import url("whhg.css");
-@import url("entyposocials.css");
-@import url("prodigy-component.css");
-@import url("responsivetabs.css");
-@import url("carousel.css");
+@import "animate";
+@import "whhg";
+@import "entyposocials";
+@import "prodigy-component";
+@import "responsivetabs";
+@import "carousel";
 
 /*----------------------------------------------------
                    Reva - CSS File
