@@ -33,7 +33,6 @@
 //= require carousel
 //= require prodigy
 //= require jquery_ujs
-//= require goals
 //= require_self
 
 $(document).foundation();
@@ -76,7 +75,6 @@ $(document).ready(function() {
             fullWidth:"on"                          // Turns On or Off the Fullwidth Image Centering in FullWidth Modus
         });
 
- // put these into different js files like user.js and goals.js etc.
 
   $('select.frequency-select').change(function() {
     var frequency_button = parseInt($(this).val());
