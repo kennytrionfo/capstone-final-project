@@ -54,6 +54,5 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'foundation-rails', '~> 5.3.0.1'
 gem 'font-awesome-sass'
 gem 'devise'

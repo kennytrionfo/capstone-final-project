@@ -13,16 +13,6 @@
         <link rel="apple-touch-icon-precomposed" href="assets/apple-icon.png" />
 
         <!-- ////////////////////////////////// -->
-        <!-- //      Stylesheets Files       // -->
-        <!-- ////////////////////////////////// -->
-        <link rel="stylesheet" href="assets/foundation.css.scss" />
-        <link rel="stylesheet" href="assets/prodigy-responsive.css.scss" />
-        <link rel="stylesheet" href="assets/style.css.scss" />
-
-        <!-- css plugin here  -->
-        <!-- no css plugin  -->
-
-        <!-- ////////////////////////////////// -->
         <!-- //     Google Webfont Files     // -->
         <!-- ////////////////////////////////// -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela">
@@ -34,9 +24,10 @@
         <link rel="shortcut icon" href="assets/favicon.ico" />
   </head>
 
-    <%= yield %>
-<footer id="footer1">
-      <div class="row">
+  <body>
+    <main><%= yield %></main>
+      <footer id="footer1">
+        <div class="row">
           <div class="large-4 medium-6 columns hide-for-small-only">
               <a href="#" class="button large round white gap-top8">Ready to get started?</a>
               <p class="gap-left8">You can also call 123.456.7899 or <a href="mailto:hello@prodigystudio.net">email us</a>.</p>
@@ -83,8 +74,8 @@
               </div>
           </div>
       </div>
-  </footer>
+    </footer>
   <!-- Footer end here -->
-  </div>
+  </body>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </html>
