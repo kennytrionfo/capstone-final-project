@@ -73,20 +73,23 @@
         <!-- Page title end here -->
         <!-- Content wrapper and sticky menu trigger here  -->
         <div id="content-wrapper">
-          <div class="row">
-              <div class="small-4 columns">
-                  <h2>Username and level go here</h2>
-                  <%=  %>
-              </div>
-              <div class="small-8 columns">
-                  <h2>Total points, titles/whatever goes here</h2>
-                  <div style="text-align: center" class="total"></div>
-              </div>
-          </div>
-            <br>
-            <br>
+        <div class="row">
+            <div class="small-4 columns">
+              <div>
+                <h3>Welcome back <%= current_user.username %></h3>
 
+              </div>
+            </div>
 
+            <div class="small-8 columns">
+                <h3>Total points, titles/whatever goes here</h3>
+            </div>
+        </div>
+
+        <div style="text-align: center" id="grand_total" value="<%= @user.grand_total %>"></div>
+
+  <br>
+  <br>
             <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
               <% @goals.each do |goal| %>
                   <li class="card">
@@ -113,6 +116,9 @@
                       </div>
                         <div class="small-6 columns">graph goes here</div>
                     </div>
+                      <div>
+                        <a class="refresh"> Refresh</a>
+                      </div>
                 </li>
               <% end %>
             </ul>
