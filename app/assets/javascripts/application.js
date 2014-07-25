@@ -110,9 +110,6 @@ $(document).ready(function() {
     return false;
   });
 
-      // psuedo for reset button
-      // when I click on the refresh button for THIS goal
-      // set the value of weekly results back to 0 and send this new value to db via ajax
   $('a.refresh').click(function(){
     var total = 0
     $(this).closest('li').find('.weekly_results').text(total);
@@ -131,7 +128,7 @@ $(document).ready(function() {
   var theTotal = $('#grand_total').attr('value')
   $('a.done').click(function(){
     theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
-    var user_id = $(this).closest('li').find('.user_id').val();  // do I need the this here cuz its not closest to anything theres just one on page
+    var user_id = $('.user_id').val();  // do I need the this here cuz its not closest to anything theres just one on page
     $('#grand_total').text("Your Grand Total: "+ theTotal);
       $.post('/clients/users/' + user_id, {
         _method: 'patch',
