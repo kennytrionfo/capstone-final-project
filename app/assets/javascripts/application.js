@@ -38,6 +38,7 @@
 $(document).foundation();
 
 $(document).ready(function() {
+  display_badges();
 // for the home page
         // Initialization Handle
         Prodigy.init();
@@ -79,7 +80,7 @@ $(document).ready(function() {
   $('select.frequency-select').change(function() {
     var frequency_button = parseInt($(this).val());
     var local_point_value = parseInt($(this).closest('li').find('.point_value').text());
-    parseInt($(this).closest('li').find('.weekly_goal').text(frequency_button*local_point_value));
+  parseInt($(this).closest('li').find('.weekly_goal').text(frequency_button*local_point_value));
     var goal_id = $(this).closest('li').find('.goal_id').val();
     $.post('/clients/goals/' + goal_id, {
       _method: 'patch',
@@ -88,11 +89,11 @@ $(document).ready(function() {
         weekly_points_goal: frequency_button*local_point_value
         },
       },function(goal){
-        console.log(goal);
+
     });
   });
 
-
+  var theTotal = $('#grand_total').attr('value');
   $('a.done').click(function(){
     var weekly_results = parseInt($(this).closest('li').find('.weekly_results').text(), 10);
     var point_value = parseInt($(this).closest('li').find('.point_value').text(), 10);
@@ -105,10 +106,24 @@ $(document).ready(function() {
         weekly_results: total,
         },
       },function(goal){
-        console.log(goal);
+
+    });
+
+    theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
+    var user_id = $('.user_id').val();
+    $('#grand_total').text("Your Grand Total: "+ theTotal);
+    $('#grand_total').attr('value', theTotal);
+    $.post('/clients/users/' + user_id, {
+      _method: 'patch',
+      user: {
+        grand_total: theTotal,
+      },
+    },function(user){
+        display_badges();
     });
     return false;
   });
+  $('#grand_total').text("Your Grand Total: "+ theTotal);
 
   $('a.refresh').click(function(){
     var total = 0
@@ -120,110 +135,82 @@ $(document).ready(function() {
         weekly_results: total,
         },
       },function(goal){
-        console.log(goal);
     });
     return false;
   });
 
-  var theTotal = $('#grand_total').attr('value')
-  $('a.done').click(function(){
-    theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
-
-    if (theTotal > 499) {
-      $('#five').css({
-        'opacity': 1.0
-        });
-      $('#four').css({
-        'opacity': 1.0
-        });
-      $('#three').css({
-        'opacity': 1.0
-        });
-      $('#two').css({
-        'opacity': 1.0
-        });
-      $('#one').css({
-        'opacity': 1.0
-        });
-      } else if (theTotal > 399){
-      $('#four').css({
-        'opacity': 1.0
-        });
-      $('#three').css({
-        'opacity': 1.0
-        });
-      $('#two').css({
-        'opacity': 1.0
-        });
-      $('#one').css({
-        'opacity': 1.0
-        });
-      } else if (theTotal > 299){
-      $('#three').css({
-        'opacity': 1.0
-        });
-      $('#two').css({
-        'opacity': 1.0
-        });
-      $('#one').css({
-        'opacity': 1.0
-        });
-      } else if (theTotal > 199){
-      $('#two').css({
-        'opacity': 1.0
-        });
-      $('#one').css({
-        'opacity': 1.0
-        });
-      } else if (theTotal > 99){
-      $('#one').css({
-        'opacity': 1.0
-        });
-      }
-
-
-    var user_id = $('.user_id').val();  // do I need the this here cuz its not closest to anything theres just one on page
-    $('#grand_total').text("Your Grand Total: "+ theTotal);
-      $.post('/clients/users/' + user_id, {
-        _method: 'patch',
-        user: {
-          grand_total: theTotal,
-          },
-        },function(user){
-        console.log(user);
-      });
-        return false;
-    });
-      $('#grand_total').text("Your Grand Total: "+ theTotal);
+  // var theTotal = $('#grand_total').attr('value')
+  // $('a.done').click(function(){
+  //   theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
+  //   var user_id = $('.user_id').val();
+  //   $('#grand_total').text("Your Grand Total: "+ theTotal);
+  //     $.post('/clients/users/' + user_id, {
+  //       _method: 'patch',
+  //       user: {
+  //         grand_total: theTotal,
+  //         },
+  //       },function(user){
+  //       console.log(user);
+  //     });
+  //       return false;
+  //   });
+      // $('#grand_total').text("Your Grand Total: "+ theTotal);
       // why does the grandtotal disappear on page when this line is gone?
 
-
-
-
-
-
-
-      // switch (theTotal   ) {
-      //   case "100":
-      //     $('#one').css({
-      //       'opacity': 1.0
-      //       });
-        // case "200":
-        //   $('#two').css({
-        //     'opacity': 1.0
-        //     });
-        // case "300":
-        //   $('#three').css({
-        //     'opacity': 1.0
-        //     });
-        // case "400":
-        //   $('#four').css({
-        //     'opacity': 1.0
-        //     });
-        // case "500":
-        //   $('#five').css({
-        //     'opacity': 1.0
-        //     });
-
-
 });
+
+
+function display_badges() {
+  var theTotal = $('#grand_total').attr('value');
+  if (theTotal > 499) {
+    $('#five').css({
+      'opacity': 1.0
+      });
+    $('#four').css({
+      'opacity': 1.0
+      });
+    $('#three').css({
+      'opacity': 1.0
+      });
+    $('#two').css({
+      'opacity': 1.0
+      });
+    $('#one').css({
+      'opacity': 1.0
+      });
+    } else if (theTotal > 399){
+    $('#four').css({
+      'opacity': 1.0
+      });
+    $('#three').css({
+      'opacity': 1.0
+      });
+    $('#two').css({
+      'opacity': 1.0
+      });
+    $('#one').css({
+      'opacity': 1.0
+      });
+    } else if (theTotal > 299){
+    $('#three').css({
+      'opacity': 1.0
+      });
+    $('#two').css({
+      'opacity': 1.0
+      });
+    $('#one').css({
+      'opacity': 1.0
+      });
+    } else if (theTotal > 199){
+    $('#two').css({
+      'opacity': 1.0
+      });
+    $('#one').css({
+      'opacity': 1.0
+      });
+    } else if (theTotal > 99){
+    $('#one').css({
+      'opacity': 1.0
+      });
+    }
+  }
