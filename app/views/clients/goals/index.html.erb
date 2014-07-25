@@ -82,13 +82,28 @@
             </div>
 
             <div class="small-8 columns">
-                <h3>Total points, titles/whatever goes here</h3>
                 <!-- kenny, badges go here mofo -->
+  <!-- Lisa said for image tags to work on heroku do this: <%= image_tag('logo.png') %> -->
+                <span id="one" style="opacity: 0.2">
+                  <img src="assets/badges/1.png" alt="1st badge" height="100" width="115" >
+                </span>
+                <span id="two" style="opacity: 0.2">
+                  <img src="assets/badges/2.png" alt="2nd badge" height="100" width="115" >
+                </span>
+                <span id="three" style="opacity: 0.2">
+                  <img src="assets/badges/3.png" alt="3rd badge" height="100" width="115" >
+                </span>
+                <span id="four" style="opacity: 0.2">
+                  <img src="assets/badges/4.png" alt="4th badge" height="100" width="115" >
+                </span>
+                <span id="five" style="opacity: 0.2">
+                  <img src="assets/badges/5.png" alt="5th badge" height="100" width="115" >
+                </span>
+
                 <div style="text-align: center" id="grand_total" value="<%= @user.grand_total %>"></div>
             </div>
         </div>
 
-  <br>
   <br>
             <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
               <% @goals.each do |goal| %>

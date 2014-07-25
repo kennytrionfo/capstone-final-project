@@ -128,6 +128,60 @@ $(document).ready(function() {
   var theTotal = $('#grand_total').attr('value')
   $('a.done').click(function(){
     theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
+
+    if (theTotal > 499) {
+      $('#five').css({
+        'opacity': 1.0
+        });
+      $('#four').css({
+        'opacity': 1.0
+        });
+      $('#three').css({
+        'opacity': 1.0
+        });
+      $('#two').css({
+        'opacity': 1.0
+        });
+      $('#one').css({
+        'opacity': 1.0
+        });
+      } else if (theTotal > 399){
+      $('#four').css({
+        'opacity': 1.0
+        });
+      $('#three').css({
+        'opacity': 1.0
+        });
+      $('#two').css({
+        'opacity': 1.0
+        });
+      $('#one').css({
+        'opacity': 1.0
+        });
+      } else if (theTotal > 299){
+      $('#three').css({
+        'opacity': 1.0
+        });
+      $('#two').css({
+        'opacity': 1.0
+        });
+      $('#one').css({
+        'opacity': 1.0
+        });
+      } else if (theTotal > 199){
+      $('#two').css({
+        'opacity': 1.0
+        });
+      $('#one').css({
+        'opacity': 1.0
+        });
+      } else if (theTotal > 99){
+      $('#one').css({
+        'opacity': 1.0
+        });
+      }
+
+
     var user_id = $('.user_id').val();  // do I need the this here cuz its not closest to anything theres just one on page
     $('#grand_total').text("Your Grand Total: "+ theTotal);
       $.post('/clients/users/' + user_id, {
@@ -141,5 +195,35 @@ $(document).ready(function() {
         return false;
     });
       $('#grand_total').text("Your Grand Total: "+ theTotal);
+      // why does the grandtotal disappear on page when this line is gone?
+
+
+
+
+
+
+
+      // switch (theTotal   ) {
+      //   case "100":
+      //     $('#one').css({
+      //       'opacity': 1.0
+      //       });
+        // case "200":
+        //   $('#two').css({
+        //     'opacity': 1.0
+        //     });
+        // case "300":
+        //   $('#three').css({
+        //     'opacity': 1.0
+        //     });
+        // case "400":
+        //   $('#four').css({
+        //     'opacity': 1.0
+        //     });
+        // case "500":
+        //   $('#five').css({
+        //     'opacity': 1.0
+        //     });
+
 
 });

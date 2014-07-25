@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   def give_goals_to_user
       self.goals.create(category: "I used my own bags at the  store.", point_value: 20, frequency: 1, weekly_points_goal: 0, weekly_results: 0)
-      self.goals.create(category: "I carpooled.", point_value: 50, frequency: 1, weekly_points_goal: 0, weekly_results: 0)
+      self.goals.create(category: "I carpooled.", point_value: 100, frequency: 1, weekly_points_goal: 0, weekly_results: 0)
       self.goals.create(category: "I recycled something.", point_value: 10, frequency: 1, weekly_points_goal: 0, weekly_results: 0)
       self.goals.create(category: "I air dryed my laundry.", point_value: 30, frequency: 1, weekly_points_goal: 0, weekly_results: 0)
       self.goals.create(category: "I turned off my electric appliance.", point_value: 5, frequency: 1, weekly_points_goal: 0, weekly_results: 0)
