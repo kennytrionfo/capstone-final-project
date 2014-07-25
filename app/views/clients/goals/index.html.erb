@@ -76,7 +76,7 @@
         <div class="row">
             <div class="small-4 columns">
               <div>
-                <h3>Welcome back <%= current_user.username %></h3>
+                <h3>Welcome back <%= current_user.username %>!</h3>
 
               </div>
             </div>
@@ -128,7 +128,7 @@
                     </div> -->
                     <div class="row">
                         <div class="small-6 columns">
-                          <div>Times Per Week&nbsp;<span class="per week"><%= select_tag(:frequency, options_for_select([1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span></div>
+                          <div>Per Week&nbsp;<span class="per week"><%= select_tag(:frequency, options_for_select([0, 1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span></div>
                           <div>Weekly Goal&nbsp;<span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span></div>
                           <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
                           <div>Weekly Results&nbsp;<span class="weekly_results"><%= goal.weekly_results %></span></div>
@@ -136,7 +136,7 @@
                         </div>
                         <div class="small-6 columns">
                             <div class="large-3 medium-3 tp-6 columns circular-trigger text-center triggerAnimation animated" data-animate="fadeInLeft">
-                            <div class="circular-bar-green donutalign" data-percent="70"></div>
+                            <div class="circular-bar-green donutalign" data-percent="<%= (goal.weekly_results.to_f / goal.weekly_points_goal.to_f) * 100 %>"></div>
                             <!-- <p><strong>Class</strong> "circular-bar-green"</p> -->
                         </div>
                     </div>
