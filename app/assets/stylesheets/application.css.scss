@@ -7,9 +7,9 @@
  *= require_self
 */
 
-// .card {
-// border: solid;
-// }
+.card {
+border: solid;
+}
 
 // li.card .row {
 //   vertical-align: bottom;
@@ -25,4 +25,10 @@ a.done {
   border-radius: 25px;
   padding: 1;
   background-color: #2483C0;
+}
+
+#dashboardbox {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
