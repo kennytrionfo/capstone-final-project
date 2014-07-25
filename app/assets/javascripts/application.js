@@ -110,9 +110,6 @@ $(document).ready(function() {
     return false;
   });
 
-      // psuedo for reset button
-      // when I click on the refresh button for THIS goal
-      // set the value of weekly results back to 0 and send this new value to db via ajax
   $('a.refresh').click(function(){
     var total = 0
     $(this).closest('li').find('.weekly_results').text(total);
