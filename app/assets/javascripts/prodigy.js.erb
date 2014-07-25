@@ -110,7 +110,7 @@ var Prodigy = function () {
                         unexpandSearch();
 
                         $('.nav').show();
-                        $("#logo img").attr("<%= asset_path('logo_sticky.png') %>").attr('alt','logo').addClass('retina');
+                        $("#logo img").attr({ src: "<%= asset_path('logo_sticky.png') %>" }).attr('alt','logo').addClass('retina');
                         $('img.retina').retina('@2x');
                     });
                 }
@@ -125,7 +125,7 @@ var Prodigy = function () {
 
                             // show menu in first condition
                             $(".nav").show();
-                            $("#logo img").attr("<%= asset_path('logo.png') %>").attr('alt','logo').addClass('retina');
+                            $("#logo img").attr({ src: "<%= asset_path('logo.png') %>" }).attr('alt','logo').addClass('retina');
                             $('img.retina').retina('@2x');
                         });
                     });
