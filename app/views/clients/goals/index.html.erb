@@ -83,10 +83,10 @@
 
             <div class="small-8 columns">
                 <h3>Total points, titles/whatever goes here</h3>
+                <!-- kenny, badges go here mofo -->
+                <div style="text-align: center" id="grand_total" value="<%= @user.grand_total %>"></div>
             </div>
         </div>
-
-        <div style="text-align: center" id="grand_total" value="<%= @user.grand_total %>"></div>
 
   <br>
   <br>
@@ -114,7 +114,12 @@
                         <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
                           <div><span class="weekly_results"><%= goal.weekly_results %></span> Weekly Results</div>
                       </div>
-                        <div class="small-6 columns">graph goes here</div>
+                        <div class="small-6 columns">
+                          <div class="large-3 medium-3 tp-6 columns circular-trigger text-center triggerAnimation animated" data-animate="fadeInLeft">
+                        <div class="circular-bar-green donutalign" data-percent="70"></div>
+                        <!-- <p><strong>Class</strong> "circular-bar-green"</p> -->
+                    </div>
+                        </div>
                     </div>
                       <div>
                         <a class="refresh"> Refresh</a>
