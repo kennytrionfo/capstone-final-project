@@ -94,36 +94,36 @@
               <% @goals.each do |goal| %>
                   <li class="card">
                     <div class="row">
-                      <div class="small-6 columns">
-                        <input type="hidden" class="goal_id" value="<%= goal.id %>">
-                        <div>
-                          <%= goal.category %>
-                        </div>
-                      </div>
-                      <div class="small-6 columns">
-                        <div><span class="point_value"><%= goal.point_value %></span> Value</div>
-                      </div>
+                       <div class="small-9 columns">
+                          <input type="hidden" class="goal_id" value="<%= goal.id %>">
+                           <%= goal.category %>
+                       </div>
+                    <div class="small-3 columns">
+                        <div>Value&nbsp;<span class="point_value"><%= goal.point_value %></span></div>
                     </div>
-                    <div class="row">
-                      <div class="small-6 columns">
-                          <div><span class="per week"><%= select_tag(:frequency, options_for_select([1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span> Times per week</div>
-                      <div class="small-6 columns"><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span> Weekly Goal</div>
                     </div>
-                    <div class="row">
-                      <div class="small-6 columns">
-                        <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
-                          <div><span class="weekly_results"><%= goal.weekly_results %></span> Weekly Results</div>
-                      </div>
+                    <!-- <div class="row">
                         <div class="small-6 columns">
-                          <div class="large-3 medium-3 tp-6 columns circular-trigger text-center triggerAnimation animated" data-animate="fadeInLeft">
-                        <div class="circular-bar-green donutalign" data-percent="70"></div>
-                        <!-- <p><strong>Class</strong> "circular-bar-green"</p> -->
-                    </div>
+
+                        </div>
+                        <div class="small-6 columns">
+
+                        </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="small-6 columns">
+                          <div>Times Per Week&nbsp;<span class="per week"><%= select_tag(:frequency, options_for_select([1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span></div>
+                          <div>Weekly Goal&nbsp;<span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span></div>
+                          <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
+                          <div>Weekly Results&nbsp;<span class="weekly_results"><%= goal.weekly_results %></span></div>
+                            <a class="refresh"> Refresh</a>
+                        </div>
+                        <div class="small-6 columns">
+                            <div class="large-3 medium-3 tp-6 columns circular-trigger text-center triggerAnimation animated" data-animate="fadeInLeft">
+                            <div class="circular-bar-green donutalign" data-percent="70"></div>
+                            <!-- <p><strong>Class</strong> "circular-bar-green"</p> -->
                         </div>
                     </div>
-                      <div>
-                        <a class="refresh"> Refresh</a>
-                      </div>
                 </li>
               <% end %>
             </ul>
