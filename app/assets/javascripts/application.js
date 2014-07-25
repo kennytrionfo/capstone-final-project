@@ -142,4 +142,32 @@ $(document).ready(function() {
     });
       $('#grand_total').text("Your Grand Total: "+ theTotal);
 
+      switch (theTotal ) {
+        case "100":
+          $('#one').css({
+            'opacity': 1.0
+            });
+          break;
+        case "200":
+          $('#two').css({
+            'opacity': 1.0
+            });
+            break;
+        case "300":
+          $('#three').css({
+            'opacity': 1.0
+            });
+            break;
+        case "400":
+          $('#four').css({
+            'opacity': 1.0
+            });
+            break;
+        case "500":
+          $('#five').css({
+            'opacity': 1.0
+            });
+            break;
+          };
+
 });
