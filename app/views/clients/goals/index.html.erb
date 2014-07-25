@@ -121,7 +121,7 @@
                     </div>
                     <div class="row">
                         <div class="small-6 columns">
-                            <div>Per Week<br /><span class="per week"><%= select_tag(:frequency, options_for_select(["no goal chosen", 1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span></div>
+                            <div>Per Week<br /><span class="per week"><%= select_tag(:frequency, options_for_select(["no goal yet", 1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span></div>
                         </div>
                         <div class="small-6 columns">
                             <div>Weekly Goal<br /><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span></div>
