@@ -148,6 +148,10 @@ $(document).ready(function() {
   });
 
   // -------REMOVE BUTTON THAT REMOVES THAT CARD FROM THE USER-----
+// on click, remove the div of that catagory. THIS IS ON HOLD DUE TO TIME CONTSTRAINTS--
+  // $('.remove').click(function(){
+  //   $(this).closest('li').find('.point_value').remove();
+  // });
 
 
 });
