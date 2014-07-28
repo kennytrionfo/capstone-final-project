@@ -7,45 +7,48 @@
  *= require_self
 */
 
+// dashboard and card styles
+#dashboardcolor {
+  background-color: #f7f8ff;
+}
 .card {
-border: solid;
+  margin:10px;
+  box-shadow: 5px 5px 5px #888;
+  background-color: #fff;
 }
 
-// li.card .row {
-//   vertical-align: bottom;
-// }
-
-// li.card .row .small-6 .columns {
-//   width: 100%;
-// }
-
-a.done {
-  border: solid;
-  border-color: #2483C0;
-  border-radius: 25px;
-  padding: 1;
-  background-color: #2483C0;
+#usergreeting {
+  text-align: left;
 }
 
-#dashboardbox {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+#grand_total {
+  text-align: left;
 }
+
+#db_user_info {
+  padding:2%;
+}
+
+#db_badges_block {
+  padding: 1%;
+}
+
 
 // dashboard done button
-a.done {
-  border: solid;
-  border-color: #2483C0;
-  border-radius: 25px;
-  padding: 1;
-  background-color: #2483C0;
-}
+// a.done {
+//   background-color: #59ba47;
+//   color: white;
+//   padding-top: 0.875rem;
+//   padding-right: 1.75rem;
+//   padding-bottom: 0.9375rem;
+//   padding-left: 1.75rem;
+//   font-size: 0.8125rem;
+// }
 
 // container for cards
 #dashboardbox {
   width: 90%;
-  margin-left: 5%;
+  margin-left: 10%;
   margin-right: 5%;
 }
 

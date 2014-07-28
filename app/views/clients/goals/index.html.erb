@@ -2,7 +2,7 @@
 <html>
 
 <body>
-    <div id="box-wrapper">
+    <div id="dashboardcolor">
       <!-- Header start here -->
       <header id="header5" class="header">
           <div class="row">
@@ -54,33 +54,31 @@
         <!-- Content wrapper and sticky menu trigger here  -->
         <div>
         <div class="row">
-            <div class="small-4 columns">
+            <div class="small-4 columns" id="db_user_info">
               <div>
-                <h3>Welcome back <%= current_user.username %>!</h3>
-
+                <h3 id="usergreeting">Welcome Back,<br /><%= current_user.username %>!</h3>
+                  <div id="grand_total" value="<%= @user.grand_total %>"></div>
               </div>
             </div>
 
-            <div class="small-8 columns">
+            <div class="small-8 columns" id="db_badges_block">
                 <!-- kenny, badges go here mofo -->
   <!-- Lisa said for image tags to work on heroku do this: <%= image_tag('logo.png') %> -->
-                <span id="one" style="opacity: 0.2">
-                  <img src="assets/badges/1.png" alt="1st badge" height="100" width="115" >
+                <span id="one" style="opacity: 0.2" alt="1st badge">
+                  <%= image_tag('badges/badge1.png', size: '90x90') %>
                 </span>
-                <span id="two" style="opacity: 0.2">
-                  <img src="assets/badges/2.png" alt="2nd badge" height="100" width="115" >
+                <span id="two" style="opacity: 0.2" alt="2st badge">
+                  <%= image_tag('badges/badge2.png', size: '90x90') %>
                 </span>
-                <span id="three" style="opacity: 0.2">
-                  <img src="assets/badges/3.png" alt="3rd badge" height="100" width="115" >
+                <span id="three" style="opacity: 0.2" alt="3st badge">
+                  <%= image_tag('badges/badge3.png', size: '95x95') %>
                 </span>
-                <span id="four" style="opacity: 0.2">
-                  <img src="assets/badges/4.png" alt="4th badge" height="100" width="115" >
+                <span id="four" style="opacity: 0.2" alt="4st badge">
+                  <%= image_tag('badges/badge4.png', size: '90x90') %>
                 </span>
-                <span id="five" style="opacity: 0.2">
-                  <img src="assets/badges/5.png" alt="5th badge" height="100" width="115" >
+                <span id="five" style="opacity: 0.2" alt="5st badge">
+                  <%= image_tag('badges/badge5.png', size: '90x90') %>
                 </span>
-
-                <div style="text-align: center" id="grand_total" value="<%= @user.grand_total %>"></div>
             </div>
         </div>
 
@@ -101,7 +99,7 @@
                     </div>
                     <div class="row">
                         <div class="small-6 columns">
-                            <div>Per Week<br /><span class="per week"><%= select_tag(:frequency, options_for_select(["no goal yet", 1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span></div>
+                            <div>Per Week<br /><span class="per week"><%= select_tag(:frequency, options_for_select([ 0, 1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span></div>
                         </div>
                         <div class="small-6 columns">
                             <div>Weekly Goal<br /><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span></div>
@@ -109,7 +107,7 @@
                     </div>
                     <div class="row">
                         <div class="small-6 columns"><br />
-                           <a class="done" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
+                           <a class="done small button green round" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
                            <div>Weekly Results<br /><span class="weekly_results"><%= goal.weekly_results %></span></div>
                         </div>
                         <div class="small-6 columns">
@@ -120,10 +118,9 @@
                     </div>
                     <div class="row">
                         <div class="small-6 columns">
-                                <a class="refresh"> Refresh</a>
                         </div>
                         <div class="small-6 columns">
-                              remove?
+                          <a class="refresh"> Refresh?</a>
                         </div>
                     </div>
                 </li>
