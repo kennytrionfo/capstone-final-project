@@ -315,7 +315,10 @@ input {
 button,
 select {
     text-transform: none;
-    width: 75%;
+    width: 40%;
+    color: #888;
+    border: none;
+    background-color: #f7f8ff;
 }
 
 /**
