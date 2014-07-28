@@ -619,8 +619,8 @@ height:316px !important;
     width:100%;
     height:10%;
     background:image-url('slideshow/bg_slide1.jpg') no-repeat top center;
-    // margin-top:-136px;
-    // position:relative; seems to be screwing it up
+    margin-top:-136px;
+    position:relative; 
 }
 
 /*FF CSS Hack*/
