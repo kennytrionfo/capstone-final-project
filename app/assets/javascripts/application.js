@@ -76,7 +76,7 @@ $(document).ready(function() {
             fullWidth:"on"                          // Turns On or Off the Fullwidth Image Centering in FullWidth Modus
         });
 
-
+// ------SELECT BUTTON GIVING USER FREQUENCY OPTIONS FOR DOING EACH TASK-----
   $('select.frequency-select').change(function() {
     var frequency_button = parseInt($(this).val());
     var local_point_value = parseInt($(this).closest('li').find('.point_value').text());
@@ -89,27 +89,29 @@ $(document).ready(function() {
         weekly_points_goal: frequency_button*local_point_value
         },
       },function(goal){
-
     });
   });
 
+// ------Did it! BUTTON THAT ADDS THE CATAGORY'S POINTS TO WEEKLY RESULTS & GRAND TOTAL-----
   var theTotal = $('#grand_total').attr('value');
   $('a.done').click(function(){
-    var weekly_results = parseInt($(this).closest('li').find('.weekly_results').text(), 10);
-    var point_value = parseInt($(this).closest('li').find('.point_value').text(), 10);
+    var $link = $(this);
+    var weekly_results = parseInt($link.closest('li').find('.weekly_results').text(), 10);
+    var weekly_goal = parseInt($link.parents('.card').find('.weekly_goal').text(), 10);
+    var point_value = parseInt($link.closest('li').find('.point_value').text(), 10);
     var total = weekly_results + point_value;
-    $(this).closest('li').find('.weekly_results').text(total);
-    var goal_id = $(this).closest('li').find('.goal_id').val();
+    $link.closest('li').find('.weekly_results').text(total);
+    var goal_id = $link.closest('li').find('.goal_id').val();
+    var $progressBar = $link.parents('.card').find('.circular-bar-green');
     $.post('/clients/goals/' + goal_id, {
       _method: 'patch',
       goal: {
         weekly_results: total,
-        },
-      },function(goal){
-
+      },
+    }, function(goal){
     });
 
-    theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
+    theTotal = Number(theTotal) + parseInt($link.closest('li').find('.point_value').text());
     var user_id = $('.user_id').val();
     $('#grand_total').text("Your Grand Total: "+ theTotal);
     $('#grand_total').attr('value', theTotal);
@@ -120,11 +122,17 @@ $(document).ready(function() {
       },
     },function(user){
         display_badges();
+        var new_weekly_results = parseInt($link.closest('li').find('.weekly_results').text(), 10);
+        var percentage = Math.ceil((new_weekly_results / weekly_goal) * 100);
+        $progressBar.attr('data-percent', percentage);
+        $progressBar.donutchart('animate');
     });
     return false;
   });
-  $('#grand_total').text("Your Grand Total: "+ theTotal);
 
+    $('#grand_total').text("Your Grand Total: "+ theTotal);
+
+// -------REFRESH BUTTON THAT SETS THAT CARD'S WEEKLY RESULTS BACK TO ZERO-----
   $('a.refresh').click(function(){
     var total = 0
     $(this).closest('li').find('.weekly_results').text(total);
@@ -139,23 +147,8 @@ $(document).ready(function() {
     return false;
   });
 
-  // var theTotal = $('#grand_total').attr('value')
-  // $('a.done').click(function(){
-  //   theTotal = Number(theTotal) + parseInt($(this).closest('li').find('.point_value').text());
-  //   var user_id = $('.user_id').val();
-  //   $('#grand_total').text("Your Grand Total: "+ theTotal);
-  //     $.post('/clients/users/' + user_id, {
-  //       _method: 'patch',
-  //       user: {
-  //         grand_total: theTotal,
-  //         },
-  //       },function(user){
-  //       console.log(user);
-  //     });
-  //       return false;
-  //   });
-      // $('#grand_total').text("Your Grand Total: "+ theTotal);
-      // why does the grandtotal disappear on page when this line is gone?
+  // -------REMOVE BUTTON THAT REMOVES THAT CARD FROM THE USER-----
+
 
 });
 
