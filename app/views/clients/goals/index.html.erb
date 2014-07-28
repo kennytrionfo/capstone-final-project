@@ -19,39 +19,30 @@
                           <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
 
                           <ul class="nav">
-                            <li class="active dropdown"><a href="<%= root_path %>">Home</a>
-                                  <ul>
-                                      <li><a href="index-layout2.html">Index Layout 2</a></li>
-                                  </ul>
-                              </li>
-                              <li class="dropdown"><a href="#">Pages</a>
-                                  <ul>
-                                      <li><a href="about.html">About Layout 1</a></li>
-                                  </ul>
-                              </li>
-                                <li>
-                                  <% if user_signed_in? %>
-                                  <% else %>
-                                  <%= link_to "Sign Up", new_user_registration_path %>
-                                  <% end %>
-                                <li>
-                                  <% if user_signed_in? %>
-                                  <%= link_to('Dashboard', clients_path) %>
-                                    <li class="has-dropdown">
-                                      <a>Account</a>
-                                      <ul class="dropdown">
-                                        <li>
+                             <li><a href="<%= root_path %>">Home</a></li>
+                             <li><a href="about.html">About</a></li>
+                             <li><a href="contact.html">Contact</a></li>
+                             <li>
+                                <% if user_signed_in? %>
+                                <% else %>
+                                <%= link_to "Sign Up", new_user_registration_path %>
+                                <% end %>
+                             </li>
+                             <li>
+                                <% if user_signed_in? %>
+                                <%= link_to('Dashboard', clients_path) %>
+                                 <li class="dropdown">
+                                   <a>Account</a>
+                                     <ul>
+                                       <li>
                                           <%= link_to('Settings', edit_user_registration_path) %>
                                           <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-                                        </li>
-                                      </ul>
-                                      <% else %>
-                                        <%= link_to('Login', new_user_session_path) %>
-                                      <% end %>
-                                    </li>
-                                </li>
-                              <li><a href="about.html">About Us</a></li>
-                              <li><a href="contact.html">Contact</a>
+                                       </li>
+                                     </ul>
+                                         <% else %>
+                                         <%= link_to('Login', new_user_session_path) %>
+                                         <% end %>
+                                  </li>
                               </li>
                           </ul>
                       </nav>
@@ -60,10 +51,6 @@
             </div>
       </header>
       <!-- Header end here -->
-        <!-- Page title start here -->
-      <!-- <section id="pagetitle-wrapper" class="parallax">
-      </section> -->
-        <!-- Page title end here -->
         <!-- Content wrapper and sticky menu trigger here  -->
         <div>
         <div class="row">

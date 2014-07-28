@@ -21,7 +21,7 @@
                    Reva - CSS File
 ------------------------------------------------------*/
 body {
-    background:#ebebeb;
+    background:#ffffff;
     font:13px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height:24px;
     color:#b3b3b3;
@@ -620,7 +620,7 @@ height:316px !important;
     height:10%;
     background:image-url('slideshow/bg_slide1.jpg') no-repeat top center;
     margin-top:-136px;
-    position:relative; 
+    position:relative;
 }
 
 /*FF CSS Hack*/
@@ -789,7 +789,7 @@ _::-ms-reveal, #content-wrapper.browser-fix {margin-top: 0px;}
 .content-full-map {
     width:100%;
     padding:0px 0;
-    background:#f8f8f8;
+    background:#ffffff;
     position: relative;
     z-index: 800;
 }
@@ -2049,7 +2049,7 @@ height:42px;
 #footer1 {
     padding: 40px 0 30px 0;
     border-top: 4px solid #ececec;
-    background: #f3f3f3 image-url('sample/bg_footer.png') no-repeat top center;
+    background: #f3f3f3 image-url('concrete_wall.png') repeat top center;
 }
 
 #footer1 .share-social {

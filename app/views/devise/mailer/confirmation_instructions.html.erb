@@ -1,5 +1,16 @@
-<p>Welcome <%= @email %>!</p>
+<div id="box-wrapper">
+  <header id="header5" class="header">
+      <div class="row">
+          <div class="large-4 columns">
+              <div id="logo">
+                  <a href="<%= root_path %>"><%= image_tag('logo.png') %></a>
+              </div>
+          </div>
+      </div>
+  </header>
+  <p>Welcome <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+  <p>You can confirm your account email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+  <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+</div>
