@@ -134,9 +134,9 @@ $(document).ready(function() {
 
 // -------REFRESH BUTTON THAT SETS THAT CARD'S WEEKLY RESULTS BACK TO ZERO-----
   $('a.refresh').click(function(){
-    function refresh_confirm() {
-    var refresh_confirm;
-    if (confirm("This will set your 'Weekly Results' back to zero. Do you want to reset?") == true) {
+    // function refresh_confirm() {
+    // var refresh_confirm;
+    // if (confirm("This will set your 'Weekly Results' back to zero. Do you want to reset?") == true) {
 
     var total = 0
     $(this).closest('li').find('.weekly_results').text(total);
@@ -150,9 +150,9 @@ $(document).ready(function() {
     });
     return false;
 
-} else {
-    console.log('no refresh now');
-}
+// } else {
+//     console.log('no refresh now');
+// }
 
 
   });
