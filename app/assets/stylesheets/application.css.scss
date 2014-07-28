@@ -32,3 +32,44 @@ a.done {
   margin-left: 5%;
   margin-right: 5%;
 }
+
+// dashboard done button
+a.done {
+  border: solid;
+  border-color: #2483C0;
+  border-radius: 25px;
+  padding: 1;
+  background-color: #2483C0;
+}
+
+#dashboardbox {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+// contact form alignment
+
+.row.contact {
+  text-align: left;
+}
+
+#name {
+  width: 100%;
+}
+
+#email {
+  width: 100%;
+}
+
+#subject {
+  width: 100%;
+}
+
+#message {
+  width: 100%;
+}
+
+#buttonsend {
+  width: 15%;
+}
