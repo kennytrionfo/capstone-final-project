@@ -2,7 +2,7 @@ class Clients::GoalsController < Clients::BaseController
 
   def index
     @user = User.find(current_user.id)
-    @goals = @user.goals.all
+    @goals = @user.goals.order(frequency: :asc)
   end
 
   def show
@@ -24,7 +24,7 @@ class Clients::GoalsController < Clients::BaseController
       render json: goal.errors.full_messages, status: 422
     end
   end
-  
+
   def destroy
   end
 
