@@ -2,7 +2,7 @@ class Clients::GoalsController < Clients::BaseController
 
   def index
     @user = User.find(current_user.id)
-    @goals = @user.goals.order(frequency: :asc)
+    @goals = @user.goals.order(frequency: :desc)
   end
 
   def show

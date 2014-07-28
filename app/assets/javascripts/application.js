@@ -134,6 +134,10 @@ $(document).ready(function() {
 
 // -------REFRESH BUTTON THAT SETS THAT CARD'S WEEKLY RESULTS BACK TO ZERO-----
   $('a.refresh').click(function(){
+    function refresh_confirm() {
+    var refresh_confirm;
+    if (confirm("This will set your 'Weekly Results' back to zero. Do you want to reset?") == true) {
+
     var total = 0
     $(this).closest('li').find('.weekly_results').text(total);
     var goal_id = $(this).closest('li').find('.goal_id').val();
@@ -145,6 +149,12 @@ $(document).ready(function() {
       },function(goal){
     });
     return false;
+
+} else {
+    console.log('no refresh now');
+}
+
+
   });
 
   // -------REMOVE BUTTON THAT REMOVES THAT CARD FROM THE USER-----
