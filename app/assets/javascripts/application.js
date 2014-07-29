@@ -134,10 +134,7 @@ $(document).ready(function() {
 
 // -------REFRESH BUTTON THAT SETS THAT CARD'S WEEKLY RESULTS BACK TO ZERO-----
   $('a.refresh').click(function(){
-    // function refresh_confirm() {
-    // var refresh_confirm;
-    // if (confirm("This will set your 'Weekly Results' back to zero. Do you want to reset?") == true) {
-
+    if (confirm("This will reset your 'Weekly Results' back to zero. \n\nReset now?") == true) {
     var total = 0
     $(this).closest('li').find('.weekly_results').text(total);
     var goal_id = $(this).closest('li').find('.goal_id').val();
@@ -149,18 +146,16 @@ $(document).ready(function() {
       },function(goal){
     });
     return false;
-//
-// } else {
-//     console.log('no refresh now');
-// }
-
-
+    } else {
+    }
   });
 
+
   // -------REMOVE BUTTON THAT REMOVES THAT CARD FROM THE USER-----
-// on click, remove the div of that catagory. THIS IS ON HOLD DUE TO TIME CONTSTRAINTS--
-  // $('.remove').click(function(){
-  //   $(this).closest('li').find('.point_value').remove();
+  // on click, remove the div of that catagory. THIS IS ON HOLD DUE TO TIME CONTSTRAINTS--
+  // $('.refreshtest').click(function(){
+  //
+  //
   // });
 
 
