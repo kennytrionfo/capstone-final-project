@@ -95,6 +95,7 @@ $(document).ready(function() {
 // ------Did it! BUTTON THAT ADDS THE CATAGORY'S POINTS TO WEEKLY RESULTS & GRAND TOTAL-----
   var theTotal = $('#grand_total').attr('value');
   $('a.done').click(function(){
+    var theTotal = $('#grand_total').attr('value');
     var $link = $(this);
     var weekly_results = parseInt($link.closest('li').find('.weekly_results').text(), 10);
     var weekly_goal = parseInt($link.parents('.card').find('.weekly_goal').text(), 10);
@@ -110,7 +111,6 @@ $(document).ready(function() {
       },
     }, function(goal){
     });
-
     theTotal = Number(theTotal) + parseInt($link.closest('li').find('.point_value').text());
     var user_id = $('.user_id').val();
     $('#grand_total').text("Your Grand Total: "+ theTotal);
@@ -119,8 +119,8 @@ $(document).ready(function() {
       _method: 'patch',
       user: {
         grand_total: theTotal,
-      },
-    },function(user){
+        },
+      },function(user){
         display_badges();
         var new_weekly_results = parseInt($link.closest('li').find('.weekly_results').text(), 10);
         var percentage = Math.ceil((new_weekly_results / weekly_goal) * 100);
@@ -130,7 +130,7 @@ $(document).ready(function() {
     return false;
   });
 
-    $('#grand_total').text("Your Grand Total: "+ theTotal);
+  $('#grand_total').text("Your Grand Total: "+ theTotal);
 
 // -------REFRESH BUTTON THAT SETS THAT CARD'S WEEKLY RESULTS BACK TO ZERO-----
   $('a.refresh').click(function(){
@@ -148,6 +148,22 @@ $(document).ready(function() {
     return false;
     } else {
     }
+  });
+// ----a hidden link at bottom of page to easily reset grand total to 0 for demo & testing
+  $('a#grandtotal_refresh').click(function(){
+    var theTotal = 0
+    $('#grand_total').text("Your Grand Total: "+ theTotal);
+    $('#grand_total').attr('value', theTotal);
+    var user_id = $('.user_id').val();
+    $.post('/clients/users/' + user_id, {
+        _method: 'patch',
+        user: {
+          grand_total: theTotal,
+        },
+      },function(user){
+          display_badges();
+    });
+      return false;
   });
 
 
@@ -181,38 +197,54 @@ function display_badges() {
       'opacity': 1.0
       });
     } else if (theTotal > 399){
-    $('#four').css({
-      'opacity': 1.0
-      });
-    $('#three').css({
-      'opacity': 1.0
-      });
-    $('#two').css({
-      'opacity': 1.0
-      });
-    $('#one').css({
-      'opacity': 1.0
-      });
+      $('#four').css({
+        'opacity': 1.0
+        });
+      $('#three').css({
+        'opacity': 1.0
+        });
+      $('#two').css({
+        'opacity': 1.0
+        });
+      $('#one').css({
+        'opacity': 1.0
+        });
     } else if (theTotal > 299){
-    $('#three').css({
-      'opacity': 1.0
-      });
-    $('#two').css({
-      'opacity': 1.0
-      });
-    $('#one').css({
-      'opacity': 1.0
-      });
+      $('#three').css({
+        'opacity': 1.0
+        });
+      $('#two').css({
+        'opacity': 1.0
+        });
+      $('#one').css({
+        'opacity': 1.0
+        });
     } else if (theTotal > 199){
-    $('#two').css({
-      'opacity': 1.0
-      });
-    $('#one').css({
-      'opacity': 1.0
-      });
+      $('#two').css({
+        'opacity': 1.0
+        });
+      $('#one').css({
+        'opacity': 1.0
+        });
     } else if (theTotal > 99){
-    $('#one').css({
-      'opacity': 1.0
-      });
+      $('#one').css({
+        'opacity': 1.0
+        });
+    } else if (theTotal < 100){
+      $('#five').css({
+        'opacity': 0.2
+        });
+      $('#four').css({
+        'opacity': 0.2
+        });
+      $('#three').css({
+        'opacity': 0.2
+        });
+      $('#two').css({
+        'opacity': 0.2
+        });
+      $('#one').css({
+        'opacity': 0.2
+        });
     }
-  }
+}
