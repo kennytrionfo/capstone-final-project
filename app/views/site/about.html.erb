@@ -1,184 +1,100 @@
-<!doctype html>
-<html class="no-js" lang="en">
 
-<body>
-    <div id="box-wrapper">
-          <!-- Header start here -->
-        <header id="header5" class="header">
-            <div class="row">
-                <div class="large-4 columns">
-                    <div id="logo">
-                        <a href="<%= root_path %>"><%= image_tag('logo.png') %></a>
-                    </div>
-                </div>
+<section class="content triggerAnimation animated" data-animate="fadeInDown">
+<div class="row">
+    <div class="large-12 columns text-center gap-bottom25">
+        <h2>Supported by a strong Web Experience.</h2>
+    </div>
 
-                <div class="large-8 columns">
-                    <div id="navigation">
+    <div class="large-4 medium-4 tp-12 columns">
+        <h4>Who We Are?</h4>
+        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
+    </div>
 
-                        <nav class="nav-menu">
-                            <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
+    <div class="large-4 medium-4 tp-12 columns">
+        <h4>The Power of Story</h4>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsaqu abillo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt suscipit laboriosam.</p>
+    </div>
 
-                            <ul class="nav">
-                               <li><a href="<%= root_path %>">Home</a></li>
-                               <li><a href="about.html">About</a></li>
-                               <li><a href="contact.html">Contact</a></li>
-                               <li>
-                                  <% if user_signed_in? %>
-                                  <% else %>
-                                  <%= link_to "Sign Up", new_user_registration_path %>
-                                  <% end %>
-                               </li>
-                               <li>
-                                  <% if user_signed_in? %>
-                                  <%= link_to('Dashboard', clients_path) %>
-                                   <li class="dropdown">
-                                     <a>Account</a>
-                                       <ul>
-                                         <li>
-                                            <%= link_to('Settings', edit_user_registration_path) %>
-                                            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-                                         </li>
-                                       </ul>
-                                           <% else %>
-                                           <%= link_to('Login', new_user_session_path) %>
-                                           <% end %>
-                                    </li>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+    <div class="large-4 medium-4 tp-12 columns">
+        <h4>Consistency is Key</h4>
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio repudiandae sint et molestia.</p>
+    </div>
+
+    <div class="large-12 columns text-center">
+        <i class="icon-workshirt big-icon"></i>
+    </div>
+</div>
+</section>
+<!-- Content end here -->
+
+<!-- Content fullwidth start here -->
+<section class="content-full3" id="about-parallax">
+<div class="row">
+    <div class="large-12 columns text-center gap-bottom25 triggerAnimation animated" data-animate="bounceIn">
+        <h2>The team behind Eco-Mojo</h2>
+    </div>
+
+    <div class="large-6 medium-6 columns text-center triggerAnimation animated" data-animate="fadeInLeft">
+        <img src="assets/sample/team1.jpg" alt="" class="team-img" />
+        <div class="panel-icon icon-offset">
+            <div class="circle-border medium">
+                <i class="icon-html"></i>
             </div>
-        </header>
-        <!-- Header end here -->
+            <h4>Kenny Trionfo</h4>
+            <p class="subtitle">developer</p>
+            <p>Eiusmod temporit al consectetur nostrum empro exercitationem ullamajo corporis suscipit fugiat consequat duis aute</p>
 
-        <!-- Content wrapper and sticky menu trigger here removed id="content-wrapper" to get rid of nav drop down  -->
-        <div>
-
-            <!-- Content start here -->
-            <section class="content triggerAnimation animated" data-animate="fadeInDown">
-                <div class="row">
-                    <div class="large-12 columns text-center gap-bottom25">
-                        <h2>Supported by a strong Web Experience.</h2>
-                    </div>
-
-                    <div class="large-4 medium-4 tp-12 columns">
-                        <h4>Who We Are?</h4>
-                        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
-                    </div>
-
-                    <div class="large-4 medium-4 tp-12 columns">
-                        <h4>The Power of Story</h4>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsaqu abillo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt suscipit laboriosam.</p>
-                    </div>
-
-                    <div class="large-4 medium-4 tp-12 columns">
-                        <h4>Consistency is Key</h4>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio repudiandae sint et molestia.</p>
-                    </div>
-
-                    <div class="large-12 columns text-center">
-                        <i class="icon-workshirt big-icon"></i>
-                    </div>
-                </div>
-            </section>
-            <!-- Content end here -->
-
-            <!-- Content fullwidth start here -->
-            <section class="content-full3" id="about-parallax">
-                <div class="row">
-                    <div class="large-12 columns text-center gap-bottom25 triggerAnimation animated" data-animate="bounceIn">
-                        <h2>The team behind Eco-Mojo</h2>
-                    </div>
-
-                    <div class="large-6 medium-6 columns text-center triggerAnimation animated" data-animate="fadeInLeft">
-                        <img src="assets/sample/team1.jpg" alt="" class="team-img" />
-                        <div class="panel-icon icon-offset">
-                            <div class="circle-border medium">
-                                <i class="icon-html"></i>
-                            </div>
-                            <h4>Kenny Trionfo</h4>
-                            <p class="subtitle">developer</p>
-                            <p>Eiusmod temporit al consectetur nostrum empro exercitationem ullamajo corporis suscipit fugiat consequat duis aute</p>
-
-                            <ul class="share-social no-bullet">
-                                <li data-tooltip class="has-tip tip-top" title="Facebook">
-                                    <a href="#">
-                                        <i class="social-facebook"></i>
-                                    </a>
-                                </li>
-                                <li data-tooltip class="has-tip tip-top" title="Twitter">
-                                    <a href="#">
-                                        <i class="social-twitter"></i>
-                                    </a>
-                                </li>
-                                <li data-tooltip class="has-tip tip-top" title="Google+">
-                                    <a href="#">
-                                        <i class="social-googleplus"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="large-6 medium-6 columns text-center triggerAnimation animated" data-animate="fadeInRight">
-                        <img src="assets/sample/team3.jpg" alt="" class="team-img" />
-                        <div class="panel-icon icon-offset">
-                            <div class="circle-border medium">
-                                <i class="icon-brush"></i>
-                            </div>
-                            <h4>Lisa Bunch</h4>
-                            <p class="subtitle">developer</p>
-                            <p>Eiusmod temporit al consectetur nostrum empro exercitationem ullamajo corporis suscipit fugiat consequat duis aute</p>
-
-                            <ul class="share-social no-bullet">
-                                <li data-tooltip class="has-tip tip-top" title="Facebook">
-                                    <a href="#">
-                                        <i class="social-facebook"></i>
-                                    </a>
-                                </li>
-                                <li data-tooltip class="has-tip tip-top" title="Twitter">
-                                    <a href="#">
-                                        <i class="social-twitter"></i>
-                                    </a>
-                                </li>
-                                <li data-tooltip class="has-tip tip-top" title="Google+">
-                                    <a href="#">
-                                        <i class="social-googleplus"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Content fullwidth end here -->
-
-            <!-- Content start here -->
-            <!-- <section class="content">
-                <div class="row">
-                    <div class="large-5 medium-5 columns triggerAnimation animated" data-animate="fadeInLeft">
-                        <img src="img/sample/content_img7.png" alt="" class="img-left">
-                    </div>
-
-                    <div class="large-7 medium-7 columns triggerAnimation animated" data-animate="fadeInRight">
-                        <p class="lead green-text">Quis autem vel eum iure reprehenderit qui inea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur tempora incidunt ut labore</p>
-                        <hr/>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum exercitation ullamco.</p>
-                        <a href="#" class="button small green round">Connect with Our Social media</a>
-                    </div>
-                </div>
-            </section> -->
-            <!-- Content end here -->
+            <ul class="share-social no-bullet">
+                <li data-tooltip class="has-tip tip-top" title="Facebook">
+                    <a href="#">
+                        <i class="social-facebook"></i>
+                    </a>
+                </li>
+                <li data-tooltip class="has-tip tip-top" title="Twitter">
+                    <a href="#">
+                        <i class="social-twitter"></i>
+                    </a>
+                </li>
+                <li data-tooltip class="has-tip tip-top" title="Google+">
+                    <a href="#">
+                        <i class="social-googleplus"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="clear"></div>
         </div>
-        <!-- Content wrapper and sticky menu trigger end here  -->
     </div>
 
 
-</body>
 
-</html>
+    <div class="large-6 medium-6 columns text-center triggerAnimation animated" data-animate="fadeInRight">
+        <img src="assets/sample/team3.jpg" alt="" class="team-img" />
+        <div class="panel-icon icon-offset">
+            <div class="circle-border medium">
+                <i class="icon-brush"></i>
+            </div>
+            <h4>Lisa Bunch</h4>
+            <p class="subtitle">developer</p>
+            <p>Eiusmod temporit al consectetur nostrum empro exercitationem ullamajo corporis suscipit fugiat consequat duis aute</p>
+
+            <ul class="share-social no-bullet">
+                <li data-tooltip class="has-tip tip-top" title="Facebook">
+                    <a href="#">
+                        <i class="social-facebook"></i>
+                    </a>
+                </li>
+                <li data-tooltip class="has-tip tip-top" title="Twitter">
+                    <a href="#">
+                        <i class="social-twitter"></i>
+                    </a>
+                </li>
+                <li data-tooltip class="has-tip tip-top" title="Google+">
+                    <a href="#">
+                        <i class="social-googleplus"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

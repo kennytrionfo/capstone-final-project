@@ -1,138 +1,78 @@
-<!doctype html>
-<html class="no-js" lang="en">
 
-<body>
-    <div id="box-wrapper">
-      <!-- Header start here -->
-      <header id="header5" class="header">
-          <div class="row">
-              <div class="large-4 columns">
-                  <div id="logo">
-                      <a href="<%= root_path %>"><%= image_tag('logo.png') %></a>
-                  </div>
-              </div>
+<!-- Content start here -->
+<section class="content">
+    <div class="row">
+        <div class="large-12 columns gap-bottom25 triggerAnimation animated" data-animate="fadeInDown">
+            <h2>Located in a small, creative city; delivering quality products that enrich lives.</h2>
+            <hr/>
+        </div>
 
-              <div class="large-8 columns">
-                  <div id="navigation">
+        <div class="large-4 medium-4 tp-12 columns triggerAnimation animated" data-animate="fadeInLeft">
+            <div class="circle-border small icon-left">
+                <i class="icon-alarm"></i>
+            </div>
+            <h4>Office Hours</h4>
+            <p class="text-overflow">Monday to Friday / 7:00 - 18:00<br/>Saturday / 9:00 - 15:00</p>
+        </div>
 
-                      <nav class="nav-menu">
-                          <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
+        <div class="large-4 medium-4 tp-12 columns triggerAnimation animated" data-animate="fadeInUp">
+            <div class="circle-border small icon-left">
+                <i class="icon-office-building"></i>
+            </div>
+            <h4>Reva Address</h4>
+            <p class="text-overflow">Cost Avenue. Silver Spring<br/>Jacko City, MD 20910, Indonesia</p>
+        </div>
 
-                          <ul class="nav">
-                             <li><a href="<%= root_path %>">Home</a></li>
-                             <li><a href="about.html">About</a></li>
-                             <li><a href="contact.html">Contact</a></li>
-                             <li>
-                                <% if user_signed_in? %>
-                                <% else %>
-                                <%= link_to "Sign Up", new_user_registration_path %>
-                                <% end %>
-                             </li>
-                             <li>
-                                <% if user_signed_in? %>
-                                <%= link_to('Dashboard', clients_path) %>
-                                 <li class="dropdown">
-                                   <a>Account</a>
-                                     <ul>
-                                       <li>
-                                          <%= link_to('Settings', edit_user_registration_path) %>
-                                          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-                                       </li>
-                                     </ul>
-                                         <% else %>
-                                         <%= link_to('Login', new_user_session_path) %>
-                                         <% end %>
-                                  </li>
-                              </li>
-                          </ul>
-                      </nav>
-                  </div>
-              </div>
-          </div>
-      </header>
-      <!-- Header end here -->
-        <!-- Content wrapper and sticky menu trigger here: removed id="content-wrapper" to get rid of nav drop down  -->
-        <div>
-            <!-- Content start here -->
-            <section class="content">
-                <div class="row">
-                    <div class="large-12 columns gap-bottom25 triggerAnimation animated" data-animate="fadeInDown">
-                        <h2>Located in a small, creative city; delivering quality products that enrich lives.</h2>
-                        <hr/>
-                    </div>
-
-                    <div class="large-4 medium-4 tp-12 columns triggerAnimation animated" data-animate="fadeInLeft">
-                        <div class="circle-border small icon-left">
-                            <i class="icon-alarm"></i>
-                        </div>
-                        <h4>Office Hours</h4>
-                        <p class="text-overflow">Monday to Friday / 7:00 - 18:00<br/>Saturday / 9:00 - 15:00</p>
-                    </div>
-
-                    <div class="large-4 medium-4 tp-12 columns triggerAnimation animated" data-animate="fadeInUp">
-                        <div class="circle-border small icon-left">
-                            <i class="icon-office-building"></i>
-                        </div>
-                        <h4>Reva Address</h4>
-                        <p class="text-overflow">Cost Avenue. Silver Spring<br/>Jacko City, MD 20910, Indonesia</p>
-                    </div>
-
-                    <div class="large-4 medium-4 tp-12 columns triggerAnimation animated" data-animate="fadeInRight">
-                        <div class="circle-border small icon-left">
-                            <i class="icon-envelope"></i>
-                        </div>
-                        <h4>Contact Info</h4>
-                        <p class="text-overflow">Phone : (111) 234 5678<br/>Email : you@companyname.com</p>
-                    </div>
-                </div>
-            </section>
-            <!-- Content end here -->
-
-            <!-- Content fullwidth start here -->
-            <section class="content-full-map">
-                <div id="map"></div>
-
-                <div class="row">
-                    <div class="large-12 columns">
-                        <div class="contactform-area triggerAnimation animated" data-animate="fadeInDown">
-                            <h4 class="text-center contactform-heading gap-bottom25"><span>We'd love to hear from you!</span></h4>
-
-                            <form action="#" id="contactform">
-                                <fieldset>
-                                    <div class="row contact">
-                                        <div class="large-4 medium-4 columns">
-                                            <label for="name"><span>Username</span></label>
-                                            <input type="text" name="name" id="name" placeholder="Username" />
-                                        </div>
-
-                                        <div class="large-4 medium-4 columns">
-                                            <label for="email"><span>Email</span></label>
-                                            <input type="email" name="email" id="email" placeholder="Email here" />
-                                        </div>
-
-                                        <div class="large-4 medium-4 columns">
-                                            <label for="subject"><span>Subject</span></label>
-                                            <input type="text" name="subject" id="subject" placeholder="Subject here" />
-                                        </div>
-
-                                        <div class="large-12 columns">
-                                            <label for="message"><span>Message</span></label>
-                                            <textarea id="message" name="message" placeholder="Leave your message here." style="height: 100px;"></textarea>
-
-                                            <button type="submit" class="small round green" id="buttonsend">Send Message</button>
-                                            <span class="loading" style="display: none;">Please wait..</span>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Content fullwidth end here -->
+        <div class="large-4 medium-4 tp-12 columns triggerAnimation animated" data-animate="fadeInRight">
+            <div class="circle-border small icon-left">
+                <i class="icon-envelope"></i>
+            </div>
+            <h4>Contact Info</h4>
+            <p class="text-overflow">Phone : (111) 234 5678<br/>Email : you@companyname.com</p>
+        </div>
     </div>
+</section>
+<!-- Content end here -->
 
+<!-- Content fullwidth start here -->
+<section class="content-full-map">
+    <div id="map"></div>
 
-</body>
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="contactform-area triggerAnimation animated" data-animate="fadeInDown">
+                <h4 class="text-center contactform-heading gap-bottom25"><span>We'd love to hear from you!</span></h4>
 
-</html>
+                <form action="#" id="contactform">
+                    <fieldset>
+                        <div class="row contact">
+                            <div class="large-4 medium-4 columns">
+                                <label for="name"><span>Username</span></label>
+                                <input type="text" name="name" id="name" placeholder="Username" />
+                            </div>
+
+                            <div class="large-4 medium-4 columns">
+                                <label for="email"><span>Email</span></label>
+                                <input type="email" name="email" id="email" placeholder="Email here" />
+                            </div>
+
+                            <div class="large-4 medium-4 columns">
+                                <label for="subject"><span>Subject</span></label>
+                                <input type="text" name="subject" id="subject" placeholder="Subject here" />
+                            </div>
+
+                            <div class="large-12 columns">
+                                <label for="message"><span>Message</span></label>
+                                <textarea id="message" name="message" placeholder="Leave your message here." style="height: 100px;"></textarea>
+
+                                <button type="submit" class="small round green" id="buttonsend">Send Message</button>
+                                <span class="loading" style="display: none;">Please wait..</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content fullwidth end here -->

@@ -1,137 +1,81 @@
-<!doctype html>
-<html>
-
-<body>
-    <div id="dashboardcolor">
-      <!-- Header start here -->
-      <header id="header5" class="header">
-          <div class="row">
-              <div class="large-4 columns">
-                  <div id="logo">
-                      <a href="<%= root_path %>"><%= image_tag('logo.png') %></a>
-                  </div>
-              </div>
-
-              <div class="large-8 columns">
-                  <div id="navigation">
-
-                       <nav class="nav-menu">
-                          <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
-
-                          <ul class="nav">
-                             <li><a href="<%= root_path %>">Home</a></li>
-                             <li><a href="about.html">About</a></li>
-                             <li><a href="contact.html">Contact</a></li>
-                             <li>
-                                <% if user_signed_in? %>
-                                <% else %>
-                                <%= link_to "Sign Up", new_user_registration_path %>
-                                <% end %>
-                             </li>
-                             <li>
-                                <% if user_signed_in? %>
-                                <%= link_to('Dashboard', clients_path) %>
-                                 <li class="dropdown">
-                                   <a>Account</a>
-                                     <ul>
-                                       <li>
-                                          <%= link_to('Settings', edit_user_registration_path) %>
-                                          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-                                       </li>
-                                     </ul>
-                                         <% else %>
-                                         <%= link_to('Login', new_user_session_path) %>
-                                         <% end %>
-                                  </li>
-                              </li>
-                          </ul>
-                      </nav>
-                   </div>
-              </div>
-            </div>
-      </header>
-      <!-- Header end here -->
-        <!-- Content wrapper and sticky menu trigger here  -->
-        <div>
-        <div class="row">
-            <div class="small-4 columns" id="db_user_info">
-              <div>
-                <h3 id="usergreeting">Welcome Back,<br /><%= current_user.username %>!</h3>
-                  <div id="grand_total" value="<%= @user.grand_total %>"></div>
-              </div>
-            </div>
-
-            <div class="small-8 columns" id="db_badges_block">
-                <!-- kenny, badges go here mofo -->
-  <!-- Lisa said for image tags to work on heroku do this: <%= image_tag('logo.png') %> -->
-                <span id="one" style="opacity: 0.2" alt="1st badge">
-                  <%= image_tag('badges/badge1.png', size: '90x90') %>
-                </span>
-                <span id="two" style="opacity: 0.2" alt="2st badge">
-                  <%= image_tag('badges/badge2.png', size: '90x90') %>
-                </span>
-                <span id="three" style="opacity: 0.2" alt="3st badge">
-                  <%= image_tag('badges/badge3.png', size: '95x95') %>
-                </span>
-                <span id="four" style="opacity: 0.2" alt="4st badge">
-                  <%= image_tag('badges/badge4.png', size: '90x90') %>
-                </span>
-                <span id="five" style="opacity: 0.2" alt="5st badge">
-                  <%= image_tag('badges/badge5.png', size: '90x90') %>
-                </span>
-            </div>
+<div id="dashboardcolor">
+    <!-- Content wrapper and sticky menu trigger here  -->
+    <div class="row">
+        <div class="small-4 columns" id="db_user_info">
+          <div>
+            <h3 id="usergreeting">Welcome Back,<br /><%= current_user.username %>!</h3>
+              <div id="grand_total" value="<%= @user.grand_total %>"></div>
+          </div>
         </div>
 
-  <br>
-  <div id="dashboardbox">
-            <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
-              <% @goals.each do |goal| %>
-                  <li class="card">
-                    <div class="row">
-                       <div class="small-6 columns">
-                          <input type="hidden" class="goal_id" value="<%= goal.id %>">
-                          <input type="hidden" class="user_id" value="<%= @user.id %>">
-                           <%= goal.category %>
-                       </div>
-                       <div class="small-6 columns">
-                          <div>Value<br /><span class="point_value"><%= goal.point_value %></span></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-6 columns">
-                            <div>Per Week<br /><span class="per week"><%= select_tag(:frequency, options_for_select([ 0, 1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span></div>
-                        </div>
-                        <div class="small-6 columns">
-                            <div>Weekly Goal<br /><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-6 columns"><br />
-                           <a class="done small button green round" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
-                           <div>Weekly Results<br /><span class="weekly_results"><%= goal.weekly_results %></span></div>
-                        </div>
-                        <div class="small-6 columns">
-                            <div class="large-3 medium-3 tp-6 columns circular-trigger text-center triggerAnimation animated" data-animate="fadeInLeft"></div>
-                            <div class="circular-bar-green donutalign" data-percent="<%= goal.percentage %>"></div>
-                            <!-- <p><strong>Class</strong> "circular-bar-green"</p> -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-6 columns">
-                          <!-- Remove button on hold due to time contraints. will complete if can. -->
-                                                <!-- <div class="small-6 columns">
-                                                      <a class="remove">remove?</a>
-                                                </div> -->
-                        </div>
-                        <div class="small-6 columns">
-                          <a class="refresh"> Refresh?</a>
-                        </div>
-                    </div>
-                </li>
-              <% end %>
-            </ul>
+        <div class="small-8 columns" id="db_badges_block">
+            <!-- kenny, badges go here mofo -->
+            <!-- Lisa said for image tags to work on heroku do this: <%= image_tag('logo.png') %> -->
+            <span id="one" style="opacity: 0.2" alt="1st badge">
+              <%= image_tag('badges/badge1.png', size: '90x90') %>
+            </span>
+            <span id="two" style="opacity: 0.2" alt="2st badge">
+              <%= image_tag('badges/badge2.png', size: '90x90') %>
+            </span>
+            <span id="three" style="opacity: 0.2" alt="3st badge">
+              <%= image_tag('badges/badge3.png', size: '95x95') %>
+            </span>
+            <span id="four" style="opacity: 0.2" alt="4st badge">
+              <%= image_tag('badges/badge4.png', size: '90x90') %>
+            </span>
+            <span id="five" style="opacity: 0.2" alt="5st badge">
+              <%= image_tag('badges/badge5.png', size: '90x90') %>
+            </span>
+        </div>
     </div>
-  </div>
-</body>
 
-</html>
+    <br>
+    <div id="dashboardbox">
+        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+          <% @goals.each do |goal| %>
+              <li class="card">
+                <div class="row">
+                   <div class="small-6 columns">
+                      <input type="hidden" class="goal_id" value="<%= goal.id %>">
+                      <input type="hidden" class="user_id" value="<%= @user.id %>">
+                       <%= goal.category %>
+                   </div>
+                   <div class="small-6 columns">
+                      <div>Value<br /><span class="point_value"><%= goal.point_value %></span></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-6 columns">
+                        <div>Per Week<br /><span class="per week"><%= select_tag(:frequency, options_for_select([ 0, 1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span></div>
+                    </div>
+                    <div class="small-6 columns">
+                        <div>Weekly Goal<br /><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-6 columns"><br />
+                       <a class="done small button green round" href="#" data-value="<%= goal.point_value %>"> Did it!</a>
+                       <div>Weekly Results<br /><span class="weekly_results"><%= goal.weekly_results %></span></div>
+                    </div>
+                    <div class="small-6 columns">
+                        <div class="large-3 medium-3 tp-6 columns circular-trigger text-center triggerAnimation animated" data-animate="fadeInLeft"></div>
+                        <div class="circular-bar-green donutalign" data-percent="<%= goal.percentage %>"></div>
+                        <!-- <p><strong>Class</strong> "circular-bar-green"</p> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-6 columns">
+                      <!-- Remove button on hold due to time contraints. will complete if can. -->
+                                            <!-- <div class="small-6 columns">
+                                                  <a class="remove">remove?</a>
+                                            </div> -->
+                    </div>
+                    <div class="small-6 columns">
+                      <a class="refresh"> Refresh?</a>
+                    </div>
+                </div>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+</div>

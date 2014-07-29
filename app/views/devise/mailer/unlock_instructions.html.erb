@@ -1,18 +1,8 @@
-<div id="box-wrapper">
-  <header id="header5" class="header">
-      <div class="row">
-          <div class="large-4 columns">
-              <div id="logo">
-                  <a href="<%= root_path %>"><%= image_tag('logo.png') %></a>
-              </div>
-          </div>
-      </div>
-  </header>
-  <p>Hello <%= @resource.email %>!</p>
 
-  <p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+<p>Hello <%= @resource.email %>!</p>
 
-  <p>Click the link below to unlock your account:</p>
+<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
 
-  <p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
-</div>
+<p>Click the link below to unlock your account:</p>
+
+<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
