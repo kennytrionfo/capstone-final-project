@@ -1,7 +1,4 @@
-<!doctype html>
-<html>
 
-<body>
     <div id="dashboardcolor">
       <!-- Header start here -->
       <header id="header5" class="header">
@@ -56,13 +53,12 @@
         <div class="row">
             <div class="small-4 columns" id="db_user_info">
               <div>
-                <h3 id="usergreeting">Welcome Back,<br /><%= current_user.username %>!</h3>
+                <h3 id="usergreeting">Welcome back <br /><%= current_user.username %>!</h3>
                   <div id="grand_total" value="<%= @user.grand_total %>"></div>
               </div>
             </div>
 
             <div class="small-8 columns" id="db_badges_block">
-                <!-- kenny, badges go here mofo -->
   <!-- Lisa said for image tags to work on heroku do this: <%= image_tag('logo.png') %> -->
                 <span id="one" style="opacity: 0.2" alt="1st badge">
                   <%= image_tag('badges/badge1.png', size: '90x90') %>
@@ -135,6 +131,3 @@
   <div >
     <a id="grandtotal_refresh" >clear grand total  </a>
   </div>
-</body>
-
-</html>
