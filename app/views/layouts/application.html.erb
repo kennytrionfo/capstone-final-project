@@ -25,55 +25,60 @@
   </head>
   <body>
     <div id="box-wrapper">
-  <!-- Header start here -->
-  <header id="header5" class="header">
-      <div class="row">
-          <div class="large-4 columns">
-              <div id="logo">
-                  <a href="<%= root_path %>"><%= image_tag('logo.png') %></a>
-              </div>
-          </div>
+    <!-- Header start here -->
+    <header id="header5" class="header">
+        <div class="row">
+            <div class="large-4 columns">
+                <div id="logo">
+                    <a href="<%= root_path %>"><%= image_tag('logo.png') %></a>
+                </div>
+            </div>
 
-          <div class="large-8 columns">
-              <div id="navigation">
+            <div class="large-8 columns">
+                <div id="navigation">
 
-                   <nav class="nav-menu">
-                      <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
+                     <nav class="nav-menu">
+                        <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
 
-                      <ul class="nav">
-                         <li><a href="<%= root_path %>">Home</a></li>
-                         <li><a href="about.html">About</a></li>
-                         <li><a href="contact.html">Contact</a></li>
-                         <li>
-                            <% if user_signed_in? %>
-                            <% else %>
-                            <%= link_to "Sign Up", new_user_registration_path %>
-                            <% end %>
-                         </li>
-                         <li>
-                            <% if user_signed_in? %>
-                            <%= link_to('Dashboard', clients_path) %>
-                             <li class="dropdown">
-                               <a>Account</a>
+                        <ul class="nav">
+                           <li><a href="<%= root_path %>">Home</a></li>
+                           <li><a href="about.html">About</a></li>
+                           <li><a href="contact.html">Contact</a></li>
+                           <li>
+                              <% if user_signed_in? %>
+                              <% else %>
+                              <%= link_to "Sign Up", new_user_registration_path %>
+                              <% end %>
+                           </li>
+                           <li>
+                              <% if user_signed_in? %>
+                              <%= link_to('Dashboard', clients_path) %>
+                              <li class="dropdown">
+                                  <a>Account</a>
+                                    <ul>
+                                      <li>
+                                         <%= link_to('Settings', edit_user_registration_path) %>
+                                         <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+                                      </li>
+                                    </ul>
+                                 </li>
                                  <ul>
-                                   <li>
-                                      <%= link_to('Settings', edit_user_registration_path) %>
-                                      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-                                   </li>
+                                       <li>
+                                        <% else %>
+                                       <li> <%= link_to('Login', new_user_session_path) %></li>
+                                       <li> <%= link_to('Facebook Login', user_omniauth_authorize_path(:facebook)) %></li>
+                                        <% end %>
+                                      </li>
                                  </ul>
-                                     <% else %>
-                                     <%= link_to('Login', new_user_session_path) %>
-                                     <%= link_to('Login with Twitter', user_omniauth_authorize_path(:twitter)) %>
-                                     <% end %>
-                              </li>
-                          </li>
-                      </ul>
-                  </nav>
-               </div>
+                             </li>
+                            </li>
+                        </ul>
+                    </nav>
+                 </div>
+            </div>
           </div>
-        </div>
-  </header>
-  <!-- Header end here -->
+    </header>
+    <!-- Header end here -->
     <main><%= yield %></main>
       <footer id="footer1">
         <div class="row">
