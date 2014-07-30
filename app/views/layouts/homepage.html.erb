@@ -61,10 +61,15 @@
                                             <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
                                          </li>
                                        </ul>
-                                           <% else %>
-                                           <%= link_to('Login', new_user_session_path) %>
-                                           <% end %>
                                     </li>
+                                    <ul>
+                                          <li>
+                                           <% else %>
+                                          <li> <%= link_to('Login', new_user_session_path) %></li>
+                                          <li> <%= link_to('Facebook Login', user_omniauth_authorize_path(:facebook)) %></li>
+                                           <% end %>
+                                         </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </nav>
@@ -79,7 +84,6 @@
           <div class="row">
             <div class="large-4 medium-6 columns hide-for-small-only">
                 <a href="<%= new_user_registration_path %>" class="button large round white gap-top8">Ready to get started?</a>
-                <p class="gap-left8">You can also call 123.456.7899 or <a href="mailto:hello@prodigystudio.net">email us</a>.</p>
             </div>
 
             <div class="large-8 medium-6 columns text">
@@ -95,19 +99,13 @@
                                 <i class="social-twitter"></i>
                             </a>
                         </li>
-                        <li data-tooltip class="has-tip tip-top gplus-color" title="Share to Google+">
-                            <a href="#">
-                                <i class="social-googleplus"></i>
-                            </a>
-                        </li>
                     </ul>
                 </div>
 
                 <div class="footer-menu">
                     <ul class="no-bullet right">
-                        <li><a href="#">Team</a></li>
+                        <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
 
