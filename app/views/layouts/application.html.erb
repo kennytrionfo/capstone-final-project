@@ -41,9 +41,12 @@
                         <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
 
                         <ul class="nav">
-                           <li><a href="<%= root_path %>">Home</a></li>
-                           <li><a href="about.html">About</a></li>
-                           <li><a href="contact.html">Contact</a></li>
+                          <li class="dropdown">
+                            <a href="<%= root_path %>">Home</a>
+                            <ul>
+                              <li><a href="about.html">About</a></li>
+                              <li><a href="contact.html">Contact</a></li>
+                            </ul>
                            <li>
                               <% if user_signed_in? %>
                               <% else %>
@@ -84,25 +87,19 @@
         <div class="row">
           <div class="large-4 medium-6 columns hide-for-small-only">
               <a href="<%= new_user_registration_path %>" class="button large round white gap-top8">Ready to get started?</a>
-              <p class="gap-left8">You can also call 123.456.7899 or <a href="mailto:hello@prodigystudio.net">email us</a>.</p>
           </div>
 
           <div class="large-8 medium-6 columns text">
               <div class="footer-socials right">
                   <ul class="share-social no-bullet">
-                      <li data-tooltip class="has-tip tip-top fb-color" title="Share to Facebook">
+                      <li data-tooltip class="has-tip tip-top fb-color" title="Link to Facebook">
                           <a href="#">
                               <i class="social-facebook"></i>
                           </a>
                       </li>
-                      <li data-tooltip class="has-tip tip-top tw-color" title="Share to Twitter">
+                      <li data-tooltip class="has-tip tip-top tw-color" title="Link to Twitter">
                           <a href="#">
                               <i class="social-twitter"></i>
-                          </a>
-                      </li>
-                      <li data-tooltip class="has-tip tip-top gplus-color" title="Share to Google+">
-                          <a href="#">
-                              <i class="social-googleplus"></i>
                           </a>
                       </li>
                   </ul>
@@ -110,12 +107,10 @@
 
               <div class="footer-menu">
                   <ul class="no-bullet right">
-                      <li><a href="#">Team</a></li>
-                      <li><a href="#">Contact</a></li>
-                      <li><a href="#">Blog</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="contact.html">Contact</a></li>
                   </ul>
               </div>
-
               <div class="right">
                   <p>&copy; 2014 Eco-Mojo</p>
               </div>
