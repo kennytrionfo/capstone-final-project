@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'clients/goals/index'
   get '/about' => 'site#about'
   get '/contact' => 'site#contact'
+  
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
