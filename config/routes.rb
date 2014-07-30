@@ -4,11 +4,9 @@ Rails.application.routes.draw do
   get 'clients/goals/index'
   get '/about' => 'site#about'
   get '/contact' => 'site#contact'
-  
-
-  devise_for :users, :controllers => { registrations: 'registrations' }
-
   root 'site#index'
+
+  devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: 'omniauth_callbacks'}
 
   namespace :clients do
     get '/' => 'goals#index'

@@ -7,10 +7,14 @@
  *= require_self
 */
 
+
+.button.small.green.round.buttonfix {
+  margin-top: 20%;
+}
 // dashboard and card styles
-// #dashboardcolor {
-//   background-color: #f7f8ff;
-// }
+.cardcats {
+  color: #999;
+}
 .card {
   margin:10px;
   box-shadow: 5px 5px 5px #888;
@@ -19,10 +23,12 @@
 
 #usergreeting {
   text-align: left;
+  text-align: center;
+  font-size: 14px;
 }
 
 #grand_total {
-  text-align: left;
+  text-align: center;
 }
 
 #db_user_info {
@@ -33,6 +39,9 @@
   padding: 1%;
 }
 
+.row.dashboard {
+
+}
 
 // dashboard done button
 // a.done {

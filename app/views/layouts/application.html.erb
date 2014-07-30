@@ -25,78 +25,81 @@
   </head>
   <body>
     <div id="box-wrapper">
-  <!-- Header start here -->
-  <header id="header5" class="header">
-      <div class="row">
-          <div class="large-4 columns">
-              <div id="logo">
-                  <a href="<%= root_path %>"><%= image_tag('logo.png') %></a>
-              </div>
-          </div>
+    <!-- Header start here -->
+    <header id="header5" class="header">
+        <div class="row">
+            <div class="large-4 columns">
+                <div id="logo">
+                    <a href="<%= root_path %>"><%= image_tag('logo.png') %></a>
+                </div>
+            </div>
 
-          <div class="large-8 columns">
-              <div id="navigation">
+            <div class="large-8 columns">
+                <div id="navigation">
 
-                   <nav class="nav-menu">
-                      <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
+                     <nav class="nav-menu">
+                        <a class="toggleMenu" href="#"><i class="icon-menu"></i></a>
 
-                      <ul class="nav">
-                         <li><a href="<%= root_path %>">Home</a></li>
-                         <li><a href="about.html">About</a></li>
-                         <li><a href="contact.html">Contact</a></li>
-                         <li>
-                            <% if user_signed_in? %>
-                            <% else %>
-                            <%= link_to "Sign Up", new_user_registration_path %>
-                            <% end %>
-                         </li>
-                         <li>
-                            <% if user_signed_in? %>
-                            <%= link_to('Dashboard', clients_path) %>
-                             <li class="dropdown">
-                               <a>Account</a>
+                        <ul class="nav">
+                          <li class="dropdown">
+                            <a href="<%= root_path %>">Home</a>
+                            <ul>
+                              <li><a href="about.html">About</a></li>
+                              <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                           <li>
+                              <% if user_signed_in? %>
+                              <% else %>
+                              <%= link_to "Sign Up", new_user_registration_path %>
+                              <% end %>
+                           </li>
+                           <li>
+                              <% if user_signed_in? %>
+                              <%= link_to('Dashboard', clients_path) %>
+                              <li class="dropdown">
+                                  <a>Account</a>
+                                    <ul>
+                                      <li>
+                                         <%= link_to('Settings', edit_user_registration_path) %>
+                                         <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+                                      </li>
+                                    </ul>
+                                 </li>
                                  <ul>
-                                   <li>
-                                      <%= link_to('Settings', edit_user_registration_path) %>
-                                      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-                                   </li>
+                                       <li>
+                                        <% else %>
+                                       <li> <%= link_to('Login', new_user_session_path) %></li>
+                                       <li> <%= link_to('Facebook Login', user_omniauth_authorize_path(:facebook)) %></li>
+                                        <% end %>
+                                      </li>
                                  </ul>
-                                     <% else %>
-                                     <%= link_to('Login', new_user_session_path) %>
-                                     <% end %>
-                              </li>
-                          </li>
-                      </ul>
-                  </nav>
-               </div>
+                             </li>
+                            </li>
+                        </ul>
+                    </nav>
+                 </div>
+            </div>
           </div>
-        </div>
-  </header>
-  <!-- Header end here -->
+    </header>
+    <!-- Header end here -->
     <main><%= yield %></main>
       <footer id="footer1">
         <div class="row">
           <div class="large-4 medium-6 columns hide-for-small-only">
               <a href="<%= new_user_registration_path %>" class="button large round white gap-top8">Ready to get started?</a>
-              <p class="gap-left8">You can also call 123.456.7899 or <a href="mailto:hello@prodigystudio.net">email us</a>.</p>
           </div>
 
           <div class="large-8 medium-6 columns text">
               <div class="footer-socials right">
                   <ul class="share-social no-bullet">
-                      <li data-tooltip class="has-tip tip-top fb-color" title="Share to Facebook">
+                      <li data-tooltip class="has-tip tip-top fb-color" title="Link to Facebook">
                           <a href="#">
                               <i class="social-facebook"></i>
                           </a>
                       </li>
-                      <li data-tooltip class="has-tip tip-top tw-color" title="Share to Twitter">
+                      <li data-tooltip class="has-tip tip-top tw-color" title="Link to Twitter">
                           <a href="#">
                               <i class="social-twitter"></i>
-                          </a>
-                      </li>
-                      <li data-tooltip class="has-tip tip-top gplus-color" title="Share to Google+">
-                          <a href="#">
-                              <i class="social-googleplus"></i>
                           </a>
                       </li>
                   </ul>
@@ -104,12 +107,10 @@
 
               <div class="footer-menu">
                   <ul class="no-bullet right">
-                      <li><a href="#">Team</a></li>
-                      <li><a href="#">Contact</a></li>
-                      <li><a href="#">Blog</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="contact.html">Contact</a></li>
                   </ul>
               </div>
-
               <div class="right">
                   <p>&copy; 2014 Eco-Mojo</p>
               </div>
