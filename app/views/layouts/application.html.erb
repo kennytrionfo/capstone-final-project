@@ -63,6 +63,7 @@
                                  </ul>
                                      <% else %>
                                      <%= link_to('Login', new_user_session_path) %>
+                                     <%= link_to('Login with Twitter', user_omniauth_authorize_path(:twitter)) %>
                                      <% end %>
                               </li>
                           </li>
