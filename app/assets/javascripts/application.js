@@ -98,7 +98,7 @@ $(document).ready(function() {
     var $link = $(this);
     var set_frequency = parseInt($link.parents('.card').find('.first_frequency').val());
     if  (set_frequency == 0 ) {
-      alert('Please choose at least 1 "Times Per Week" first');
+      alert('Please select "Times Per Week" first');
     } else {
     var theTotal = $('#grand_total').attr('value');
     var weekly_results = parseInt($link.closest('li').find('.weekly_results').text(), 10);
