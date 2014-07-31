@@ -1,4 +1,4 @@
-        <div class="row">
+          <div class="row">
             <div class="large-4 medium-4 small-12 columns" id="db_user_info">
               <div>
                 <div id="usergreeting">Welcome back<br /><%= current_user.username %>!</div>
@@ -38,10 +38,10 @@
                    <div class="small-6 columns">
                       <input type="hidden" class="goal_id" value="<%= goal.id %>">
                       <input type="hidden" class="user_id" value="<%= @user.id %>">
-                       <%= goal.category %>
+                       <%= goal.category %><br /><br />
                    </div>
                    <div class="small-6 columns">
-                      <div><span class="point_value"><%= goal.point_value %></span></div>
+                      <div><span class="point_value"><%= goal.point_value %></span></div><br />
                     </div>
                 </div>
                 <div class="row">
