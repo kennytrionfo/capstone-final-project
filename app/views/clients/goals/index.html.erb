@@ -36,10 +36,10 @@
                 <div class="small-6 columns cardcats">Goal Value</div>
               </div>
               <div class="row">
-                 <div class="small-6 columns">
+                 <div class="small-6 columns" id="catagories">
                     <input type="hidden" class="goal_id" value="<%= goal.id %>">
                     <input type="hidden" class="user_id" value="<%= @user.id %>">
-                     <%= goal.category %><br /><br />
+                     <%= goal.category %>
                  </div>
                  <div class="small-6 columns">
                     <div><span class="point_value"><%= goal.point_value %></span></div><br />
@@ -51,7 +51,7 @@
               </div>
               <div class="row">
                   <div class="small-6 columns">
-                      <div><span class="per week"><%= select_tag(:frequency, options_for_select([ 0, 1, 2, 3, 4, 5, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span></div>
+                      <div><span class="per week"><%= select_tag(:frequency, options_for_select([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20], selected: goal.frequency), id: nil, class: 'frequency-select') %></span></div>
                   </div>
                   <div class="small-6 columns">
                       <div><span class="weekly_goal" id='<%= goal.id %>'><%= goal.weekly_points_goal %></span></div>
@@ -77,7 +77,7 @@
                   </div> -->
                   </div>
                   <div class="small-6 columns">
-                    <a class="refresh"> Reset?</a>
+                    <a class="refresh"> Reset</a>
                   </div>
               </div>
           </li>
