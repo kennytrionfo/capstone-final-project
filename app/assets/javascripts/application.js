@@ -93,17 +93,16 @@ $(document).ready(function() {
   });
 
 // ------Did it! BUTTON THAT ADDS THE CATAGORY'S POINTS TO WEEKLY RESULTS & GRAND TOTAL-----
-  var theTotal = $('#grand_total').attr('value');
+    var theTotal = $('#grand_total').attr('value');
   $('a.done').click(function(){
     var $link = $(this);
-    var set_frequency = parseInt($link.parents('.card').find('.first_frequency').val());
-    if  (set_frequency == 0 ) {
+    var weekly_goal = parseInt($link.parents('.card').find('.weekly_goal').text(), 10);
+    if  (weekly_goal == 0 ) {
       alert('Please choose at least 1 "Times Per Week" first');
     } else {
     var theTotal = $('#grand_total').attr('value');
     var weekly_results = parseInt($link.closest('li').find('.weekly_results').text(), 10);
     var point_value = parseInt($link.closest('li').find('.point_value').text(), 10);
-    var weekly_goal = parseInt($link.parents('.card').find('.weekly_goal').text(), 10);
     var total = weekly_results + point_value;
     $link.closest('li').find('.weekly_results').text(total);
     var goal_id = $link.closest('li').find('.goal_id').val();
