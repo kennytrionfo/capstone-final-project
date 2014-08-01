@@ -97,9 +97,9 @@ $(document).ready(function() {
   $('a.done').click(function(){
     var $link = $(this);
     var set_frequency = parseInt($link.parents('.card').find('.first_frequency').val());
-    if  (set_frequency == 0 ) {
-      alert('Please select "Times Per Week" first');
-    } else {
+    // if  (set_frequency == 0 ) {
+    //   alert('Please select "Times Per Week" first');
+    // } else {
     var theTotal = $('#grand_total').attr('value');
     var weekly_results = parseInt($link.closest('li').find('.weekly_results').text(), 10);
     var point_value = parseInt($link.closest('li').find('.point_value').text(), 10);
@@ -132,7 +132,7 @@ $(document).ready(function() {
         $progressBar.donutchart('animate');
     });
     return false;
-    }
+    // }
 
   });
 
