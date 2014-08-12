@@ -183,9 +183,19 @@ $(document).ready(function() {
 
 });
 
+// set var to 0
+// if total is over 100 (check var theTotal)
+// and if it's first time only ()
+// highlight badge and
+// say "congrats"
+
+
+
+
 
 function display_badges() {
   var theTotal = $('#grand_total').attr('value');
+  var level1 = 0
   if (theTotal > 499) {
     $('#five').css({
       'opacity': 1.0
@@ -202,6 +212,7 @@ function display_badges() {
     $('#one').css({
       'opacity': 1.0
       });
+
     } else if (theTotal > 399){
       $('#four').css({
         'opacity': 1.0
@@ -215,6 +226,7 @@ function display_badges() {
       $('#one').css({
         'opacity': 1.0
         });
+
     } else if (theTotal > 299){
       $('#three').css({
         'opacity': 1.0
@@ -226,12 +238,27 @@ function display_badges() {
         'opacity': 1.0
         });
     } else if (theTotal > 199){
+var level1 = 0;
+if (level1 == 0) {
+  alert("Way to go! \nNow you're now an Eco Trooper!");
+  level1 = 1;
+  $('#two').css({
+    'opacity': 1.0
+    });
+  $('#one').css({
+    'opacity': 1.0
+    });
+} else if (level1 > 0) {
       $('#two').css({
         'opacity': 1.0
         });
       $('#one').css({
         'opacity': 1.0
-        });
+      });
+  }
+
+
+
     } else if (theTotal > 99){
       $('#one').css({
         'opacity': 1.0
