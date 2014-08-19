@@ -80,7 +80,7 @@ $(document).ready(function() {
   $('select.frequency-select').change(function() {
     var frequency_button = parseInt($(this).val());
     var local_point_value = parseInt($(this).closest('li').find('.point_value').text());
-  parseInt($(this).closest('li').find('.weekly_goal').text(frequency_button*local_point_value));
+    parseInt($(this).closest('li').find('.weekly_goal').text(frequency_button*local_point_value));
     var goal_id = $(this).closest('li').find('.goal_id').val();
     $.post('/clients/goals/' + goal_id, {
       _method: 'patch',
@@ -91,30 +91,45 @@ $(document).ready(function() {
       },function(goal){
     });
   });
-
+// tesing this here..
+var badges = [100, 200, 300, 400, 500];
+function addPoints(local_point_value) {
+  var index = 0;
+  while(badges[index] <= grand_total && index < badges.length) {
+    index++;
+    grand_total += local_point_value;
+  }
+  while (badges[index + 1] <= grand_total && index < badges.length) {
+    alert ("you did it!");
+  }
+}
 
 // ------Did it! BUTTON THAT ADDS THE CATAGORY'S POINTS TO WEEKLY RESULTS & GRAND TOTAL-----
   var theTotal = $('#grand_total').attr('value');
   $('a.done').click(function(){
     var $link = $(this);
     var weekly_goal = parseInt($link.parents('.card').find('.weekly_goal').text(), 10);
-    if  (weekly_goal == 0 ) {
+    if  (weekly_goal == 0 )
+    {
       alert('Please choose at least 1 "Times Per Week" first');
-    } else {
-    var theTotal = $('#grand_total').attr('value');
-    var weekly_results = parseInt($link.closest('li').find('.weekly_results').text(), 10);
-    var point_value = parseInt($link.closest('li').find('.point_value').text(), 10);
-    var total = weekly_results + point_value;
-    $link.closest('li').find('.weekly_results').text(total);
-    var goal_id = $link.closest('li').find('.goal_id').val();
-    var $progressBar = $link.parents('.card').find('.circular-bar-green');
-    $.post('/clients/goals/' + goal_id, {
-      _method: 'patch',
-      goal: {
-        weekly_results: total,
-      },
-    }, function(goal){
-    });
+    }
+      else
+    {
+      var theTotal = $('#grand_total').attr('value');
+      var weekly_results = parseInt($link.closest('li').find('.weekly_results').text(), 10);
+      var point_value = parseInt($link.closest('li').find('.point_value').text(), 10);
+      var total = weekly_results + point_value;
+      $link.closest('li').find('.weekly_results').text(total);
+      var goal_id = $link.closest('li').find('.goal_id').val();
+      var $progressBar = $link.parents('.card').find('.circular-bar-green');
+      $.post('/clients/goals/' + goal_id, {
+        _method: 'patch',
+        goal:
+        {
+          weekly_results: total,
+        }
+      }),function(goal) {
+    }
     theTotal = Number(theTotal) + parseInt($link.closest('li').find('.point_value').text());
     var user_id = $('.user_id').val();
     $('#grand_total').text("Your Grand Total: "+ theTotal);
@@ -126,6 +141,9 @@ $(document).ready(function() {
         },
       },function(user){
         display_badges();
+
+addPoints(local_point_value);   //testing here
+
         var new_weekly_results = parseInt($link.closest('li').find('.weekly_results').text(), 10);
         var percentage = Math.ceil((new_weekly_results / weekly_goal) * 100);
         $progressBar.attr('data-percent', percentage);
@@ -133,11 +151,9 @@ $(document).ready(function() {
     });
     return false;
     }
-
   });
 
   $('#grand_total').text("Your Grand Total: "+ theTotal);
-
 // -------REFRESH BUTTON THAT SETS THAT CARD'S WEEKLY RESULTS BACK TO ZERO-----
   $('a.refresh').click(function(){
     if (confirm("This will reset your 'Weekly Results' back to zero. \n\nReset now?") == true) {
@@ -172,17 +188,14 @@ $(document).ready(function() {
       return false;
   });
 
-
   // -------REMOVE BUTTON THAT REMOVES THAT CARD FROM THE USER-----
   // on click, remove the div of that catagory. THIS IS ON HOLD DUE TO TIME CONTSTRAINTS--
   // $('.refreshtest').click(function(){
   //
   //
   // });
-
-
 });
-
+// psuedo for a one-time congrats alert when passing each level threshold
 // set var to 0
 // if total is over 100 (check var theTotal)
 // and if it's first time only ()
@@ -190,12 +203,8 @@ $(document).ready(function() {
 // say "congrats"
 
 
-
-
-
 function display_badges() {
   var theTotal = $('#grand_total').attr('value');
-  var level1 = 0
   if (theTotal > 499) {
     $('#five').css({
       'opacity': 1.0
@@ -212,7 +221,6 @@ function display_badges() {
     $('#one').css({
       'opacity': 1.0
       });
-
     } else if (theTotal > 399){
       $('#four').css({
         'opacity': 1.0
@@ -226,7 +234,6 @@ function display_badges() {
       $('#one').css({
         'opacity': 1.0
         });
-
     } else if (theTotal > 299){
       $('#three').css({
         'opacity': 1.0
@@ -238,27 +245,12 @@ function display_badges() {
         'opacity': 1.0
         });
     } else if (theTotal > 199){
-var level1 = 0;
-if (level1 == 0) {
-  alert("Way to go! \nNow you're now an Eco Trooper!");
-  level1 = 1;
-  $('#two').css({
-    'opacity': 1.0
-    });
-  $('#one').css({
-    'opacity': 1.0
-    });
-} else if (level1 > 0) {
       $('#two').css({
         'opacity': 1.0
         });
       $('#one').css({
         'opacity': 1.0
-      });
-  }
-
-
-
+        });
     } else if (theTotal > 99){
       $('#one').css({
         'opacity': 1.0
